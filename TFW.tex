@@ -246,7 +246,7 @@ $rot\text{ }rot\mathbf{F} = grad\text{ } div \mathbf{F} - \Delta\mathbf{F}$
 \begin{sectionbox}
 	\subsection{Rand- und Stetigkeitsbedingungen}
 	Tangentialkomponente des magnetischen und elektrischen Feldes:\\
-	\includegraphics[width = 3.3cm]{./img/tang_rand.png}
+	\includegraphics[width = 3.5cm]{./img/tang_rand.png}
 	\begin{emphbox}
 		$\mathbf{n} \times (\mathbf{h}_1 - \mathbf{h}_2) = 
 		\begin{cases}
@@ -264,7 +264,7 @@ $rot\text{ }rot\mathbf{F} = grad\text{ } div \mathbf{F} - \Delta\mathbf{F}$
 \end{sectionbox}
 \begin{sectionbox}
 Normalenkomponente an einer Grenzschicht:\\
-\includegraphics[width = 3.3cm]{./img/normal_rand.png}
+\includegraphics[width = 3.5cm]{./img/normal_rand.png}
 \begin{emphbox}
 	$\mathbf{n} \cdot (\mathbf{D}_1 - \mathbf{D}_2) = \begin{cases}
 		0 : \text{Normalfall} \\
@@ -593,6 +593,7 @@ Im Lastwiederstand umgesetzte Leistung: $P_L = \frac{|V_+|^2}{Z_0}(1-|\rho|^2)$
 		\item Kreise um den Mittelpunkt entsprechen Leitungstransformationen in verlustlosen Leitungen: Bewegt man sich vom Abschlusswiderstand weg (Vergrößerung der Leitungslänge), dann bewegt man sich im Uhrzeigersinn.
 	\end{itemize}
 \end{sectionbox}
+
 \begin{sectionbox}
 	\subsection{Planare Leitungen}
 	\begin{tabular*}{\columnwidth}{cc}
@@ -602,7 +603,82 @@ Im Lastwiederstand umgesetzte Leistung: $P_L = \frac{|V_+|^2}{Z_0}(1-|\rho|^2)$
 		\includegraphics[width = 3cm]{./img/mikrostreifen_leitung.png} & \includegraphics[width = 3cm]{./img/koplanar_streifen_leitung.png}\\
 		Mikrostreifenleitung & Koplanare Streifenleitung
 	\end{tabular*}
+
+Die einzige planare Leitung auf der eine TEM-Welle natürlich ausbreitungsfähig ist ist die Streifenleitung
+
 \end{sectionbox}
+
+\section{Zwei- und Mehrtore}
+\begin{sectionbox}
+Bei höheren Frequenzen sind bei Zwei- und Mehrtoren die Zuleitungen zu berücksichtigen. Daher ist die Definition der Bezugsebenen (Tor 1 und Tor 2) erforderlich.\\
+Die Verwendung von Strom ($I_1$ bzw. $I_2$) und Spannung ($V_1$ und $V_2$) als Torgrößen ist wenig sinnvoll. Betrag und Phase hängen empfindlich von der Länge der Zuleitung ab.
+Bei höheren Frequenzen werden fast ausschließlich komplexe Amplituden der hineinlaufenden Wellen ($a_1$ bw. $a_2$) und der herauslaufenden Wellen ($b_1$ bzw. $b_2$) als Torgrößen verwendet.
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Komplexe Wellenamplituden}
+	Spannung der hineinlaufenden Wellen:\\
+	$V_{+i}e^{-j\beta z_i} = \frac{1}{2}(V_i(z_i) + Z_0 \cdot I_i(z_i))\cdot $\\
+	Definition der Wellenamplituden über die Leistung:\\
+	$P_{el} = \frac{1}{2}V\cdot V_{+i} \cdot I_{+i}^* = \frac{1}{2}V_{+i}\cdot \frac{V_{+i}^*}{Z_0} = \frac{V_{+i}}{\sqrt{2} Z_0}\cdot\frac{V_{+i}^*}{\sqrt{2} Z_0}$\\
+	
+	$P_{el} = a_i(z_i)\cdot a_i^*(z_i) = |a_i(z_i)|^2$
+	Analog für herauslaufende Welle, es ergibt sich:\\
+	$a_i(z_i) = \frac{V_{+i}\cdot e^{-j\beta z_i}}{\sqrt{2}Z_0}$, \qquad $[a_i] = \sqrt{\text{W}}$\\
+	
+	$b_i(z_i) = \frac{V_{-i}\cdot e^{-j\beta z_i}}{\sqrt{2}Z_0}$, \qquad $[b_i] = \sqrt{\text{W}}$\\
+	
+	$V_i(z_i) = \sqrt{2Z_0} \cdot (a_i(z_i) + b_i(z_i))$\\
+	$I_i(z_i) = \frac{2}{Z_0} \cdot (a_i(z_i) - b_i(z_i))$
+	
+
+\end{sectionbox}
+
+\begin{sectionbox}
+\includegraphics[width = \columnwidth]{./img/zweitor_amplituden.png}
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Streuparameter (S-Parameter)}
+	$b_1 = S_{11} a_1 + S_{12} a_2$\\
+	$b_2 = S_{21} a_1 + S_{22} a_2$\\
+	\textbf{Matrizendarstellung}:\\
+	$\begin{bmatrix}
+		b_1 \\
+		b_2
+	\end{bmatrix}
+	= [S] \begin{bmatrix}
+		a_1\\
+		a_2
+	\end{bmatrix}$
+
+	\textbf{Zusammenhang mit Reflexionsfaktor}:\\
+	\begin{emphbox}
+	Eingangsreflexionsfaktor: $\rho_E = \frac{b_1}{a_1} = S_{11} + \frac{S_{12}S_{21}\rho_L}{1-S_{22}\rho_L}$
+	\end{emphbox}
+
+	$\rho_L = \frac{a_2}{b_2}  \implies \frac{1}{\rho_L} = S_{22} + \frac{a_1}{a_2}\cdot S_{21}$\\
+	
+	$\rho_A = \frac{b_2}{a_2}, \quad \rho_G = \frac{a_1}{b_1}$\\
+	\begin{emphbox}
+		Ausgangsreflexionsfaktor: $\rho_A = S_{22} + \frac{S_{12}S_{21}\rho_G}{1-S_{11}\rho_G}$
+	\end{emphbox}
+Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rho_A = S_{22}$\\
+
+\begin{tabular*}{\columnwidth}{cc}
+\includegraphics[width = 3cm]{./img/eingangsrefl.png} & \includegraphics[width = 3cm]{./img/ausgangsrefl.png}
+\end{tabular*}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Stabilität von Zweitoren}
+	Absolute Stabilität: Die Tore verhalten sich unabhängig von der Beschaltung passiv d.h. $Re\{Z_E\} > 0$ und $Re\{Z_A\} > 0$.\\
+	Für die Reflexionsfaktoren muss gelten:\\
+	\begin{emphbox}
+		$|\rho_E < 1$ und $|\rho_A| < 1$ für\\
+		
+		$|\rho_L| < 1$ und $|\rho_G| < 1$
+	\end{emphbox}
+\end{sectionbox}
+
 
 % ======================================================================
 % End
