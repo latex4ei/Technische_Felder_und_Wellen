@@ -48,6 +48,8 @@
 
 \newcommand{\VB}{\underline{\textit{B}}}
 
+\newcommand{\comment}[1]{\textcolor{red}{#1}}
+
 
 % ======================================================================
 % Begin
@@ -145,15 +147,15 @@
 
 
 
-\begin{sectionbox}
-	\subsubsection{Ableitungsregeln ($\forall \lambda, \mu \in \mathbb R$)}
-	\begin{tabular}{@{}l@{\quad}ll@{}}
-		Linearität: & $(\lambda f + \mu g)' (x) = \lambda f'(x) + \mu g'(x_0)$  \\
-		Produkt: & $(f \cdot g)'(x) = f'(x) g(x) + f(x) g'(x)$\\
-		Quotient: & $\left(\frac{f}{g}\right)' (x) = \frac{g(x)f'(x) -f(x) g'(x)}{g(x)^2}$ \quad $\left(\frac{\text{NAZ}-\text{ZAN}}{\text{N}^2}\right)$\\
-		Kettenregel & $\left( f\bigl(g(x)\bigr) \right)' = f'\bigl(g(x)\bigr) g'(x)$\\
-	\end{tabular}
-\end{sectionbox}
+%\begin{sectionbox}
+%	\subsubsection{Ableitungsregeln ($\forall \lambda, \mu \in \mathbb R$)}
+%	\begin{tabular}{@{}l@{\quad}ll@{}}
+%		Linearität: & $(\lambda f + \mu g)' (x) = \lambda f'(x) + \mu g'(x_0)$  \\
+%		Produkt: & $(f \cdot g)'(x) = f'(x) g(x) + f(x) g'(x)$\\
+%		Quotient: & $\left(\frac{f}{g}\right)' (x) = \frac{g(x)f'(x) -f(x) g'(x)}{g(x)^2}$ \quad $\left(\frac{\text{NAZ}-\text{ZAN}}{\text{N}^2}\right)$\\
+%		Kettenregel & $\left( f\bigl(g(x)\bigr) \right)' = f'\bigl(g(x)\bigr) g'(x)$\\
+%	\end{tabular}
+%\end{sectionbox}
 
 \begin{sectionbox}
 	\subsection{Integrale $\int e^x\mathrm dx = e^x = (e^x)'$}
@@ -196,7 +198,7 @@
 		\hline
 		\multicolumn{2}{c}{Durchflutungssatz (verallg. Amperesches Gesetz)} \\
 		\hline
-		$\oint \mathbf{h} \cdot d\mathbf{s} = \iint (\mathbf{j} + \frac{\partial \mathbf{D}}{\partial t}) \cdot d\mathbf{A}$ & $\nabla \times \mathbf{h} = \mathbf{j} + \frac{\partial D}{\partial t}$ \\
+		$\oint \mathbf{h} \cdot d\mathbf{s} = \iint (\mathbf{j} + \frac{\partial \mathbf{D}}{\partial t}) \cdot d\mathbf{A}$ & $\nabla \times \mathbf{h} = \mathbf{j} + \frac{\partial \mathbf{D}}{\partial t}$ \\
 		\hline
 		\multicolumn{2}{c}{Gaußsches Gesetz} \\
 		\hline
@@ -210,7 +212,8 @@
 		\hline
 		$\iint \mathbf{j} \cdot d\mathbf{A} = -\iiint \rho \cdot d\mathbf{V}$ & $\nabla \cdot \mathbf{j} = - \frac{\partial \rho}{\partial t}$\\
 	\end{tabular*}
-
+	
+ $\mathbf{e}$ $\left[ \frac{\text{V}}{\text{m}} \right]$,  $\mathbf{D}$ $\left[ \frac{\text{As}}{\text{m}^2} \right]$, $\mathbf{h}$ $\left[ \frac{\text{A}}{\text{m}} \right]$, $\mathbf{b}$ $\left[ \frac{\text{Vs}}{\text{m}^2} \right]$, $\rho$ $\left[ \frac{\text{As}}{\text{m}^3} \right]$, $\mathbf{j}$ $\left[ \frac{\text{A}}{\text{m}^2} \right]$
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -280,7 +283,7 @@ Normalenkomponente an einer Grenzschicht:\\
 
 \begin{sectionbox}
 \subsection{Skin-Effekt}
-Ansatz: $\nabla \times \mathbf{J} = -j\omega\kappa \mathbf{B}$ und $\nabla\times\mathbf{B} = \mu \mathbf{J}$.\\
+Ansatz: $\nabla \times \mathbf{J} = -j\omega\kappa \mathbf{B}$, $\nabla\times\mathbf{B} = \mu \mathbf{J}$ und Strom in +z $\mathbf{J} = J_z \mathbf{u}_z$.\\
 Es ergibt sich eine DGL: $\frac{\partial^2 J_z}{\partial y^2} = j\omega \mu \kappa J_z$
 Im idealen elektrischen Leiter (PEC) $\kappa \to \infty: E_{tan} = 0$ an der Leiteroberfläche d.h.:\\
 \begin{itemize}
@@ -325,7 +328,8 @@ Die Verluste im Material lassen sich berechnen (Platte mit Querschnitt $\delta \
 \begin{sectionbox}
 \subsection{Ebene Wellen}
 Ausbreitungsgeschwindigkeit: $c = \frac{1}{\sqrt{\mu \cdot \epsilon}}$\\
-Feldwellenwiederstand: $Z_F = \frac{\mu}{\epsilon}$, $Z_{F_0} = \frac{\mu_0}{\epsilon_0} \approx 120\pi\Omega \approx 377\Omega$\\
+%\approx 120\pi\Omega
+Feldwellenwiderstand: $Z_F = \sqrt{\frac{\mu}{\epsilon}}$, $Z_{F_0} = \sqrt{\frac{\mu_0}{\epsilon_0}}  \approx 377\Omega$\\
 Phasenkonstante: $\beta = \frac{\omega}{c} = \frac{2\pi}{\lambda}$\\
 
 Lösungen für Wellengleichung:
@@ -373,7 +377,7 @@ Lösungen für Wellengleichung:
 	\begin{emphbox}
 		$\mathbf{k}\cdot\mathbf{k} = \mathbf{\beta}^2 - \mathbf{\alpha}^2 -j2\mathbf{\alpha}\cdot\mathbf{\beta} = \omega^2\epsilon\mu$
 	\end{emphbox}
-Verlustloste Medien: $\omega^2\epsilon\mu$ reell.
+Verlustloste Medien: $\omega^2\epsilon\mu$ reell und $\mathbf{k}\cdot\mathbf{k} = \beta^2 - \alpha^2$.
 \end{sectionbox}
 \begin{sectionbox}
 	\subsection{Fallunterscheidung für $\alpha$ und $\beta$}
@@ -384,6 +388,8 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell.
 		\item $\mathbf{E} = \mathbf{E}_0 e^{-j\mathbf{k}\cdot \mathbf{r}} $
 		\item $\mathbf{H} = \frac{1}{Z_F}(\mathbf{e}_k \times \mathbf{E}_0) e^{-j\mathbf{k}\cdot \mathbf{r}} $
 		\item $\mathbf{k} = k \mathbf{e}_k$, \quad $k=\omega\sqrt{\epsilon\mu}$
+		\item Leistungstransport: $\mathbf{S} = \frac{\mathbf{e}_k}{2Z^*_F}  \mathbf{E} \cdot \mathbf{E} = \frac{\mathbf{e}_k Z^*_F}{2}\mathbf{H}\cdot\mathbf{H}^*$
+		
 	\end{itemize}
 \textbf{2. Fall}: $\alpha \cdot \beta = 0$
 \begin{itemize}
@@ -402,9 +408,13 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell.
 	
 	\begin{tablebox}{@{\hspace{5mm}}c@{\extracolsep\fill}c@{\extracolsep\fill}}
 	Reflexionsfaktor & Transmissionsfaktor \\
-	$\rho = \frac{Z_{F2} - Z_{F1}}{Z_{F1} + Z_{F2}}$ & $\tau = \frac{2Z_{F2}}{Z_{F1} + Z_{F2}}$\\
+	$\rho = \frac{Z_{F2} - Z_{F1}}{Z_{F1} + Z_{F2}}$ & $\tau = \frac{2Z_{F2}}{Z_{F1} + Z_{F2}} = 1 + \rho$\\
 	\end{tablebox}
-	Stehwellenverhältnis: SWR = $\frac{|E_1|_{max}}{|E_1|_{min}} = \frac{1 + |\rho|}{1-|\rho|}$
+	Welle in Medium 1: $\mathbf{E}_1(z) = E_{1i}e^{-j\beta_1z}(1+\rho e^{+2j\beta_1z})\mathbf{u}_x$\\
+	Welle in Medium 2: $\mathbf{E}_2(z) = \tau E_{1i}e^{-j\beta_1z}\mathbf{u}_x$\\
+	Stehwellenverhältnis: SWR = $\frac{|E_1|_{\text{max}}}{|E_1|_{\text{min}}} = \frac{1 + |\rho |}{1-|\rho |}$\\
+	Maxima: $z_{\text{max}} = -\frac{n \lambda_1}{2}, n= 0,1,2,\dots$\\
+	Minima: $z_{\text{min}} = -\frac{(2n+1) \lambda_1}{4}, n= 0,1,2,\dots$\\
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -432,12 +442,31 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell.
 \end{sectionbox}
 
 \begin{sectionbox}
+	\subsubsection{Schräger Einfall auf leitende Grenzfläche}
+	\textbf{1. Fall: Senkrechte Polarisation}\\
+	$\mathbf{E}_i(y,z) = Ee^{-j\beta (y\sin{\theta} - z\cos{\theta} )}\mathbf{u}_x$\\
+	$\mathbf{E}_r(y,z) = Ee^{-j\beta (y\sin{\theta} + z\cos{\theta} )}\mathbf{u}_x$\\
+	$\Rightarrow$ stehende Welle in z-Richtung und eine Wanderwelle in y-Richtung:\\
+	$\mathbf{E}_{\text{tot}}(y,z) = 2jE\sin{(\beta\cos{\theta} z )}e^{-j \beta\sin{\theta} y }\mathbf{u}_x$\\
+	\textbf{2. Fall: Parallele Polarisation}\\
+	Parallel zur Ebene:\\
+	$E_{i y}(y,z) = E \cos{\theta}e^{-j\beta(y\sin{\theta}-z\cos{\theta})}$\\
+	$E_{r y}(y, z)=-E \cos \theta e^{-j \beta(y \sin \theta+z \cos \theta)}$\\
+	Senkrecht zur Ebene:\\
+	$E_{i z}(y, z)=E \sin \theta e^{-j \beta(y \sin \theta-z \cos \theta)}$\\
+	$E_{r z}(y, z)=E \sin \theta e^{-j \beta(y \sin \theta+z \cos \theta)}$\\
+	$\Rightarrow$ stehende Welle in z-Richtung und eine Wanderwelle in y-Richtung:\\
+	$E_{\text {tot } y}(y, z)=2 j E \cos \theta \sin (\beta z \cos \theta) e^{-j \beta y \sin \theta}$ \\
+	$E_{\text {tot } z}(y, z)=2 E \sin \theta \cos (\beta z \cos \theta) e^{-j \beta y \sin \theta}$
+\end{sectionbox}
+
+\begin{sectionbox}
 	\subsection{Zusammenfassung Reflexion, Transmission an Grenzflächen}
 	\begin{itemize}
 		\item Die Reflexion (und Transmission) einer ebenen Welle an einer senkrecht zur Ausbreitungsrichtung orientierten Grenzfläche folgt den gleichen Gesetzmäßigkeiten wie bei einer (fehl-)abgeschlossenen TEM-Leitung. Dabei gilt:
 		\subitem Leitende Wand: Kurzschluss
 		\subitem Magnetische Wand: Leerlauf
-		\subitem Dielektrische Wand: Leitung mit anderem Wellenwiederstand
+		\subitem Dielektrische Wand: Leitung mit anderem Wellenwiderstand
 		\item Die Reflexion (und Transmission) einer ebenen Welle an einer schräg zur Ausbreitungsrichtung orientierten Grenzfläche lässt sich als Überlagerung zweier Wellen beschreiben:
 		\item Die jeweiligen Teilwellen ergeben sich als Projektion des Wellenvektors auf (1) den Normalenvektor und (2) die Oberfläche der Grenzfläche
 		\item Für die erste Teilwelle gelten die Reflexions- und Transmissionseigenschaften einer Welle bei senkrechtem Einfall
@@ -447,16 +476,19 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell.
 \begin{sectionbox}
 	\subsection{Gauß'scher Strahl}
 	\begin{emphbox}
-		$E(x,y,z) = E_0\frac{w_0}{w(z)}exp\left(-\frac{x^2+y^2}{w(z)^2} -jkz - \frac{j\pi (x^2+y^2)}{\lambda R(z)} +jarctan\frac{\lambda z}{\pi \omega_0^2}\right)$
+		$E(x,y,z) = E_0\frac{w_0}{w(z)}exp\left(-\frac{x^2+y^2}{w(z)^2} -jkz - \frac{j\pi (x^2+y^2)}{\lambda R(z)} +j\text{arctan}\frac{\lambda z}{\pi \omega_0^2}\right)$
 	\end{emphbox}
 	\begin{itemize}
+		\item $b = n k_0 w_0^2$, mit Brechzahl $n = \sqrt{\epsilon \mu}$ \comment{???}
+		\item Strahldurchmesser (Abfall auf 1/e): $w(z) = w_0 \sqrt{1 - \left(\frac{2z}{b}\right)^2}$
 		\item Amplitudenterm: $-\frac{x^2+y^2}{w(z)^2}$
 		\item Phasenterm: $-jkz$
 		\item Krümmung der Phasenfronten: $- \frac{j\pi (x^2+y^2)}{\lambda R(z)}$
-		\item Korrekturfaktor (damits aufgeht): $+jarctan\frac{\lambda z}{\pi \omega_0^2}$
+		\item Korrekturfaktor (damits aufgeht): $+j\text{arctan}\frac{\lambda z}{\pi \omega_0^2}$
 	\end{itemize}
 	Für große Werte von $|z|$ schmiegt sich das Hyperboloid asymptotisch einem Kegel an mit dem Öffnungswinkel:\\
-	$\theta_0 = arctan\frac{2w_0}{b}$\\
+	$\theta_0 = \text{arctan}\frac{2w_0}{b}$\\
+	$w(z) = z\tan\theta$
 	
 	Für kleine Öffnungswinkel erhalten wir näherungsweise:\\
 	$\theta_0 = \frac{2w_0}{b} = \frac{2}{nk_0w_0} = \frac{\lambda_0}{\pi w_0 n} = \frac{\lambda}{\pi w_0}$\\
@@ -520,7 +552,7 @@ Typisch: $\frac{c}{c_0} \approx 0.66$ bzw. $c\approx 2 \cdot 10^8 [\frac{m}{s}]$
 		\hline
 		Reflexionsfrei & $V_- = 0, \implies V=V_+,\implies \quad \rho=0$ 
 	\end{tablebox}
-Im Lastwiederstand umgesetzte Leistung: $P_L = \frac{|V_+|^2}{Z_0}(1-|\rho|^2)$
+Im Lastwiderstand umgesetzte Leistung: $P_L = \frac{|V_+|^2}{Z_0}(1-|\rho|^2)$
 \end{sectionbox}
 
 \begin{sectionbox}
