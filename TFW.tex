@@ -47,6 +47,7 @@
 \newcommand{\va}{\underline{\textbf{\textit{a}}}}
 
 \newcommand{\VB}{\underline{\textit{B}}}
+\newcommand{\danger}[1]{\textcolor{red}{#1}}
 
 \newcommand{\comment}[1]{\textcolor{red}{#1}}
 
@@ -328,8 +329,8 @@ Die Verluste im Material lassen sich berechnen (Platte mit Querschnitt $\delta \
 \begin{sectionbox}
 \subsection{Ebene Wellen}
 Ausbreitungsgeschwindigkeit: $c = \frac{1}{\sqrt{\mu \cdot \epsilon}}$\\
-%\approx 120\pi\Omega
-Feldwellenwiderstand: $Z_F = \sqrt{\frac{\mu}{\epsilon}}$, $Z_{F_0} = \sqrt{\frac{\mu_0}{\epsilon_0}}  \approx 377\Omega$\\
+Feldwellenwiderstand: $Z_F = \sqrt{\frac{\mu}{\epsilon}} = \sqrt{\frac{\mu_r}{\epsilon_r}}Z_{F_0}$\\
+Feldwellenwiderstand im Freiraum: $Z_{F_0} = \sqrt{\frac{\mu_0}{\epsilon_0}} \approx 120\pi\Omega \approx 377\Omega$\\
 Phasenkonstante: $\beta = \frac{\omega}{c} = \frac{2\pi}{\lambda}$\\
 
 Lösungen für Wellengleichung:
@@ -411,10 +412,14 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell und $\mathbf{k}\cdot\mathbf{k} 
 	$\rho = \frac{Z_{F2} - Z_{F1}}{Z_{F1} + Z_{F2}}$ & $\tau = \frac{2Z_{F2}}{Z_{F1} + Z_{F2}} = 1 + \rho$\\
 	\end{tablebox}
 	Welle in Medium 1: $\mathbf{E}_1(z) = E_{1i}e^{-j\beta_1z}(1+\rho e^{+2j\beta_1z})\mathbf{u}_x$\\
-	Welle in Medium 2: $\mathbf{E}_2(z) = \tau E_{1i}e^{-j\beta_1z}\mathbf{u}_x$\\
+	Welle in Medium 2: $\mathbf{E}_2(z) = \tau E_{1i}e^{-j\beta_1z}\mathbf{u}_x$ \danger{Vorzeichen von $z$!}\\
 	Stehwellenverhältnis: SWR = $\frac{|E_1|_{\text{max}}}{|E_1|_{\text{min}}} = \frac{1 + |\rho |}{1-|\rho |}$\\
-	Maxima: $z_{\text{max}} = -\frac{n \lambda_1}{2}, n= 0,1,2,\dots$\\
-	Minima: $z_{\text{min}} = -\frac{(2n+1) \lambda_1}{4}, n= 0,1,2,\dots$\\
+	Max/Min: $z = -\frac{n \lambda_1}{2}, n= 0,1,2,\dots$, $|E_1| = |E_{1i}||1 + \rho|$\\
+	Min/Max: $z = -\frac{(2n+1) \lambda_1}{4}, n= 0,1,2,\dots$, $|E_1| = |E_{1i}||1 - \rho|$\\
+	Maximum/Minimum abhängig von ($\rho > 0$)/($\rho < 0$)\\
+	Umformungen: $|\rho | = \frac{\text{SWR} - 1}{\text{SWR} + 1}$, $Z_{F2} = \frac{1 + \rho}{1 - \rho}Z_{F1}$ \\
+	Vorzeichen: $\rho > 0$ für $Z_{F2} > Z_{F1}$ (falls reell)\\
+	Leistungsfluss in 1: $|S| = \frac{|E_{1i}|^2}{Z_{F1}} - \frac{|E_{1r}|^2}{Z_{F1}} = \frac{|E_{1i}|^2}{Z_{F1}}(1 - \rho^2)$\\
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -479,8 +484,9 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell und $\mathbf{k}\cdot\mathbf{k} 
 		$E(x,y,z) = E_0\frac{w_0}{w(z)}exp\left(-\frac{x^2+y^2}{w(z)^2} -jkz - \frac{j\pi (x^2+y^2)}{\lambda R(z)} +j\text{arctan}\frac{\lambda z}{\pi \omega_0^2}\right)$
 	\end{emphbox}
 	\begin{itemize}
-		\item $b = n k_0 w_0^2$, mit Brechzahl $n = \sqrt{\epsilon \mu}$ \comment{???}
-		\item Strahldurchmesser (Abfall auf 1/e): $w(z) = w_0 \sqrt{1 - \left(\frac{2z}{b}\right)^2}$
+		\item $E_0 = \sqrt{\frac{4 k_{0} Z_{F 0} P}{\pi b}}$, mit $k_0 = \frac{2\pi f}{c}$ (ungedämpft)
+		\item $b = n k_0 w_0^2[m]$, mit Brechzahl $n = \sqrt{\epsilon_r \mu_r}$, \danger{!$w_0$ ist nicht $\omega_0$}
+		\item Strahldurchmesser (Abfall auf 1/e): $w(z) = w_0 \sqrt{1 + \left(\frac{2z}{b}\right)^2}$
 		\item Amplitudenterm: $-\frac{x^2+y^2}{w(z)^2}$
 		\item Phasenterm: $-jkz$
 		\item Krümmung der Phasenfronten: $- \frac{j\pi (x^2+y^2)}{\lambda R(z)}$
@@ -488,15 +494,20 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell und $\mathbf{k}\cdot\mathbf{k} 
 	\end{itemize}
 	Für große Werte von $|z|$ schmiegt sich das Hyperboloid asymptotisch einem Kegel an mit dem Öffnungswinkel:\\
 	$\theta_0 = \text{arctan}\frac{2w_0}{b}$\\
-	$w(z) = z\tan\theta$
+	$w(z) = z\tan\theta$\\
+	Für $z \gg b$: $\frac{w_0}{w(z)} \approx \frac{b}{2z}$
 	
 	Für kleine Öffnungswinkel erhalten wir näherungsweise:\\
 	$\theta_0 = \frac{2w_0}{b} = \frac{2}{nk_0w_0} = \frac{\lambda_0}{\pi w_0 n} = \frac{\lambda}{\pi w_0}$\\
-	
+	$b=\frac{2 \lambda}{\pi \theta_{0}^{2}}$
+
 	\includegraphics[width = \columnwidth]{./img/gauss_strahl.png}\\
 	
 	Leistungstransport des Strahls:\\
 	$P = \frac{n}{2Z_{F0}}\int_-\infty^\infty\int_-\infty^\infty |E_{00x}(x,y,z)|^2 dxdy$
+
+	Konfokaler Parameter $b$:\\
+	Im konfocalen Abstand $z=\pm b/2$ ist die doppelte Fläche beschienen: $w(z) = \sqrt{2}w_0$.
 \end{sectionbox}
 \section{Leitungen}
 \begin{sectionbox}
@@ -531,7 +542,7 @@ Typisch: $\frac{c}{c_0} \approx 0.66$ bzw. $c\approx 2 \cdot 10^8 [\frac{m}{s}]$
 \begin{sectionbox}
 	\subsection{Zusammenfassung Leitungen}
 	\begin{itemize}
-	\item	Die ideale TEM-Leitung kann vollständig netzwerktheoretisch beschrieben werden. Es handelt sich dabei nicht um Wellenausbreitung im eigentlichen Sinne
+	\item Die ideale TEM-Leitung kann vollständig netzwerktheoretisch beschrieben werden. Es handelt sich dabei nicht um Wellenausbreitung im eigentlichen Sinne
 	\item Die Netzwerkgrößen I(t,z) und V(t,z) stehen aber in einer räumlichen und zeitlichen Beziehung, gekennzeichnet durch die Ausbreitungsgeschwindigkeit, die unabhängig von der Signalform ist.
 	\item Dabei existieren immer zwei unabhängige Lösungen, die den beiden möglichen Transportrichtungen entsprechen.
 	\item Die Leitungseigenschaften $c$ und $Z_0$ sind für beide Lösungen und an allen Orten der Leitung gleich und ausschließlich durch die Leitungsgeometrie und die Materialien festgelegt.
@@ -662,7 +673,9 @@ Bei höheren Frequenzen werden fast ausschließlich komplexe Amplituden der hine
 	$V_i(z_i) = \sqrt{2Z_0} \cdot (a_i(z_i) + b_i(z_i))$\\
 	$I_i(z_i) = \frac{2}{Z_0} \cdot (a_i(z_i) - b_i(z_i))$
 	
-
+	Definition über Klemmspannungen und -ströme: (Ströme hineinlaufend)\\
+	$a_{k}=\frac{1}{2 \sqrt{2 Z_{0}}}\left(U_{k}+Z_{0} \cdot I_{k}\right)$\\
+	$b_{k}=\frac{1}{2 \sqrt{2 Z_{0}}}\left(U_{k}-Z_{0} \cdot I_{k}\right)$
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -711,6 +724,20 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\end{emphbox}
 \end{sectionbox}
 
+
+\begin{sectionbox}
+	\subsection{Besondere Zweitore}
+	\setlength\tabcolsep{1.5pt}\begin{tabular*}{\columnwidth}{cc}
+		\includegraphics[width = 2.5cm]{./img/laengs_widerstand.png} & \includegraphics[width = 3cm]{./img/leitung.png}\\
+		Längswiderstand & Verlustfreie Leitung\\
+		$[S]=\left[\begin{array}{cc}
+			\frac{R}{R+2 Z_{0}} & \frac{2 Z_{0}}{R+2 Z_{0}} \\
+			\frac{2 Z_{0}}{R+2 Z_{0}} & \frac{R}{R+2 Z_{0}}
+			\end{array}\right]$ & $U_{1}=U_{2} \cos (\beta l)+j Z_{L} I_{2} \sin (\beta l)$\\
+		& $I_{1}=j \frac{U_{2}}{Z_{L}} \sin (\beta l)+I_{2} \cos (\beta l)$\\
+		
+	\end{tabular*}
+\end{sectionbox}
 
 % ======================================================================
 % End
