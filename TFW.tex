@@ -655,7 +655,7 @@ Die einzige planare Leitung auf der eine TEM-Welle natürlich ausbreitungsfähig
 \begin{sectionbox}
 Bei höheren Frequenzen sind bei Zwei- und Mehrtoren die Zuleitungen zu berücksichtigen. Daher ist die Definition der Bezugsebenen (Tor 1 und Tor 2) erforderlich.\\
 Die Verwendung von Strom ($I_1$ bzw. $I_2$) und Spannung ($V_1$ und $V_2$) als Torgrößen ist wenig sinnvoll. Betrag und Phase hängen empfindlich von der Länge der Zuleitung ab.
-Bei höheren Frequenzen werden fast ausschließlich komplexe Amplituden der hineinlaufenden Wellen ($a_1$ bw. $a_2$) und der herauslaufenden Wellen ($b_1$ bzw. $b_2$) als Torgrößen verwendet.
+Bei höheren Frequenzen werden fast ausschließlich komplexe Amplituden der hineinlaufenden Wellen ($a_1$ bw. $a_2$) und der herauslaufenden Wellen ($b_1$ bzw. $b_2$) als Torgrößen verwendet. Amplituden auf den Zuleitungen konstant, lediglich Phasenänderung.
 \end{sectionbox}
 \begin{sectionbox}
 	\subsection{Komplexe Wellenamplituden}
@@ -725,20 +725,211 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \end{sectionbox}
 
 
+% \begin{sectionbox}
+% 	\subsection{Besondere Zweitore}
+% 	\setlength\tabcolsep{1.5pt}\begin{tabular*}{\columnwidth}{cc}
+% 		\includegraphics[width = 2.5cm]{./img/laengs_widerstand.png} & \includegraphics[width = 3cm]{./img/leitung.png}\\
+% 		Längswiderstand & Verlustfreie Leitung\\
+% 		$[S]=\left[\begin{array}{cc}
+% 			\frac{R}{R+2 Z_{0}} & \frac{2 Z_{0}}{R+2 Z_{0}} \\
+% 			\frac{2 Z_{0}}{R+2 Z_{0}} & \frac{R}{R+2 Z_{0}}
+% 			\end{array}\right]$ & $U_{1}=U_{2} \cos (\beta l)+j Z_{L} I_{2} \sin (\beta l)$\\
+% 		& $I_{1}=j \frac{U_{2}}{Z_{L}} \sin (\beta l)+I_{2} \cos (\beta l)$\\
+% 	\end{tabular*}
+% \end{sectionbox}
+
 \begin{sectionbox}
-	\subsection{Besondere Zweitore}
-	\setlength\tabcolsep{1.5pt}\begin{tabular*}{\columnwidth}{cc}
-		\includegraphics[width = 2.5cm]{./img/laengs_widerstand.png} & \includegraphics[width = 3cm]{./img/leitung.png}\\
-		Längswiderstand & Verlustfreie Leitung\\
-		$[S]=\left[\begin{array}{cc}
-			\frac{R}{R+2 Z_{0}} & \frac{2 Z_{0}}{R+2 Z_{0}} \\
-			\frac{2 Z_{0}}{R+2 Z_{0}} & \frac{R}{R+2 Z_{0}}
-			\end{array}\right]$ & $U_{1}=U_{2} \cos (\beta l)+j Z_{L} I_{2} \sin (\beta l)$\\
-		& $I_{1}=j \frac{U_{2}}{Z_{L}} \sin (\beta l)+I_{2} \cos (\beta l)$\\
-		
-	\end{tabular*}
+	\subsection{Reziprozität, Symmetrie, Verlustfreiheit}
+	\begin{emphbox}
+		Reziprozität: $[S] = [S]^T$ ($[Y] = [Y]^T$)\\
+		Symmetrie: $[S] = [S]^T$ und $S_{ii} = S_{jj} \forall i,j$\\
+		Verlustfreiheit: $[S]^T[S]^* = [E]$
+	\end{emphbox}
+	Verlustfreiheit erfordert, dass die Betragsquadrate der Spalten $1$ ergeben.\\
+	\textbf{Verlustfreies, reziprokes allseits angepasstes 3-Tor nicht realisierbar.}
 \end{sectionbox}
 
+
+\begin{sectionbox}
+	\subsection{Alternative Netzwerkdarstellungen}
+	\textbf{Transmissionsmatrix}:\\
+	\setlength\tabcolsep{1.5pt}\begin{tabular*}{\columnwidth}{cc}
+	$\left[\begin{array}{l}
+		b_{1} \\
+		a_{1}
+		\end{array}\right]=[\Sigma]\left[\begin{array}{l}
+		a_{2} \\
+		b_{2}
+		\end{array}\right]$ & \raisebox{-7mm}{\includegraphics[width = 4cm]{./img/transmissions_matrix.png}}\\
+	\end{tabular*}
+	$[\Sigma]=\frac{1}{S_{21}}\left[\begin{array}{cc}
+		-\Delta_{S} & S_{11} \\
+		-S_{22} & 1
+		\end{array}\right]$ $[S]=\frac{1}{\Sigma_{22}}\left[\begin{array}{cc}
+			\Sigma_{12} & \Delta \Sigma \\
+			1 & -\Sigma_{21}
+			\end{array}\right]$\\
+	Determinante: $\Delta A = A_{11}A_{22}-A_{12}A_{21}$\\
+
+	\textbf{Kettenmatrix}:\\
+	\setlength\tabcolsep{1.5pt}\begin{tabular*}{\columnwidth}{cc}
+		$\left[\begin{array}{l}
+			u_{1} \\
+			i_{1}
+			\end{array}\right]=\left[\begin{array}{ll}
+			\mathrm{A} & \mathrm{B} \\
+			\mathrm{C} & \mathrm{D}
+			\end{array}\right]\left[\begin{array}{l}
+			u_{2} \\
+			-i_{2}
+			\end{array}\right]$ & \raisebox{-4mm}{\includegraphics[width = 3cm]{./img/kettenmatrix.png}}\\
+		\end{tabular*}\\
+
+		Mit normierten Größen $u$,$i$ $[\sqrt{W}]$:\\
+		$u = U / \sqrt{Z_0}$ und $i = I\sqrt{Z_0}$\\
+		$u_{1,2}=a_{1,2}+b_{1,2}$, $i_{1,2}=a_{1,2}-b_{1,2}$\\
+		\begin{tablebox}{@{\hspace{5mm}\vspace{1mm}}l@{\extracolsep\fill}l@{\extracolsep\fill}}
+			$S_{11}=\frac{A+B-C-D}{A+B+C+D}$ & $S_{12}=\frac{2 \Delta_{A}}{A+B+C+D}$\\
+			$S_{21}=\frac{2}{A+B+C+D}$ & $S_{22}=\frac{-A+B-C+D}{A+B+C+D}$\\
+			\hline
+			$A=\frac{-\Delta_{S}+S_{11}-S_{22}+1}{2 S_{21}}$ & $B=\frac{\Delta_{S}+S_{11}+S_{22}+1}{2 S_{21}}$\\
+			$C=\frac{\Delta_{S}-S_{11}-S_{22}+1}{2 S_{21}}$ & $D=\frac{-\Delta_{S}-S_{11}+S_{22}+1}{2 S_{21}}$\\
+		\end{tablebox}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Kettenmatrizen häufiger 2-Tore}
+	$\left[\begin{array}{cc}
+		\mathrm{A} & \mathrm{B} \\
+		\mathrm{C} & \mathrm{D}
+		\end{array}\right]=\left[\begin{array}{cc}
+		1 & \frac{R}{Z_{0}} \\
+		0 & 1
+		\end{array}\right]$ \raisebox{-4mm}{\includegraphics[width = 3cm]{./img/laengswiderstand.png}}\\
+		$\left[\begin{array}{cc}
+			\mathrm{A} & \mathrm{B} \\
+			\mathrm{C} & \mathrm{D}
+			\end{array}\right]=\left[\begin{array}{cc}
+			1 & 0 \\
+			G Z_{0} & 1
+			\end{array}\right]$\raisebox{-4mm}{\includegraphics[width = 3cm]{./img/querleitwert.png}}\\
+		$\left[\begin{array}{cc}
+			\cos \beta l & j \frac{Z_{1}}{Z_{0}} \sin \beta l \\
+			j \frac{Z_{0}}{Z_{1}} \sin \beta l & \cos \beta l
+			\end{array}\right]$\raisebox{-4mm}{\includegraphics[width = 3cm]{./img/leitung.png}}\\
+		$\left[\begin{array}{cc}
+			\cosh \gamma l & \frac{Z_{1}}{Z_{0}} \sinh \gamma l \\
+			\frac{Z_{1}}{Z_{0}} \sinh \gamma l & \cosh \gamma l
+			\end{array}\right]$ \raisebox{-4mm}{\includegraphics[width = 3cm]{./img/leitung_verlustbehaftet.jpg}}\\
+		$\left[\begin{array}{ll}
+			\mathrm{A} & \mathrm{B} \\
+			\mathrm{C} & \mathrm{D}
+			\end{array}\right]=\left[\begin{array}{cc}
+			\frac{1}{n} & 0 \\
+			0 & n
+			\end{array}\right]$ Idealer Übertrager, $n = N_1 / N_2$\\
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Eingangswiderstände unter veschiedenen Anschlüssen}	
+	\begin{tablebox}{@{\hspace{15mm}}l@{\extracolsep\fill}l@{\hspace{15mm}\extracolsep\fill}}
+		Abschluss $Z_0$: & $Z_{i n}=\frac{\mathrm{A}+\mathrm{B}}{\mathrm{C}+\mathrm{D}} Z_{0}$\\
+
+		Kurzschluss: & $Z_{i n}^{K}=\frac{\mathrm{B}}{\mathrm{D}} Z_{0}$\\
+
+		Leerlauf: & $Z_{i n}^{L}=\frac{\mathrm{A}}{\mathrm{C}} Z_{0}$ \\
+
+		Abschluss $Z_I$: & $\tilde{Z}_{i n}=\frac{\mathrm{AZ}_{I}+\mathrm{BZ}_{0}}{\mathrm{CZ}_{I}+\mathrm{DZ}_{0}}$\\
+	\end{tablebox}	
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Zweitorverstärkung}
+	\includegraphics[width = 6cm]{./img/zweitorverstaerkung.png}\\
+	Eingangsleistung: $P_{E}=\left|a_{1}\right|^{2}-\left|b_{1}\right|^{2} =\left|a_{1}\right|^{2} \cdot\left(1-\left|\rho_{E}\right|^{2}\right)$\\
+	Ausgangsleistung: $P_{A}=\left|b_{2}\right|^{2}-\left|a_{2}\right|^{2}=\left|b_{2}\right|^{2} \cdot\left(1-\left|\rho_{L}\right|^{2}\right)$\\
+
+	Zusammenhang mit Generatorurwelle: $a_{1}=\frac{a_{G}}{1-\rho_{G} \rho_{E}}$\\
+
+	Leistungsabgabe im Generator: $P_G = P_E = \left|a_{G}\right|^{2} \cdot \frac{1-\left|\rho_{E}\right|^{2}}{\left|1-\rho_{G} \rho_{E}\right|^{2}}$
+
+	Maximale/verfügbare Generatorleistung für Anpassung ($\rho_{E}=\rho_{G}^{*}$):\\
+	$P_{G V}=\frac{\left|a_{G}\right|^{2}}{1-\left|\rho_{G}\right|^{2}}$\\
+
+	Übertragungsverhalten: $\frac{b_{2}}{a_{1}}=\frac{S_{21}}{1-\rho_{L} S_{22}}$\\
+
+	Tatsächliche Leistungsverstärkung:\\
+	$V_{P}=\frac{P_{A}}{P_{E}}=\frac{\left|b_{2}\right|^{2} \cdot\left(1-\left|\rho_{L}\right|^{2}\right)}{\left|a_{1}\right|^{2} \cdot\left(1-\left|\rho_{E}\right|^{2}\right)}=\frac{\left|S_{21}\right|^{2}}{\left|1-\rho_{L} S_{22}\right|^{2}} \cdot \frac{1-\left|\rho_{L}\right|^{2}}{1-\left|\rho_{E}\right|^{2}}$\\
+
+	Übertragungsleistungsverstärkung/Gewinn\\(Ausgangsleistung bezogen auf verfügbare Generatorleistung):\\
+	$G=\frac{P_{A}}{P_{G V}} = \frac{1-\left|\rho_{G}\right|^{2}}{\left|1-\rho_{G} \rho_{E}\right|^{2}} \cdot\left|S_{21}\right|^{2} \cdot \frac{1-\left|\rho_{L}\right|^{2}}{\left|1-\rho_{L} S_{22}\right|^{2}}$\\
+	
+	Maximale Leistungsverstärkung (maximaler Gewinn) bei Wirkleistungsanpassung am Eingang und Ausgang:
+	$\rho_{G}=\rho_{E}^{*} ; \rho_{L}=\rho_{A}^{*}$\\
+
+	\begin{emphbox}
+		Gewinn rückwirkungsfreier Verstärker ($|S_{12}| / |S_{21}| < 0.1$), $\rho_{E}=S_{11}$:\\
+		$G=\underbrace{\frac{1-\left|\rho_{G}\right|^{2}} {\left|1-\rho_{G} S_{11}\right|^{2}}}_{\text{Gewinn der Quelle}}\cdot \underbrace{\left|S_{21}\right|^{2}}_{\text {des Zweitors }} \cdot  \underbrace{\frac{1-\left|\rho_{L}\right|^{2}}{\left|1-\rho_{L} S_{22}\right|^{2}}}_{\text {der Last }}$\\
+		
+		Maximaler Gewinn für beidseitige Wirkleistungsanpassung: $\rho_{G}=\rho_{E}^{*}=S_{11}^{*} ; \rho_{L}=\rho_{A}^{*}=S_{22}^{*}$\\
+		$G_{\max }=\frac{\left|S_{21}\right|^{2}}{\left(1-\left|S_{11}\right|^{2}\right) \cdot\left(1-\left|S_{22}\right|^{2}\right)}$
+	\end{emphbox}
+\end{sectionbox}	
+\begin{sectionbox}
+	\subsection{Anpassnetzwerke}
+	\begin{itemize}
+		\item Für maximalen Gewinn ist Wirkleistungsanpassung erforderlich
+		\item HF-Verstärker haben frequenzabhängige und stark reaktive Ein/Ausgangsimpedanzen, die angepasst werden müssen
+		\item Problem: Reaktive Anpassungen in der Regel schmalbandig
+		\item Problem: Reflexionen können zu Stabilitätsproblemen führen
+	\end{itemize}
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Absolute Stabilität}
+	\begin{itemize}
+		\item Die Tore verhalten sich unabhängig der passiven Beschaltung passiv
+		\item Der Verstärker ist unabhängig von der Beschaltung stabil
+	\end{itemize}
+	Mathematisch: $\left|\rho_{E}\right|<1$ für $\left|\rho_{L}\right|<1 \quad \wedge \quad\left|\rho_{A}\right|<1$ für $\left|\rho_{G}\right|<1$\\
+	\includegraphics[width = 6.8cm]{./img/stablilitaet.png}\\
+	\begin{emphbox}
+		5 notwendige und hinreichende Bedingungnen für absolute Stabilität:\\
+		\begin{enumerate}
+			\item $\left|S_{11}\right|<1$ und $\left|S_{22}\right|<1$
+			\item $\left|S_{12} \cdot S_{21}\right|<1-\left|S_{22}\right|^{2}$ und $\left|S_{12} \cdot S_{21}\right|<1-\left|S_{11}\right|^{2}$
+			\item $K > 1$
+		\end{enumerate}
+		Stabilitätsfaktor:\\
+		$K=\frac{1+\left|S_{11} \cdot S_{22}-S_{12} \cdot S_{21}\right|^{2}-\left|S_{11}\right|^{2}-\left|S_{22}\right|^{2}}{\left|2 \cdot S_{12} \cdot S_{21}\right|}$
+	\end{emphbox}
+
+	\textbf{Stabilitätskreise}:\\
+	Zur Überprüfung wird die Ortskurve $\left|\rho_{L}\right|=1$ bzw $\left|\rho_{G}\right|=1$ zum Ein- /Ausgang transformiert:
+	\begin{emphbox}
+		Bild des Eingangsreflexionsfaktors in der Lastebene:\\
+		$C_{L}=\frac{\left(S_{22}-\Delta_{S} S_{11}^{*}\right)^{*}}{\left|S_{22}\right|^{2}-\left|\Delta_{S}\right|^{2}}$, $R_{L}=\left|\begin{array}{c}
+			S_{12} S_{21} \\
+			\left|S_{22}\right|^{2}-\left|\Delta_{S}\right|^{2}
+			\end{array}\right|$\\
+		Bild des Ausgangsreflexionsfaktors in der Eingangsebene:\\
+		$C_{G}=\frac{\left(S_{11}-\Delta_{S} S_{22}^{*}\right)^{*}}{\left|S_{11}\right|^{2}-\left|\Delta_{S}\right|^{2}}$, $R_{G}=\left|\frac{S_{12} S_{21}}{\left|S_{11}\right|^{2}-\left|\Delta_{S}\right|^{2}}\right|$
+	\end{emphbox}
+	\comment{Kriterium für die Wahl der stabilen Seite hinzufügen.}\\
+	\comment{Einfügen von Widerständen zur Stabilisierung hinzufügen.}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Leitungskoppler}
+	\begin{itemize}
+		\item Innenleiter zweier Leitungssysteme werden über Strecke $l$ aufeinander angenähert und parallel geführt
+		\item Verwendung von TEM Leitungen $\rightarrow$ Phasengeschwindigkeiten der verschiedenen Eigenwellen sind gleich !wesentliche Eigenschaft
+		\item Homogenes Dielektrikum zwischen den Platten
+		\item Doppelte Symmetrie ermöglicht Gleich/Gegentaktanalyse
+		\item Alle Koppler mit doppelter Symmetrie und $z_ez_d = 1$ sind allseits angepasst und $S_{31} = S_{13} = 0$
+	\end{itemize}
+	\includegraphics[width = 2.5cm]{./img/leitungskoppler1.png}\includegraphics[width = 4.3cm]{./img/leitungskoppler2.png}\\
+	 
+	Gleich/Gegentaktanalyse:\\
+	
+\end{sectionbox}
 % ======================================================================
 % End
 % ======================================================================
