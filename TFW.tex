@@ -924,11 +924,77 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		\item Homogenes Dielektrikum zwischen den Platten
 		\item Doppelte Symmetrie ermöglicht Gleich/Gegentaktanalyse
 		\item Alle Koppler mit doppelter Symmetrie und $z_ez_d = 1$ sind allseits angepasst und $S_{31} = S_{13} = 0$
+		\item Alle verlustfreien angepassten Koppler mit doppelter Symmetrie sind $90^{\circ}$ Koppler
+		\item Können zur Signaldämpfung eingesetzt werden
 	\end{itemize}
 	\includegraphics[width = 2.5cm]{./img/leitungskoppler1.png}\includegraphics[width = 4.3cm]{./img/leitungskoppler2.png}\\
 	 
-	Gleich/Gegentaktanalyse:\\
+	\textbf{Gleich/Gegentaktanalyse}:\\
+	Für $a_2 = a_3 = 0$ werden Wellen in Tor 1 und 4 eingespeist. Aufgrund der Symmetrie muss nur ein Ast des Kopplers betrachtet werden.\\
+	Gleichtakt: $a_1^+ = a_4^+ = \frac{a_1}{2}$ $\rightarrow$ Tor 1 sieht Leitung mit Impedanz $Z_e$.\\
+	Gegentakt: $a_1^- = -a_4^- = \frac{a_1}{2}$ $\rightarrow$ Tor 1 sieht Leitung mit $Z_d$.\\
+	Bei Überlagerung gilt $a_4 = 0$ und dank doppelter Symmetrie $S_{ii} = S_{jj}$, $S_{12} = S_{21} = S_{34} = S_{43}$ usw. kann $[S]$ bestimmt werden.
+
+	\begin{emphbox}
+		Koppelgrößen für $z_e z_d = 1$:\\
+		\vspace{1em}
+		$S_{21}=\frac{2}{2 \cos \beta l+j\left(z_{e}+\frac{1}{z_{e}}\right) \sin \beta l}$\\
+		$S_{41}=\frac{j\left(z_{e}-\frac{1}{z_{e}}\right) \sin \beta l}{2 \cos \beta l+j\left(z_{e}+\frac{1}{z_{e}}\right) \sin \beta l}$
+		\begin{itemize}
+			\item $S_{11} = S_{31} = 0$ \textbf{frequenzunabhängig}
+			\item $S_{21}$ und $S_{41}$ unterscheiden sich \textbf{frequenzunabhängig} um $90$deg
+		\end{itemize}
+	\end{emphbox}
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Bandbreite von Leitungskopplern (3dB-Koppler)}
+	\includegraphics[width = 4.3cm]{./img/leitungskoppler_bb.png}\raisebox{5mm}{\includegraphics[width = 2.4cm]{./img/leitungskoppler_ms.png}}\\
+	Etwa eine halbe Oktave Bandbreite, bei max. 1dB Unterschied.\\
+	Mehrstufige Koppler verbessern die Bandbreite.
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Resistive Koppler}
+	\includegraphics[width = 4.3cm]{./img/resistiver_koppler.png}
+	\includegraphics[width = 2.3cm]{./img/resistiver_koppler_evenodd.png}\\
+	Schließt man alle Tore mit $Z_0$ ab, ergibt sich eine Wheatstone-Brücke.\\
+	\begin{emphbox}
+		Mit $R_1 R_2 = Z_0^2$:\\
+		\vspace{1em}
+		Anpassung: $S_{11}=S_{22}=S_{33}=S_{44}=0$\\
+		Isolation: $S_{31}=S_{13} = S_{42} = S_{24} =0$\\
+		Übertragung: $S_{21}=\frac{Z_{0}}{Z_{0}+R_{2}} \quad S_{41}=\frac{R_{2}}{Z_{0}+R_{2}}$
+	\end{emphbox}
+	\begin{itemize}
+		\item Phasen von $S_{21}$ und $S_{41}$ gleich: $0^{\circ}$-Koppler
+		\item Für $R_{1}=R_{2}=Z_{0}$ 6dB Dämpfung nach Tor 2, bzw. Tor 4.
+		\item Für $R_1 = j \omega L$, $R_2 = 1 / j \omega C$, $R_1R_2 = Z_0^2$ ist der Koppler verlustlos, breitbandig zu Tor 3 entkoppelt, aber die Übertragung ist frequenzabhängig.
+		\item Problem der Wheatstone-Brücke: nur ein Punkt geerdet $\rightarrow$ Symmetrieglied erforderlich $\rightarrow$ Bandbreite begrenzt
+	\end{itemize}
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Null-Grad-Koppler (Wilkinsonteiler)}
+	\includegraphics[width = 4cm]{./img/wilkinsonteiler.png}\\
+	\begin{itemize}
+		\item Zur Transformation von $Z_0$ auf $2Z_0$ muss gelten $Z_1 = \sqrt{2}Z_0$
+		\item Bei gekoppelten Leitungen ist $Z_1$ die Leitungsimpedanz der Gleichtaktwelle
+		\item Bei Speisung an Tor 1 sind Tor 2 und 3 gleich in Amplitude und Phase
+		\item wird $0^{\circ}$ Koppler genannt
+		\item $R$ idealerweise verlustfrei da zwischen Punkten gleichen Potential
+		\item Für $R = 2Z_0$ sind die Tore 2 und 3 entkoppelt
+		\item Etwa eine Oktave Bandbreite, erweiterbar durch mehrere Stufen
+	\end{itemize}
+\end{sectionbox}
+
+\section{Einige Theoreme der Elektromagnetischen Feldtheorie}
+\begin{sectionbox}
+	\subsection{Elektromagnetische Energiebilanz}
+	\begin{emphbox}
+	$\underbrace{-\frac{\partial}{\partial t}\left(W_{e}+W_{m}\right)}_{\substack{\text{zeitliche Änderung der}\\ \text{in} V \text{gespeicherten Energie}}}=\underbrace{p_{\kappa}}_{\text{Verlustleistung}}+\underbrace{p_{s}}_{
+		\substack{\text{aus(+)- oder}\\\text{eingebrachte(-)}\\ \text{Leistung}}
+	}$\\
+	\end{emphbox}
 	
+
 \end{sectionbox}
 % ======================================================================
 % End
