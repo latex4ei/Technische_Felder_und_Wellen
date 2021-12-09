@@ -17,7 +17,7 @@
 
 % set document information
 \title{Technische Felder\\ und Wellen}
-\author{Markus Kaschke}					% optional, delete if unchanged
+\author{Markus Kaschke, Johannes Kunz}					% optional, delete if unchanged
 \myemail{info@latex4ei.de}			% optional, delete if unchanged
 \mywebsite{www.latex4ei.de}			% optional, delete if unchanged
 
@@ -947,7 +947,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\end{emphbox}
 \end{sectionbox}
 \begin{sectionbox}
-	\subsection{Bandbreite von Leitungskopplern (3dB-Koppler)}
+	\subsection{Bandbreite von 3dB-Leitungskopplern}
 	\includegraphics[width = 4.3cm]{./img/leitungskoppler_bb.png}\raisebox{5mm}{\includegraphics[width = 2.4cm]{./img/leitungskoppler_ms.png}}\\
 	Etwa eine halbe Oktave Bandbreite, bei max. 1dB Unterschied.\\
 	Mehrstufige Koppler verbessern die Bandbreite.
@@ -987,15 +987,52 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 \section{Einige Theoreme der Elektromagnetischen Feldtheorie}
 \begin{sectionbox}
-	\subsection{Elektromagnetische Energiebilanz}
+	\subsection{Energiedichte im Feld}
+	Herleitung aus der mechanischen Arbeit durch Anhhäherung von Ladung aus dem Unendlichen.\\
+	Energiedichte des elektrischen Felds:\\
+	$w_{e}=\int_{0}^{\vec{d}} \vec{e}^{\prime} \cdot d \vec{d}^{\prime}= \frac{1}{\varepsilon_{r} \varepsilon_{0}} \frac{1}{2}|\vec{d}|^{2}=\frac{1}{2} \varepsilon_{r} \varepsilon_{0}|\vec{e}|^{2}$\\
+	Energiedichte des magnetischen Felds:\\
+	$w_{m}=\frac{1}{\mu_{r} \mu_{0}} \int_{0}^{d} \vec{b}^{\prime} \cdot d \vec{b}^{\prime}=\frac{1}{\mu_{r} \mu_{0}} \frac{1}{2}|\vec{b}|^{2}= \frac{1}{2} \mu_{r} \mu_{0}|\vec{h}|^{2}$\\
+	(Die letzten beiden Umformungen gelten für lineares isotropes Material.)
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Elektromagnetische Energiebilanz im Zeitbereich}
 	\begin{emphbox}
 	$\underbrace{-\frac{\partial}{\partial t}\left(W_{e}+W_{m}\right)}_{\substack{\text{zeitliche Änderung der}\\ \text{in} V \text{gespeicherten Energie}}}=\underbrace{p_{\kappa}}_{\text{Verlustleistung}}+\underbrace{p_{s}}_{
 		\substack{\text{aus(+)- oder}\\\text{eingebrachte(-)}\\ \text{Leistung}}
 	}$\\
 	\end{emphbox}
-	
+	\textbf{Stationäres Feld}:
+	$-\frac{\partial}{\partial t}\left(W_{e}+W_{m}\right)=0 \quad \rightarrow \quad p_{\kappa}=-p_{s}$
 
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{10mm}\extracolsep\fill}}
+		d. $A$ austretende Leist.: & $p_{s}=\oiint\limits_{A(V)} [\vec{e} \times \vec{h}] \cdot d \vec{A} = \oiint\limits_{A(V)} \vec{s} \cdot d \vec{A}$ \\
+		ohmsche Verlustleistung: & $p_{\kappa}=\iiint\limits_{V}[\kappa \vec{e} \cdot \vec{e}] d v$\\
+		elektrische Energie in V: & $W_{e}=\iiint\limits_{V}\left[\frac{1}{2} \varepsilon_{r} \varepsilon_{0}|\vec{e}|^{2}\right] d v \quad=\iiint\limits_{V} w_{e} d v$\\
+		magnetische Energie in V: & $W_{m}=\iiint\limits_{V}\left[\frac{1}{2} \mu_{r} \mu_{0}|\vec{h}|^{2}\right] d v=\iiint\limits_{V} w_{m} d v$\\
+	\end{tablebox}	
+	Mit Pointing Vektor (Leistungsflussvektor): $\vec{s} = \vec{e} \times \vec{h}$ $\left[\frac{W}{m^2}\right]$\\
+	(Herl. über Erweiterung der MWG mit $\vec{e}$, $\vec{h}$, Satz v. Gauss und Subtr.)
 \end{sectionbox}
+\begin{sectionbox}
+	\subsection{Elektromagnetische Energiebilanz in Zeigerdarstellung}
+	\begin{emphbox}
+	$-\oiint\limits_{A(V)} \vec{S} \cdot d \vec{A}=P_{V}-2 j \omega\left(\bar{W}_{e}-\bar{W}_{m}\right)$\\
+	\end{emphbox}
+	Wirkleistungsfluss durch A (Verlustleistung in V): $P_{V}=P_{\kappa}+P_{\varepsilon}+P_{\mu}$
+
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{10mm}\extracolsep\fill}}
+		ohmsche Verlustleistung: & $P_{\kappa}=\frac{1}{2} \iiint\limits_{V}\left[\kappa \vec{E} \cdot \vec{E}^{*}\right] d v$\\
+		dielektrische Verlustleistung: & $P_{\varepsilon}=\frac{1}{2} \iiint\limits_{V}\left[\omega \varepsilon_{r}^{\prime \prime} \varepsilon_{0} \vec{E} \cdot \vec{E}^{*}\right] d v$\\
+		magnetische Verlustleistung: & $P_{\mu}=\frac{1}{2} \iiint\limits_{V}\left[\omega \mu_{r}^{\prime \prime} \mu_{0} \vec{H} \cdot \vec{H}^{*}\right] d v$\\
+		mittlere elektrische Energie: & $\bar{W}_{e}=\frac{1}{4} \iiint\limits_{V}\left[\varepsilon_{r}^{\prime} \varepsilon_{0} \vec{E} \cdot \vec{E}^{*}\right] d v$\\
+		mittlere magnetische Energie: & $\bar{W}_{m}=\frac{1}{4} \iiint\limits_{V}\left[\mu_{r}^{\prime} \mu_{0} \vec{H} \cdot \vec{H}^{*}\right] d v$\\
+	\end{tablebox}	
+	Mit Pointing Vektor: $\vec{S}=\frac{1}{2} \vec{E} \times \vec{H}^{*}$\\
+	$\frac{1}{2} \operatorname{Re}\left(\vec{E} \times \vec{H}^{*}\right)=\overline{\vec{e}(t) \times \vec{h}(t)}=\frac{1}{T} \int_{0}^{T}(\vec{e}(t) \times \vec{h}(t)) d t$\\
+\end{sectionbox}
+
 % ======================================================================
 % End
 % ======================================================================
