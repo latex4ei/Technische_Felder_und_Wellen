@@ -250,7 +250,8 @@ $rot\text{ }rot\mathbf{F} = grad\text{ } div \mathbf{F} - \Delta\mathbf{F}$
 \begin{sectionbox}
 	\subsection{Rand- und Stetigkeitsbedingungen}
 	Tangentialkomponente des magnetischen und elektrischen Feldes:\\
-	\includegraphics[width = 3.5cm]{./img/tang_rand.png}
+	\vspace{-0.28cm}
+	\begin{center}\includegraphics[width = 3.5cm]{./img/tang_rand.png}\end{center}
 	\begin{emphbox}
 		$\mathbf{n} \times (\mathbf{h}_1 - \mathbf{h}_2) = 
 		\begin{cases}
@@ -268,7 +269,8 @@ $rot\text{ }rot\mathbf{F} = grad\text{ } div \mathbf{F} - \Delta\mathbf{F}$
 \end{sectionbox}
 \begin{sectionbox}
 Normalenkomponente an einer Grenzschicht:\\
-\includegraphics[width = 3.5cm]{./img/normal_rand.png}
+\vspace{-0.28cm}
+\begin{center}\includegraphics[width = 3.5cm]{./img/normal_rand.png}\end{center}
 \begin{emphbox}
 	$\mathbf{n} \cdot (\mathbf{D}_1 - \mathbf{D}_2) = \begin{cases}
 		0 : \text{Normalfall} \\
@@ -344,10 +346,8 @@ Lösungen für Wellengleichung:
 \end{tabular*}
 
 \subsubsection{Polarisation ebener Wellen}
-\begin{tabular*}{\columnwidth}{l}
-	\includegraphics[width = 0.8\columnwidth]{./img/polarisation_ebener_wellen.png} 
-\end{tabular*}
 
+\begin{center}\includegraphics[width = 0.8\columnwidth]{./img/polarisation_ebener_wellen.png} \end{center}
 \textbf{Eigenschaften ebene Wellen:}
 \begin{itemize}
 	\item Phasenfronten sind Ebenen, Wellenvektor ist Normalenvektor dieser Ebenen
@@ -843,7 +843,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \end{sectionbox}
 \begin{sectionbox}
 	\subsection{Zweitorverstärkung}
-	\includegraphics[width = 6cm]{./img/zweitorverstaerkung.png}\\
+	\begin{center}\includegraphics[width = 6cm]{./img/zweitorverstaerkung.png}\end{center}
 	Eingangsleistung: $P_{E}=\left|a_{1}\right|^{2}-\left|b_{1}\right|^{2} =\left|a_{1}\right|^{2} \cdot\left(1-\left|\rho_{E}\right|^{2}\right)$\\
 	Ausgangsleistung: $P_{A}=\left|b_{2}\right|^{2}-\left|a_{2}\right|^{2}=\left|b_{2}\right|^{2} \cdot\left(1-\left|\rho_{L}\right|^{2}\right)$\\
 
@@ -973,7 +973,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \end{sectionbox}
 \begin{sectionbox}
 	\subsection{Null-Grad-Koppler (Wilkinsonteiler)}
-	\includegraphics[width = 4cm]{./img/wilkinsonteiler.png}\\
+	\begin{center}\includegraphics[width = 4cm]{./img/wilkinsonteiler.png}\end{center}
 	\begin{itemize}
 		\item Zur Transformation von $Z_0$ auf $2Z_0$ muss gelten $Z_1 = \sqrt{2}Z_0$
 		\item Bei gekoppelten Leitungen ist $Z_1$ die Leitungsimpedanz der Gleichtaktwelle
@@ -1029,9 +1029,28 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		mittlere elektrische Energie: & $\bar{W}_{e}=\frac{1}{4} \iiint\limits_{V}\left[\varepsilon_{r}^{\prime} \varepsilon_{0} \vec{E} \cdot \vec{E}^{*}\right] d v$\\
 		mittlere magnetische Energie: & $\bar{W}_{m}=\frac{1}{4} \iiint\limits_{V}\left[\mu_{r}^{\prime} \mu_{0} \vec{H} \cdot \vec{H}^{*}\right] d v$\\
 	\end{tablebox}	
-	Mit Pointing Vektor: $\vec{S}=\frac{1}{2} \vec{E} \times \vec{H}^{*}$\\
+	Komplexer Pointing Vektor: $\vec{S}=\frac{1}{2} \vec{E} \times \vec{H}^{*}$\\
 	$\frac{1}{2} \operatorname{Re}\left(\vec{E} \times \vec{H}^{*}\right)=\overline{\vec{e}(t) \times \vec{h}(t)}=\frac{1}{T} \int_{0}^{T}(\vec{e}(t) \times \vec{h}(t)) d t$\\
 \end{sectionbox}
+\begin{sectionbox}
+	\subsection{Eindeutigkeitstheorem}
+	\textbf{Frage}: Unter welchen Voraussetzungen (Randbedingungnen) ist die Feldlösung in einem durch $A$ geschlossenen Lösungsgebiet für eine Anregung eindeutig bestimmt?\\
+	\begin{center}\includegraphics[width = 4cm]{./img/eindeutigkeitsthm.png}\end{center}
+	\textbf{Ansatz}: Nehme an, es gäbe zwei Feldlösungen der MWG $\vec{E}_1, \vec{H}_1$ und $\vec{E}_2, \vec{H}_2$ im gleichen Gebiet $V_b$ mit gleicher Anregung $\vec{J}, \vec{M}$. Durch Differenzbildung der Lösungen, Einsetzen in die MWG (1-2), und Erweiterung mit $\delta \vec{H}^{*}$ bzw. $\delta \vec{E}$, Differenzbildung, Satz v. Gauß ergibt sich:
+ 	$\iiint_{V_{b}} \nabla \cdot\left(\delta \vec{E}(\vec{r}) \times \delta \vec{H}^{*}(\vec{r})\right) d v \quad=\oiint_{A}\left(\delta \vec{E}(\vec{r}) \times \delta \vec{H}^{*}(\vec{r})\right) \cdot d\vec{a} = \iiint_{V_{b}}\left[-j \omega \mu(\vec{r})|\delta \vec{H}(\vec{r})|^{2}+j \omega \varepsilon^{*}(\vec{r})|\delta \vec{E}(\vec{r})|^{2}\right] d v$.\\
+	Oberflächenintegral verschwindet für:
+	%\vspace{-1em}
+	\begin{tablebox}{@{\hspace{2mm}}l@{\extracolsep\fill}}
+		1. Vorgabe von $\vec{n} \times \vec{E}$ auf $A$ \\
+		2. Vorgabe von $\vec{n} \times \vec{H}$ auf $A$ \\
+		3. Vorgabe von $\vec{n} \times \vec{E}$ auf Teilen v. $A$ und $\vec{n} \times \vec{H}$ auf dem Rest
+	\end{tablebox}
+	Bei verschwindendem Oberflächenintegral:\\
+	$\Rightarrow$ Für $\mu^{\prime \prime}(\vec{r})>0 $ und/oder $ \varepsilon^{\prime \prime}(\vec{r})>0$ ist die Feldlösung eindeutig.\\
+	$\Rightarrow$ Für verlustfreie Medien (ideale Resonatoren) oder negativen Materialien existieren mehrere Lösungen.
+
+\end{sectionbox}	
+
 
 % ======================================================================
 % End
