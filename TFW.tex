@@ -17,7 +17,7 @@
 
 % set document information
 \title{Technische Felder\\ und Wellen}
-\author{Markus Kaschke}					% optional, delete if unchanged
+\author{Markus Kaschke, Johannes Kunz}					% optional, delete if unchanged
 \myemail{info@latex4ei.de}			% optional, delete if unchanged
 \mywebsite{www.latex4ei.de}			% optional, delete if unchanged
 
@@ -250,7 +250,8 @@ $rot\text{ }rot\mathbf{F} = grad\text{ } div \mathbf{F} - \Delta\mathbf{F}$
 \begin{sectionbox}
 	\subsection{Rand- und Stetigkeitsbedingungen}
 	Tangentialkomponente des magnetischen und elektrischen Feldes:\\
-	\includegraphics[width = 3.5cm]{./img/tang_rand.png}
+	\vspace{-0.28cm}
+	\begin{center}\includegraphics[width = 3.5cm]{./img/tang_rand.png}\end{center}
 	\begin{emphbox}
 		$\mathbf{n} \times (\mathbf{h}_1 - \mathbf{h}_2) = 
 		\begin{cases}
@@ -268,7 +269,8 @@ $rot\text{ }rot\mathbf{F} = grad\text{ } div \mathbf{F} - \Delta\mathbf{F}$
 \end{sectionbox}
 \begin{sectionbox}
 Normalenkomponente an einer Grenzschicht:\\
-\includegraphics[width = 3.5cm]{./img/normal_rand.png}
+\vspace{-0.28cm}
+\begin{center}\includegraphics[width = 3.5cm]{./img/normal_rand.png}\end{center}
 \begin{emphbox}
 	$\mathbf{n} \cdot (\mathbf{D}_1 - \mathbf{D}_2) = \begin{cases}
 		0 : \text{Normalfall} \\
@@ -344,10 +346,8 @@ Lösungen für Wellengleichung:
 \end{tabular*}
 
 \subsubsection{Polarisation ebener Wellen}
-\begin{tabular*}{\columnwidth}{l}
-	\includegraphics[width = 0.8\columnwidth]{./img/polarisation_ebener_wellen.png} 
-\end{tabular*}
 
+\begin{center}\includegraphics[width = 0.8\columnwidth]{./img/polarisation_ebener_wellen.png} \end{center}
 \textbf{Eigenschaften ebene Wellen:}
 \begin{itemize}
 	\item Phasenfronten sind Ebenen, Wellenvektor ist Normalenvektor dieser Ebenen
@@ -844,7 +844,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \end{sectionbox}
 \begin{sectionbox}
 	\subsection{Zweitorverstärkung}
-	\includegraphics[width = 6cm]{./img/zweitorverstaerkung.png}\\
+	\begin{center}\includegraphics[width = 6cm]{./img/zweitorverstaerkung.png}\end{center}
 	Eingangsleistung: $P_{E}=\left|a_{1}\right|^{2}-\left|b_{1}\right|^{2} =\left|a_{1}\right|^{2} \cdot\left(1-\left|\rho_{E}\right|^{2}\right)$\\
 	Ausgangsleistung: $P_{A}=\left|b_{2}\right|^{2}-\left|a_{2}\right|^{2}=\left|b_{2}\right|^{2} \cdot\left(1-\left|\rho_{L}\right|^{2}\right)$\\
 
@@ -951,7 +951,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\end{emphbox}
 \end{sectionbox}
 \begin{sectionbox}
-	\subsection{Bandbreite von Leitungskopplern (3dB-Koppler)}
+	\subsection{Bandbreite von 3dB-Leitungskopplern}
 	\includegraphics[width = 4.3cm]{./img/leitungskoppler_bb.png}\raisebox{5mm}{\includegraphics[width = 2.4cm]{./img/leitungskoppler_ms.png}}\\
 	Etwa eine halbe Oktave Bandbreite, bei max. 1dB Unterschied.\\
 	Mehrstufige Koppler verbessern die Bandbreite.
@@ -977,7 +977,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \end{sectionbox}
 \begin{sectionbox}
 	\subsection{Null-Grad-Koppler (Wilkinsonteiler)}
-	\includegraphics[width = 4cm]{./img/wilkinsonteiler.png}\\
+	\begin{center}\includegraphics[width = 4cm]{./img/wilkinsonteiler.png}\end{center}
 	\begin{itemize}
 		\item Zur Transformation von $Z_0$ auf $2Z_0$ muss gelten $Z_1 = \sqrt{2}Z_0$
 		\item Bei gekoppelten Leitungen ist $Z_1$ die Leitungsimpedanz der Gleichtaktwelle
@@ -991,15 +991,71 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 \section{Einige Theoreme der Elektromagnetischen Feldtheorie}
 \begin{sectionbox}
-	\subsection{Elektromagnetische Energiebilanz}
+	\subsection{Energiedichte im Feld}
+	Herleitung aus der mechanischen Arbeit durch Anhhäherung von Ladung aus dem Unendlichen.\\
+	Energiedichte des elektrischen Felds:\\
+	$w_{e}=\int_{0}^{\vec{d}} \vec{e}^{\prime} \cdot d \vec{d}^{\prime}= \frac{1}{\varepsilon_{r} \varepsilon_{0}} \frac{1}{2}|\vec{d}|^{2}=\frac{1}{2} \varepsilon_{r} \varepsilon_{0}|\vec{e}|^{2}$\\
+	Energiedichte des magnetischen Felds:\\
+	$w_{m}=\frac{1}{\mu_{r} \mu_{0}} \int_{0}^{d} \vec{b}^{\prime} \cdot d \vec{b}^{\prime}=\frac{1}{\mu_{r} \mu_{0}} \frac{1}{2}|\vec{b}|^{2}= \frac{1}{2} \mu_{r} \mu_{0}|\vec{h}|^{2}$\\
+	(Die letzten beiden Umformungen gelten für lineares isotropes Material.)
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Elektromagnetische Energiebilanz im Zeitbereich}
 	\begin{emphbox}
 	$\underbrace{-\frac{\partial}{\partial t}\left(W_{e}+W_{m}\right)}_{\substack{\text{zeitliche Änderung der}\\ \text{in} V \text{gespeicherten Energie}}}=\underbrace{p_{\kappa}}_{\text{Verlustleistung}}+\underbrace{p_{s}}_{
 		\substack{\text{aus(+)- oder}\\\text{eingebrachte(-)}\\ \text{Leistung}}
 	}$\\
 	\end{emphbox}
-	
+	\textbf{Stationäres Feld}:
+	$-\frac{\partial}{\partial t}\left(W_{e}+W_{m}\right)=0 \quad \rightarrow \quad p_{\kappa}=-p_{s}$
 
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{10mm}\extracolsep\fill}}
+		d. $A$ austretende Leist.: & $p_{s}=\oiint\limits_{A(V)} [\vec{e} \times \vec{h}] \cdot d \vec{A} = \oiint\limits_{A(V)} \vec{s} \cdot d \vec{A}$ \\
+		ohmsche Verlustleistung: & $p_{\kappa}=\iiint\limits_{V}[\kappa \vec{e} \cdot \vec{e}] d v$\\
+		elektrische Energie in V: & $W_{e}=\iiint\limits_{V}\left[\frac{1}{2} \varepsilon_{r} \varepsilon_{0}|\vec{e}|^{2}\right] d v \quad=\iiint\limits_{V} w_{e} d v$\\
+		magnetische Energie in V: & $W_{m}=\iiint\limits_{V}\left[\frac{1}{2} \mu_{r} \mu_{0}|\vec{h}|^{2}\right] d v=\iiint\limits_{V} w_{m} d v$\\
+	\end{tablebox}	
+	Mit Pointing Vektor (Leistungsflussvektor): $\vec{s} = \vec{e} \times \vec{h}$ $\left[\frac{W}{m^2}\right]$\\
+	(Herl. über Erweiterung der MWG mit $\vec{e}$, $\vec{h}$, Satz v. Gauss und Subtr.)
 \end{sectionbox}
+\begin{sectionbox}
+	\subsection{Elektromagnetische Energiebilanz in Zeigerdarstellung}
+	\begin{emphbox}
+	$-\oiint\limits_{A(V)} \vec{S} \cdot d \vec{A}=P_{V}-2 j \omega\left(\bar{W}_{e}-\bar{W}_{m}\right)$\\
+	\end{emphbox}
+	Wirkleistungsfluss durch A (Verlustleistung in V): $P_{V}=P_{\kappa}+P_{\varepsilon}+P_{\mu}$
+
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{10mm}\extracolsep\fill}}
+		ohmsche Verlustleistung: & $P_{\kappa}=\frac{1}{2} \iiint\limits_{V}\left[\kappa \vec{E} \cdot \vec{E}^{*}\right] d v$\\
+		dielektrische Verlustleistung: & $P_{\varepsilon}=\frac{1}{2} \iiint\limits_{V}\left[\omega \varepsilon_{r}^{\prime \prime} \varepsilon_{0} \vec{E} \cdot \vec{E}^{*}\right] d v$\\
+		magnetische Verlustleistung: & $P_{\mu}=\frac{1}{2} \iiint\limits_{V}\left[\omega \mu_{r}^{\prime \prime} \mu_{0} \vec{H} \cdot \vec{H}^{*}\right] d v$\\
+		mittlere elektrische Energie: & $\bar{W}_{e}=\frac{1}{4} \iiint\limits_{V}\left[\varepsilon_{r}^{\prime} \varepsilon_{0} \vec{E} \cdot \vec{E}^{*}\right] d v$\\
+		mittlere magnetische Energie: & $\bar{W}_{m}=\frac{1}{4} \iiint\limits_{V}\left[\mu_{r}^{\prime} \mu_{0} \vec{H} \cdot \vec{H}^{*}\right] d v$\\
+	\end{tablebox}	
+	Komplexer Pointing Vektor: $\vec{S}=\frac{1}{2} \vec{E} \times \vec{H}^{*}$\\
+	$\frac{1}{2} \operatorname{Re}\left(\vec{E} \times \vec{H}^{*}\right)=\overline{\vec{e}(t) \times \vec{h}(t)}=\frac{1}{T} \int_{0}^{T}(\vec{e}(t) \times \vec{h}(t)) d t$\\
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Eindeutigkeitstheorem}
+	\textbf{Frage}: Unter welchen Voraussetzungen (Randbedingungnen) ist die Feldlösung in einem durch $A$ geschlossenen Lösungsgebiet für eine Anregung eindeutig bestimmt?\\
+	\begin{center}\includegraphics[width = 4cm]{./img/eindeutigkeitsthm.png}\end{center}
+	\textbf{Ansatz}: Nehme an, es gäbe zwei Feldlösungen der MWG $\vec{E}_1, \vec{H}_1$ und $\vec{E}_2, \vec{H}_2$ im gleichen Gebiet $V_b$ mit gleicher Anregung $\vec{J}, \vec{M}$. Durch Differenzbildung der Lösungen, Einsetzen in die MWG (1-2), und Erweiterung mit $\delta \vec{H}^{*}$ bzw. $\delta \vec{E}$, Differenzbildung, Satz v. Gauß ergibt sich:
+ 	$\iiint_{V_{b}} \nabla \cdot\left(\delta \vec{E}(\vec{r}) \times \delta \vec{H}^{*}(\vec{r})\right) d v \quad=\oiint_{A}\left(\delta \vec{E}(\vec{r}) \times \delta \vec{H}^{*}(\vec{r})\right) \cdot d\vec{a} = \iiint_{V_{b}}\left[-j \omega \mu(\vec{r})|\delta \vec{H}(\vec{r})|^{2}+j \omega \varepsilon^{*}(\vec{r})|\delta \vec{E}(\vec{r})|^{2}\right] d v$.\\
+	Oberflächenintegral verschwindet für:
+	%\vspace{-1em}
+	\begin{tablebox}{@{\hspace{2mm}}l@{\extracolsep\fill}}
+		1. Vorgabe von $\vec{n} \times \vec{E}$ auf $A$ \\
+		2. Vorgabe von $\vec{n} \times \vec{H}$ auf $A$ \\
+		3. Vorgabe von $\vec{n} \times \vec{E}$ auf Teilen v. $A$ und $\vec{n} \times \vec{H}$ auf dem Rest
+	\end{tablebox}
+	Bei verschwindendem Oberflächenintegral:\\
+	$\Rightarrow$ Für $\mu^{\prime \prime}(\vec{r})>0 $ und/oder $ \varepsilon^{\prime \prime}(\vec{r})>0$ ist die Feldlösung eindeutig.\\
+	$\Rightarrow$ Für verlustfreie Medien (ideale Resonatoren) oder negativen Materialien existieren mehrere Lösungen.
+
+\end{sectionbox}	
+
+
 % ======================================================================
 % End
 % ======================================================================
