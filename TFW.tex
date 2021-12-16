@@ -741,8 +741,9 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 % \end{sectionbox}
 
 \begin{sectionbox}
-	\subsection{Reziprozität, Symmetrie, Verlustfreiheit}
+	\subsection{Anpassung, Reziprozität, Symmetrie, Verlustfreiheit}
 	\begin{emphbox}
+		Anpassung: $S_{ii} = 0 \forall i$\\
 		Reziprozität: $[S] = [S]^T$ ($[Y] = [Y]^T$)\\
 		Symmetrie: $[S] = [S]^T$ und $S_{ii} = S_{jj} \forall i,j$\\
 		Verlustfreiheit: $[S]^T[S]^* = [E]$
@@ -864,6 +865,9 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	Übertragungsleistungsverstärkung/Gewinn\\(Ausgangsleistung bezogen auf verfügbare Generatorleistung):\\
 	$G=\frac{P_{A}}{P_{G V}} = \frac{1-\left|\rho_{G}\right|^{2}}{\left|1-\rho_{G} \rho_{E}\right|^{2}} \cdot\left|S_{21}\right|^{2} \cdot \frac{1-\left|\rho_{L}\right|^{2}}{\left|1-\rho_{L} S_{22}\right|^{2}}$\\
 	
+	Wenn $Z_G = Z_L$ $\rightarrow$ Anpassung: $\rho_G = \rho_L = 0$\\
+	$G = |S_{21}|^2$\\
+	
 	Maximale Leistungsverstärkung (maximaler Gewinn) bei Wirkleistungsanpassung am Eingang und Ausgang:
 	$\rho_{G}=\rho_{E}^{*} ; \rho_{L}=\rho_{A}^{*}$\\
 
@@ -871,7 +875,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		Gewinn rückwirkungsfreier Verstärker ($|S_{12}| / |S_{21}| < 0.1$), $\rho_{E}=S_{11}$:\\
 		$G=\underbrace{\frac{1-\left|\rho_{G}\right|^{2}} {\left|1-\rho_{G} S_{11}\right|^{2}}}_{\text{Gewinn der Quelle}}\cdot \underbrace{\left|S_{21}\right|^{2}}_{\text {des Zweitors }} \cdot  \underbrace{\frac{1-\left|\rho_{L}\right|^{2}}{\left|1-\rho_{L} S_{22}\right|^{2}}}_{\text {der Last }}$\\
 		
-		Maximaler Gewinn für beidseitige Wirkleistungsanpassung: $\rho_{G}=\rho_{E}^{*}=S_{11}^{*} ; \rho_{L}=\rho_{A}^{*}=S_{22}^{*}$\\
+		Maximaler Gewinn für beidseitige Wirkleistungsanpassung: $\rho_{G}=\rho_{E}^{*}=S_{11}^{*} ; \rho_{L}=\rho_{A}^{*}=\rho_{G}^{*}=S_{22}^{*}$\\
 		$G_{\max }=\frac{\left|S_{21}\right|^{2}}{\left(1-\left|S_{11}\right|^{2}\right) \cdot\left(1-\left|S_{22}\right|^{2}\right)}$
 	\end{emphbox}
 \end{sectionbox}	
