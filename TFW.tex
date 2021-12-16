@@ -51,6 +51,8 @@
 
 \newcommand{\comment}[1]{\textcolor{red}{#1}}
 
+\usepackage{multirow}
+
 
 % ======================================================================
 % Begin
@@ -942,7 +944,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		$S_{41}=\frac{j\left(z_{e}-\frac{1}{z_{e}}\right) \sin \beta l}{2 \cos \beta l+j\left(z_{e}+\frac{1}{z_{e}}\right) \sin \beta l}$
 		\begin{itemize}
 			\item $S_{11} = S_{31} = 0$ \textbf{frequenzunabhängig}
-			\item $S_{21}$ und $S_{41}$ unterscheiden sich \textbf{frequenzunabhängig} um $90$deg
+			\item $S_{21}$ und $S_{41}$ unterscheiden sich \textbf{frequenzunabhängig} um $90^\circ$
 		\end{itemize}
 	\end{emphbox}
 \end{sectionbox}
@@ -1051,7 +1053,111 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 \end{sectionbox}	
 
+\begin{sectionbox}
+	\subsection{Reziprozität}
+	Betrachte Quellen $\vec{J}_{1}, \vec{M}_{1}$ mit dem Feld $\vec{E}_{1}, \vec{H}_{1}$ und\\
+	Betrachte Quellen $\vec{J}_{2}, \vec{M}_{2}$ mit dem Feld $\vec{E}_{2}, \vec{H}_{2}$ mit MWG:\\
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{10mm}\extracolsep\fill}}
+		(1) $\nabla \times \vec{H}_{1}=j \omega \varepsilon \vec{E}_{1}+\vec{J}_{1}$ & (3) $\nabla \times \vec{H}_{2}=j \omega \varepsilon \vec{E}_{2}+\vec{J}_{2}$ \\
+		(2) $\nabla \times \vec{E}_{1}=-j \omega \mu \vec{H}_{1}-\vec{M}_{1}$ & (4) $\nabla \times \vec{E}_{2}=-j \omega \mu \vec{H}_{2}-\vec{M}_{2}$
+	\end{tablebox}
+	\textbf{Annahmen:}: Materialien sind isotrop (trotzdem gg. ortsabhängig).\\
+	\textbf{Ansatz}: Berechne $(3) \cdot \vec{E}_{1}-(2) \cdot \vec{H}_{2} - ((1) \cdot \vec{E}_{2}-(4) \cdot \vec{H}_{1})$. RHS liefert Beiträge nur in Quellregionen. Satz v. Gauss. Ergebnis:\\
+	\begin{emphbox}
+		$-\oiint\limits_{A(V)}\left(\vec{E}_{1} \times \vec{H}_{2}-\vec{E}_{2} \times \vec{H}_{1}\right) \cdot d \vec{A}=\iiint\limits_{V}\left(\vec{E}_{1} \cdot \vec{J}_{2}+\vec{H}_{2} \cdot \vec{M}_{1}-\vec{E}_{2} \cdot \vec{J}_{1}-\vec{H}_{1} \cdot \vec{M}_{2}\right) d v$
+	\end{emphbox}
+	\begin{emphbox}
+		\textbf{Für Quellefreie Gebiete}:\\
+		Diff. Form: $-\nabla \cdot\left(\vec{E}_{1} \times \vec{H}_{2}-\vec{E}_{2} \times \vec{H}_{1}\right)=0$\\
+		Integralform: $\oiint\limits_{A(V)}\left(\vec{E}_{1} \times \vec{H}_{2}-\vec{E}_{2} \times \vec{H}_{1}\right) \cdot d \vec{A}=0$
+	\end{emphbox}
+	Wähle $A(V)$ als die Fernkugeloberfläche $r \rightarrow \infty$ (lokale ebene Welle).\\
+	$E_{\vartheta}=Z H_{\varphi}$ u. $E_{\varphi}=-Z H_{\vartheta}$, das Oberflächenintegral verschwindet:\\
+	\begin{emphbox}
+		$\iiint\limits_{V}\left(\vec{E}_{1} \cdot \vec{J}_{2}-\vec{H}_{1} \cdot \vec{M}_{2}\right) d v=\iiint\limits_{V}\left(\vec{E}_{2} \cdot \vec{J}_{1}-\vec{H}_{2} \cdot \vec{M}_{1}\right) d v$
+	\end{emphbox}
 
+	\textbf{Für idealen elektrischen Leiter (PEC)}:\\
+	Da keine mag. Ströme existieren: $\vec{M}_{1} = \vec{M}_{2} = 0$.\\
+	Betrachte eingeprägten Strom $\vec{J}_{1}$ im PEC $\rightarrow$ $\vec{E}_{1} = 0$ (PEC) $\rightarrow$ Integral ist $0$ $\rightarrow$ $\vec{E}_{2} = 0$ für beliebige $\vec{J}_{2} = 0$.\\
+	
+	$\Rightarrow$ Elektrischer Strom $\vec{J}$ auf/in PEC straht kein Feld ab.\\
+	$\Rightarrow$ Magnetischer Strom $\vec{M}$ auf/in PMC straht kein Feld ab.\\
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Reziprozität von Antennen}
+	Betrachte zwei beliebige metallische PEC Antennen (auch für nicht-PEC):\\
+	\includegraphics[width = 6.8cm]{./img/reziproke_antennen.jpeg}\\
+
+	Nutze $\iiint\limits_{V}\left(\vec{E}_{12} \cdot \vec{J}_{1}\right) d v=\iiint\limits_{V}\left(\vec{E}_{21} \cdot \vec{J}_{2}\right) d v$.\\
+	Weitere Annahmen: $\vec{J}_{1} \neq \vec{f}(h)$ u. $\vec{E}_{12}=\text { konst. } \text { in } A$\\$\Rightarrow$ $\int \vec{E}_{12} \cdot d \vec{h}=-U_{10} \quad \iint \vec{J}_{1} \cdot d \vec{A}=I_{1}$\\
+	\begin{emphbox}
+		$\frac{U_{10}}{I_{2}}=Z_{12}=\frac{U_{20}}{I_{1}}=Z_{21}$
+	\end{emphbox}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Elektromagnetische Potentiale}
+	Zerlegung in elektrische und magnetische Felder:
+	\begin{center}$\vec{E} = \vec{E}_{e} + \vec{E}_{m} \qquad \vec{H} = \vec{H}_{e} + \vec{H}_{m}$\end{center}
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
+		\textbf{Elektrische Ströme} & \textbf{Magnetische Ströme}\\
+		\hline
+		MWG: & \\
+		$\begin{aligned}
+			\nabla \times \vec{H}_{e} &=j \omega \varepsilon \vec{E}_{e}+\vec{J} \\
+			\nabla \times \vec{E}_{e} &=-j \omega \mu \vec{H}_{e} \\
+			\nabla \cdot\left(\varepsilon \vec{E}_{e}\right) &=\rho \\
+			\nabla \cdot\left(\mu \vec{H}_{e}\right) &=0
+			\end{aligned}$ & $\begin{aligned}
+				-\nabla \times \vec{E}_{m} &=j \omega \mu \vec{H}_{m}+\vec{M} \\
+				\nabla \times \vec{H}_{m} &=j \omega \varepsilon \vec{E}_{m} \\
+				\nabla \cdot\left(\mu \vec{H}_{m}\right) &=\rho_{m} \\
+				\nabla \cdot\left(\varepsilon \vec{E}_{m}\right) &=0
+				\end{aligned}$\\
+		\hline
+		Felddarstellung über Potentiale: & \\
+		$\begin{aligned}
+			\vec{H}_{e}(\vec{r}) &=\frac{1}{\mu} \nabla \times \vec{A}(\vec{r}) \\
+			\vec{E}_{e}(\vec{r}) &=-j \omega \vec{A}-\nabla \phi
+			\end{aligned}$ & $\begin{aligned}
+				\vec{E}_{m}(\vec{r}) &=-\frac{1}{\varepsilon} \nabla \times \vec{F}(\vec{r}) \\
+				\vec{H}_{m}(\vec{r}) &=-j \omega \vec{F}-\nabla \psi 
+				\end{aligned}$\\
+			$=-j \omega\left(\vec{A}(\vec{r})+\frac{1}{k^{2}} \nabla \nabla \cdot \vec{A}(\vec{r})\right)$ & $=-j \omega\left(\vec{F}(\vec{r})+\frac{1}{k^{2}} \nabla \nabla \cdot \vec{F}(\vec{r})\right)$\\
+		\hline
+		Lorenz-Eichung: & \\
+		$\nabla \cdot \vec{A}(\vec{r})+j \omega \mu \varepsilon \phi(\vec{r})=0$ & $\nabla \cdot \vec{F}(\vec{r})+j \omega \mu \varepsilon \psi(\vec{r})=0$\\
+		\hline
+		Helmholtz-Gleichungen: & \\
+		$\begin{aligned}
+			&\Delta \vec{A}(\vec{r})+k^{2} \vec{A}(\vec{r})=-\mu \vec{J}(\vec{r}) \\
+			&\Delta \phi(\vec{r})+k^{2} \phi(\vec{r})=-\frac{\rho(\vec{r})}{\varepsilon}
+			\end{aligned}$ & $\begin{aligned}
+				&\Delta \vec{F}(\vec{r})+k^{2} \vec{F}(\vec{r})=-\varepsilon \vec{M}(\vec{r}) \\
+				&\Delta \psi(\vec{r})+k^{2} \psi(\vec{r})=-\frac{\rho_{m}(\vec{r})}{\mu}
+				\end{aligned}$\\
+	\end{tablebox}
+	\textbf{Idee:} \comment{Kurze Beschreibung der Vorteile der Darstellung (Entkopplung v. Gleichungen, Entfernen von Redundanz in MWG, Modellierungsfreiheit, Green'sche Funktionen skalar)}
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Dualität}
+	Besitzen zwei Gleichungssysteme, die unterschiedliche physikalische Phänomene beschreiben, die gleiche mathematische Form, so nehmen ihre Lösungen die gleiche mathematische Form an.
+
+	Felder elektrischer Quellen sind dual zu Feldern magnetischer Quellen.\\
+	Duale Lösungen erfordern zueinander duale Randbedingungen.\\
+	\textbf{Anwendungen:}
+	\begin{itemize}
+		\item Verifizierung von zueinander dualen Gleichung und Lösungen.
+		\item Ersetzen von Größen in einer Lösung durch duale Größen führt zur dualen Lösung.
+	\end{itemize}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Green'sche Funktionen}
+
+\end{sectionbox}
 % ======================================================================
 % End
 % ======================================================================
