@@ -500,7 +500,7 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell und $\mathbf{k}\cdot\mathbf{k} 
 	Für $z \gg b$: $\frac{w_0}{w(z)} \approx \frac{b}{2z}$
 	
 	Für kleine Öffnungswinkel erhalten wir näherungsweise:\\
-	$\theta_0 = \frac{2w_0}{b} = \frac{2}{nk_0w_0} = \frac{\lambda_0}{\pi w_0 n} = \frac{\lambda}{\pi w_0}$\\
+	$\theta_0 = \frac{\lambda}{\pi w_0} = \frac{2w_0}{b} = \frac{2}{nk_0w_0} = \frac{\lambda_0}{\pi w_0 n}$\\
 	$b=\frac{2 \lambda}{\pi \theta_{0}^{2}}$
 
 	\includegraphics[width = \columnwidth]{./img/gauss_strahl.png}\\
@@ -642,12 +642,35 @@ Im Lastwiderstand umgesetzte Leistung: $P_L = \frac{|V_+|^2}{Z_0}(1-|\rho|^2)$
 \begin{sectionbox}
 	\subsection{Planare Leitungen}
 	\begin{tabular*}{\columnwidth}{cc}
-		\includegraphics[width = 3cm]{./img/streifenleitung.png} & \includegraphics[width = 3cm]{./img/koplanar_leitung.png}\\
-		Streifenleitung & Koplanarleitung\\
+		\includegraphics[width = 3cm]{./img/streifenleitung.png} & \includegraphics[width = 3cm]{./img/koplanar_streifen_leitung.png}\\
+		Streifenleitung & Koplanare Streifenleitung\\
 		\hline\\
-		\includegraphics[width = 3cm]{./img/mikrostreifen_leitung.png} & \includegraphics[width = 3cm]{./img/koplanar_streifen_leitung.png}\\
-		Mikrostreifenleitung & Koplanare Streifenleitung
+		\includegraphics[width = 3cm]{./img/mikrostreifen_leitung.png} & \includegraphics[width = 3cm]{./img/koplanar_leitung.png}\\
+		Mikrostreifenleitung & Koplanarleitung\\
 	\end{tabular*}
+	\vspace{-6mm}
+	\begin{multicols*}{2}
+	\begin{itemize}
+		\item[+] einfache Fertigung
+		\item[+] verlustarm
+		\item[+] umepfindlich gg. Diskontinuitäten
+		\item[+] Serienelemente leicht integrierbar
+		\item[-] Parallelelemente schwierig
+		\item[-] Leiterbreite nicht skalierbar
+		\item[-] messtechnisch schwierig
+	\end{itemize}
+	\columnbreak
+	\begin{itemize}
+		\item[+] einseitige Metallisierung
+		\item[+] Leiterbreite skalierbar
+		\item[+] Serienelemente leicht integrierbar
+		\item[+] Serienelemente leicht integrierbar
+		\item[+] Parallelelemente leicht integrierbar
+		\item[-] mittlere Verluste
+		\item[-] zwei Moden $\rightarrow$ Leiterbrücken 
+		\item[-] empfindlich gg. Diskontinuitäten 
+	\end{itemize}
+\end{multicols*}
 
 Die einzige planare Leitung auf der eine TEM-Welle natürlich ausbreitungsfähig ist ist die Streifenleitung
 
@@ -865,11 +888,13 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	Übertragungsleistungsverstärkung/Gewinn\\(Ausgangsleistung bezogen auf verfügbare Generatorleistung):\\
 	$G=\frac{P_{A}}{P_{G V}} = \frac{1-\left|\rho_{G}\right|^{2}}{\left|1-\rho_{G} \rho_{E}\right|^{2}} \cdot\left|S_{21}\right|^{2} \cdot \frac{1-\left|\rho_{L}\right|^{2}}{\left|1-\rho_{L} S_{22}\right|^{2}}$\\
 	
-	Wenn $Z_G = Z_L$ $\rightarrow$ Anpassung: $\rho_G = \rho_L = 0$\\
-	$G = |S_{21}|^2$\\
+	Wenn $Z_G = Z_L = Z_0$ $\rightarrow$ Anpassung: $\rho_G = \rho_L = 0$\\
+	$\rightarrow$ $G = |S_{21}|^2$\\
 	
 	Maximale Leistungsverstärkung (maximaler Gewinn) bei Wirkleistungsanpassung am Eingang und Ausgang:
 	$\rho_{G}=\rho_{E}^{*} ; \rho_{L}=\rho_{A}^{*}$\\
+
+	Rückwirkungsfreiheit ($|S_{12}| / |S_{21}| < 0.1$): $\rho_{E} = S_{11}$\\
 
 	\begin{emphbox}
 		Gewinn rückwirkungsfreier Verstärker ($|S_{12}| / |S_{21}| < 0.1$), $\rho_{E}=S_{11}$:\\
@@ -923,7 +948,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		With $\Delta_{S} = det(S) = S_{11}S_{22}-S_{12}S_{21}$
 	\end{emphbox}
 	\comment{Kriterium für die Wahl der stabilen Seite hinzufügen.}\\
-	\comment{Einfügen von Widerständen zur Stabilisierung hinzufügen.}\\
+	\comment{Einfügen von Widerständen zur Stabilisierung hinzufügen.}\\ 
 	Finden eines Punktes der stabil sein muss. Das ist bei Anpassung. z.B. $\rho_L=S^*_{22}$
 \end{sectionbox}
 
@@ -1166,6 +1191,87 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \begin{sectionbox}
 	\subsection{Green'sche Funktionen}
 
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Huygens'sches Prinzip}
+	\textbf{Idee}: Das Feld einer Primärquelle im Gebiet $V_a$ kann durch äquivalente Oberflächenströme $\vec{J}_A$, $\vec{M}_A$ auf der Grenzfläche $A(V_b)$ ersetzt werden. $V_a$ wird dadurch feldfrei und kann mit beliebigen Materialien (zb. PEC) gefüllt werden. Die Flächenströme sind Sekundärquellen, die zur Berechnung des Felds in $V_b$ verwendet werden können.\\
+	$\begin{aligned}
+		&\vec{E}(\vec{r})=\iiint\limits_{V_{b}}\left[\overleftrightarrow{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}\left(\vec{r}^{\prime}\right)+\overleftrightarrow{G}_{M}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{M}\left(\vec{r}^{\prime}\right)\right] d v^{\prime} \\
+		&+\oiint\limits_{A\left(V_{b}\right)}\left[\overleftrightarrow{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}_{A}\left(\vec{r}^{\prime}\right)+\overleftrightarrow{G}_{M}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{M}_{A}\left(\vec{r}^{\prime}\right)\right] d a^{\prime}
+		\end{aligned}$\\
+	\begin{emphbox}
+		$\begin{aligned}
+			&\vec{J}_{A}\left(\vec{r}\right)=\vec{n} \times \vec{H}\left(\vec{r}\right) \\
+			&\vec{M}_{A}\left(\vec{r}\right)=-\vec{n} \times \vec{E}\left(\vec{r}\right)
+		\end{aligned}$\\
+		$\rightarrow$ Felder in $V_a$ verschwinden.
+	\end{emphbox}
+	\textbf{Eindeutigkeitsprinzip}: Das Feld in $V_b$ ist eindeutig über die Quellen und die tangentialen Ströme auf $A(V_b)$ gegeben (außer im Fall von Resonanzen). Der Beitrag der äußeren Hüllfläche entfällt, falls im Unendlichen.\\
+	
+	\textbf{Äquivalente Formulierungen}: Da die Felder in $V_a$ verschwinden, kann $V_a$ mit beliebigen Materialen gefüllt werden. Gängige Materialen:\\
+	Freiraum:\\
+	$\vec{E}(\vec{r})=\iint_{A}\left[\overleftrightarrow{G}_{J, 0}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}_{A}\left(\vec{r}^{\prime}\right)+\overleftrightarrow{G}_{M, 0}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{M}_{A}\left(\vec{r}^{\prime}\right)\right] d a^{\prime}$\\
+	PMC: $\vec{E}(\vec{r})=\iint_{A}\left[\overleftrightarrow{G}_{J, 1}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}_{A}\left(\vec{r}^{\prime}\right)\right] d a^{\prime}$\\
+	PEC: $\vec{E}(\vec{r})=\iint_{A}\left[\overleftrightarrow{G}_{M, 2}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{M}_{A}\left(\vec{r}^{\prime}\right)\right] d a^{\prime}$\\
+	
+	\textbf{Nutze Spiegelungsprinzip bei PEC/PMC Halbräumen}:\\
+	PMC: $M_A$ = 0, $2J_A$ strahlt in freien Raum\\
+	PEC: $J_A$ = 0, $2M_A$ strahlt in freien Raum\\
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Nah- und Fernfeld}
+	
+	\begin{center}\includegraphics[width = 2.3cm]{./img/fernfeld.png}\end{center}
+
+	Approximiere $\vec{A}(\vec{r})$ unter den Annahmen $r = |\vec{r}|\gg |\vec{r}^{\prime}|$, $r \gg \lambda$.\\
+	$\rightarrow$ $|\vec{r} - \vec{r}^{\prime}| \approx r$ im Nenner, und $|\vec{r} - \vec{r}^{\prime}| \approx r - \frac{\vec{r}\cdot\vec{r}^{\prime}}{r}$ im Exp.\\
+
+	\begin{emphbox}
+		$\begin{aligned}
+			&\vec{A}(\vec{r})=\mu \frac{\mathrm{e}^{-j k r}}{4 \pi r} \iiint\limits_{V} \vec{J}\left(\vec{r}^{\prime}\right) \mathrm{e}^{+j k \frac{\vec{r}\cdot \vec{r}^{\prime}}{r} } d v^{\prime} \\
+			&\vec{F}(\vec{r})=\varepsilon \frac{\mathrm{e}^{-j k r}}{4 \pi r} \iiint\limits_{V} \vec{M}\left(\vec{r}^{\prime}\right) \mathrm{e}^{+j k \frac{\vec{r}\cdot \vec{r}^{\prime} }{r}} d v^{\prime}
+			\end{aligned}$
+	\end{emphbox}
+
+	\begin{emphbox}
+		Rotationsoperator im Fernfeld:\\
+		$\nabla \times \vec{A} \approx -jk \vec{e}_r \times \vec{A}$\\
+		Divergenzoperator im Fernfeld:\\
+		$\nabla \cdot \vec{A} \approx -jk \vec{e}_r \cdot \vec{A}$\\
+	\end{emphbox}
+	\textbf{Sphärische Feldkomponenten im Fernfeld}:
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
+		Elektrische Ströme: & \\
+		
+			$H_{r 1}=0$ &  $E_{r 1}=0$ \\
+			$H_{\vartheta 1}=\frac{j k}{\mu} A_{\varphi}$ & $E_{\vartheta 1}=-j \omega A_{\vartheta}=Z_{F} H_{\varphi 1}$\\
+			$H_{\varphi 1}=-\frac{j k}{\mu} A_{\vartheta}$ & $E_{\varphi 1}=-j \omega A_{\varphi}=-Z_{F} H_{\vartheta 1}$\\
+
+		Magnetische Ströme: & \\
+			$E_{r 2}=0 $ & $H_{r 2}=0$\\
+			$E_{\vartheta 2}=-\frac{j k}{\varepsilon} F_{\varphi}=Z_{F} H_{\varphi 2} $ & $H_{\vartheta 2}=-j \omega F_{\vartheta}$\\
+			$E_{\varphi 2}=\frac{j k}{\varepsilon} F_{\vartheta}=-Z_{F} H_{\vartheta 2}$ & $H_{\varphi 2}=-j \omega F_{\varphi}$\\
+	\end{tablebox}
+	$Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{TEM Wellen}
+	$\vec{H} = \frac{1}{Z_F} \vec{e}_z \times \vec{E}$\\
+	$\vec{E} = -Z_F \vec{e}_z \times \vec{H}$\\
+	$\vec{E} \perp \vec{H} \perp \vec{e}_z$, $\vec{e}_z$ ist Ausbreitungsrichtung.\\
+	Nutze Rechte-Hand-Regel für schnelle Berechnung von Kreuzprodukten.
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Smithchart Tricks}
+
+	\textbf{Impedanz $\rightarrow$ Bauteilwert}\\
+	$L=\frac{(z_L / j)Z_0}{\omega} \quad C=\frac{1}{(-z_C / j)Z_0\omega}$\\
+	\textbf{Admittanz $\rightarrow$ Bauteilwert}\\
+	$C=\frac{y_C / j}{Z_0 \omega} \quad L = \frac{Z_0}{(-y_L / j) \omega}$\\
 \end{sectionbox}
 % ======================================================================
 % End
