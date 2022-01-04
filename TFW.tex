@@ -615,11 +615,13 @@ Im Lastwiderstand umgesetzte Leistung: $P_L = \frac{|V_+|^2}{Z_0}(1-|\rho|^2)$
 \begin{sectionbox}
 	\subsection{Transformation ins Smith-Diagramm}
 	Mit einer konformen Abbildung können Reflexionsfaktor und Leitungsimpedanz ineinander überführt werden.\\
+	\begin{emphbox}
+		$z=\frac{Z_L}{Z_0}, \quad \text{dann} \quad \begin{cases}
+			\rho = \frac{z-1}{z+1} = \frac{Z_L-Z_0}{Z_L+Z_0}\\
+			z = \frac{1+\rho}{1-\rho}
+		\end{cases}$
+	\end{emphbox}
 	
-	$z=\frac{Z_L}{Z_0} \text{dann} \quad \begin{cases}
-		\rho = \frac{z-1}{z+1}\\
-		z = \frac{1+\rho}{1-\rho}
-	\end{cases}$
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -1113,7 +1115,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 	\textbf{Für idealen elektrischen Leiter (PEC)}:\\
 	Da keine mag. Ströme existieren: $\vec{M}_{1} = \vec{M}_{2} = 0$.\\
-	Betrachte eingeprägten Strom $\vec{J}_{1}$ im PEC $\rightarrow$ $\vec{E}_{1} = 0$ (PEC) $\rightarrow$ Integral ist $0$ $\rightarrow$ $\vec{E}_{2} = 0$ für beliebige $\vec{J}_{2} = 0$.\\
+	Eingeprägter Strom $\vec{J}_{1}$ nur im PEC und $\vec{E}_{2} = 0$ im PEC $\rightarrow$ Integral ist $0$ $\rightarrow$ beliebige Wahl von $\vec{J}_{2}$ erfordert $\vec{E}_{1} = 0$ für alle $\vec{r}$.\\
 	
 	$\Rightarrow$ Elektrischer Strom $\vec{J}$ auf/in PEC straht kein Feld ab.\\
 	$\Rightarrow$ Magnetischer Strom $\vec{M}$ auf/in PMC straht kein Feld ab.\\
@@ -1221,7 +1223,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \end{sectionbox}
 
 \begin{sectionbox}
-	\subsection{Nah- und Fernfeld}
+	\subsection{Nah- und Fernfeld (im Freien Raum)}
 	
 	\begin{center}\includegraphics[width = 2.3cm]{./img/fernfeld.png}\end{center}
 
@@ -1234,7 +1236,14 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 			&\vec{F}(\vec{r})=\varepsilon \frac{\mathrm{e}^{-j k r}}{4 \pi r} \iiint\limits_{V} \vec{M}\left(\vec{r}^{\prime}\right) \mathrm{e}^{+j k \frac{\vec{r}\cdot \vec{r}^{\prime} }{r}} d v^{\prime}
 			\end{aligned}$
 	\end{emphbox}
-
+	\begin{emphbox}
+		$\begin{aligned}
+			&\overleftrightarrow{G}^A(\vec{r}, \vec{r}^\prime)=\mu \frac{\mathrm{e}^{-j k r}}{4 \pi r} \mathrm{e}^{+j k \frac{\vec{r}\cdot \vec{r}^{\prime}}{r} } \overleftrightarrow{I} \\
+			&\overleftrightarrow{G}^F(\vec{r}, \vec{r}^\prime)=\varepsilon \frac{\mathrm{e}^{-j k r}}{4 \pi r} \mathrm{e}^{+j k \frac{\vec{r}\cdot \vec{r}^{\prime}}{r} } \overleftrightarrow{I}
+			\end{aligned}$\\
+			\vspace{1em}
+			Einheitsdyade ist karthesisch: $\overleftrightarrow{I} = \vec{e}_x\vec{e}_x + \vec{e}_y\vec{e}_y + \vec{e}_z\vec{e}_z$.
+	\end{emphbox}
 	\begin{emphbox}
 		Rotationsoperator im Fernfeld:\\
 		$\nabla \times \vec{A} \approx -jk \vec{e}_r \times \vec{A}$\\
@@ -1243,13 +1252,14 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\end{emphbox}
 	\textbf{Sphärische Feldkomponenten im Fernfeld}:
 	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
-		Elektrische Ströme: & \\
-		
+		Felder aufgrund elektr. Ströme: & \\
+			$\vec{H}_1(\vec{r}) = -\frac{jk}{\mu}\vec{e}_r \times \vec{A}(\vec{r})$ & $\vec{E}_1(\vec{r}) = -j\omega \left(\vec{A}(\vec{r}) - \vec{e}_rA_r(\vec{r})\right)$\\
 			$H_{r 1}=0$ &  $E_{r 1}=0$ \\
 			$H_{\vartheta 1}=\frac{j k}{\mu} A_{\varphi}$ & $E_{\vartheta 1}=-j \omega A_{\vartheta}=Z_{F} H_{\varphi 1}$\\
 			$H_{\varphi 1}=-\frac{j k}{\mu} A_{\vartheta}$ & $E_{\varphi 1}=-j \omega A_{\varphi}=-Z_{F} H_{\vartheta 1}$\\
 
-		Magnetische Ströme: & \\
+		Felder aufgrund magnet. Ströme: & \\
+			$\vec{E}_{2}(\vec{r})= \frac{j k}{\varepsilon} \vec{e}_{r} \times \vec{F}(\vec{r})$ & $\vec{H}_{2}(\vec{r}) = -j \omega\left(\vec{F}(\vec{r})-\vec{e}_{r} F_{r}(\vec{r})\right)$ \\
 			$E_{r 2}=0 $ & $H_{r 2}=0$\\
 			$E_{\vartheta 2}=-\frac{j k}{\varepsilon} F_{\varphi}=Z_{F} H_{\varphi 2} $ & $H_{\vartheta 2}=-j \omega F_{\vartheta}$\\
 			$E_{\varphi 2}=\frac{j k}{\varepsilon} F_{\vartheta}=-Z_{F} H_{\vartheta 2}$ & $H_{\varphi 2}=-j \omega F_{\varphi}$\\
@@ -1273,6 +1283,25 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\textbf{Admittanz $\rightarrow$ Bauteilwert}\\
 	$C=\frac{y_C / j}{Z_0 \omega} \quad L = \frac{Z_0}{(-y_L / j) \omega}$\\
 \end{sectionbox}
+
+
+
+\section{Antennen}
+\begin{sectionbox}
+	\subsection{Basics schonmal vorab für Altklausuren}
+	$P_R = P_0 (1 - |r|^2)G_tG_r\left(\frac{\lambda}{4\pi d}\right)^2$\\
+	$G_{\text{dBi}} = 10\text{lg}(G / 10)$\\
+	$S_{ij, \text{dB}} = 20\text{lg}(S_{ij} / 10)$\\
+\end{sectionbox}
+
+
+\section{Tricks aus Altklausuren}
+\begin{sectionbox}
+	\subsection{Näherungen}
+	$w/2$ sehr klein: $\int\limits_{-w/2}^{w/2}f(x^{\prime}) d x^{\prime} \approx w f(0)$\\
+\end{sectionbox}
+
+
 % ======================================================================
 % End
 % ======================================================================
