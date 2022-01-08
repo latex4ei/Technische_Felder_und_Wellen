@@ -1058,8 +1058,12 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\subsection{Elektromagnetische Energiebilanz in Zeigerdarstellung}
 	\begin{emphbox}
 	$-\oiint\limits_{A(V)} \vec{S} \cdot d \vec{A}=P_{V}-2 j \omega\left(\bar{W}_{e}-\bar{W}_{m}\right)$\\
+	Gilt nur in Felder mit harmonischer Zeitabhängigkeit.
 	\end{emphbox}
-	Wirkleistungsfluss durch A (Verlustleistung in V): $P_{V}=P_{\kappa}+P_{\varepsilon}+P_{\mu}$
+	Realteil: Der Wirkleistungsfluss durch die Hülle A entspricht der umgesetzten Verlustleistung im Volumen V.\\
+	Imaginärteil: Differenz der mittleren elektrischen und magnetischen	Feldenergie im Volumen V.\\
+	Wirkleistungsfluss durch A (Verlustleistung in V): $P_{V}=P_{\kappa}+P_{\varepsilon}+P_{\mu}=Re\left\{\oiint \vec{S} \cdot d \vec{A}\right\}$\\
+	$\left(\bar{W}_{e}-\bar{W}_{m}\right) = \frac{1}{2\omega} Im\left\{\oiint \vec{S} \cdot d \vec{A}\right\} $
 
 	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{10mm}\extracolsep\fill}}
 		ohmsche Verlustleistung: & $P_{\kappa}=\frac{1}{2} \iiint\limits_{V}\left[\kappa \vec{E} \cdot \vec{E}^{*}\right] d v$\\
@@ -1069,7 +1073,10 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		mittlere magnetische Energie: & $\bar{W}_{m}=\frac{1}{4} \iiint\limits_{V}\left[\mu_{r}^{\prime} \mu_{0} \vec{H} \cdot \vec{H}^{*}\right] d v$\\
 	\end{tablebox}	
 	Komplexer Pointing Vektor: $\vec{S}=\frac{1}{2} \vec{E} \times \vec{H}^{*}$\\
-	$\frac{1}{2} \operatorname{Re}\left(\vec{E} \times \vec{H}^{*}\right)=\overline{\vec{e}(t) \times \vec{h}(t)}=\frac{1}{T} \int_{0}^{T}(\vec{e}(t) \times \vec{h}(t)) d t$\\
+	$\frac{1}{2} \operatorname{Re}\left(\vec{E} \times \vec{H}^{*}\right)=\overline{\vec{e}(t) \times \vec{h}(t)}=\frac{1}{T} \int_{0}^{T}(\vec{e}(t) \times \vec{h}(t)) d t$\\\\
+	ideal elektirsche leitende Wände $\Rightarrow$ Randbedingung: $E_{tm}=n \times \vec{E} = 0$\\
+	Hohlraum mit verlustfreien Dielektrikum $\Rightarrow P_v=0$
+
 \end{sectionbox}
 \begin{sectionbox}
 	\subsection{Eindeutigkeitstheorem}
