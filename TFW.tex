@@ -1073,7 +1073,8 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		mittlere magnetische Energie: & $\bar{W}_{m}=\frac{1}{4} \iiint\limits_{V}\left[\mu_{r}^{\prime} \mu_{0} \vec{H} \cdot \vec{H}^{*}\right] d v$\\
 	\end{tablebox}	
 	Komplexer Pointing Vektor: $\vec{S}=\frac{1}{2} \vec{E} \times \vec{H}^{*}$\\
-	$\frac{1}{2} \operatorname{Re}\left(\vec{E} \times \vec{H}^{*}\right)=\overline{\vec{e}(t) \times \vec{h}(t)}=\frac{1}{T} \int_{0}^{T}(\vec{e}(t) \times \vec{h}(t)) d t$\\\\
+	$\frac{1}{2} \operatorname{Re}\left(\vec{E} \times \vec{H}^{*}\right)=\overline{\vec{e}(t) \times \vec{h}(t)}=\frac{1}{T} \int_{0}^{T}(\vec{e}(t) \times \vec{h}(t)) d t$\\
+	Bei Gleichstrom $\vec{S}=\vec{E} \times \vec{H}$\\\\
 	ideal elektirsche leitende Wände $\Rightarrow$ Randbedingung: $E_{tm}=n \times \vec{E} = 0$\\
 	Hohlraum mit verlustfreien Dielektrikum $\Rightarrow P_v=0$
 
@@ -1099,6 +1100,9 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 \begin{sectionbox}
 	\subsection{Reziprozität}
+	Umkehrbarkeit: In einem System die Position von Ursache und Wirkung vertauscht. 
+	Die Reaktion des Feldes a auf Quelle von b ist gleich der Reaktion des Feldes b auf die Quelle von a.\\
+	$\vec{J}, \vec{M} \rightarrow \vec{E}, \vec{H} \Rightarrow \vec{E}, \vec{H} \rightarrow \vec{J}, \vec{M}$\\
 	Betrachte Quellen $\vec{J}_{1}, \vec{M}_{1}$ mit dem Feld $\vec{E}_{1}, \vec{H}_{1}$ und\\
 	Betrachte Quellen $\vec{J}_{2}, \vec{M}_{2}$ mit dem Feld $\vec{E}_{2}, \vec{H}_{2}$ mit MWG:\\
 	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{10mm}\extracolsep\fill}}
@@ -1123,6 +1127,9 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 	\textbf{Für idealen elektrischen Leiter (PEC)}:\\
 	Da keine mag. Ströme existieren: $\vec{M}_{1} = \vec{M}_{2} = 0$.\\
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
+		$\iiint_{V}\left(\vec{E}_{1} \cdot \vec{J}_{2}\right) d v=\iiint_{V}\left(\vec{E}_{2} \cdot \vec{J}_{1}\right) d v$		
+	\end{tablebox}
 	Eingeprägter Strom $\vec{J}_{1}$ nur im PEC und $\vec{E}_{2} = 0$ im PEC $\rightarrow$ Integral ist $0$ $\rightarrow$ beliebige Wahl von $\vec{J}_{2}$ erfordert $\vec{E}_{1} = 0$ für alle $\vec{r}$.\\
 	
 	$\Rightarrow$ Elektrischer Strom $\vec{J}$ auf/in PEC straht kein Feld ab.\\
@@ -1131,6 +1138,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 \begin{sectionbox}
 	\subsection{Reziprozität von Antennen}
+	Senderverhalten = Empfangsverhalten\\
 	Betrachte zwei beliebige metallische PEC Antennen (auch für nicht-PEC):\\
 	\includegraphics[width = 6.8cm]{./img/reziproke_antennen.jpeg}\\
 
@@ -1200,7 +1208,21 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 \begin{sectionbox}
 	\subsection{Green'sche Funktionen}
-
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
+	Green‘sche Funktion des magnetischen Vektorpotentials\\
+	$\vec{G}^{A}\left(\vec{r}, \vec{r}^{\prime}\right)=\mu \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \vec{I}$\\
+	Green‘sche Funktion des elektrischen Vektorpotentials\\
+	$\vec{G}^{F}\left(\vec{r}, \vec{r}^{\prime}\right)=\varepsilon \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \vec{I}$\\
+	Elektrischen Feldes bei Anregung mit elektrischen Strömen\\
+	$\vec{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right)=-j \omega \mu\left[\left(\vec{I}+\frac{1}{k^{2}} \nabla \nabla\right) \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|}\right]$\\
+	Magnetischen Feldes bei Anregung mit elektrischen Strömen\\
+	$\vec{G}_{J}^{H}\left(\vec{r}, \vec{r}^{\prime}\right)=\nabla \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \times \vec{I}$\\
+	Elektrisches Feld, Anregung mit magnetischen Strömen\\
+	$\vec{G}_{M}^{E}\left(\vec{r}, \vec{r}^{\prime}\right)=-\nabla \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \times \vec{I}$\\
+	Magnetisches Feld, Anregung mit magnetischen Strömen\\
+	$\vec{G}_{M}^{H}\left(\vec{r}, \vec{r}^{\prime}\right)=-j \omega \varepsilon\left[\left(\vec{I}+\frac{1}{k^{2}} \nabla \nabla\right) \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|}\right]$\\
+	\end{tablebox}
+	Beispiel: $\vec{E}\left(\vec{r}\right) = \iiint\limits_{V}\vec{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}\left(\vec{r^{\prime}}\right)\,dv $
 \end{sectionbox}
 
 \begin{sectionbox}
