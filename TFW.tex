@@ -51,6 +51,8 @@
 
 \newcommand{\comment}[1]{\textcolor{red}{#1}}
 
+\usepackage{multirow}
+
 
 % ======================================================================
 % Begin
@@ -498,7 +500,7 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell und $\mathbf{k}\cdot\mathbf{k} 
 	Für $z \gg b$: $\frac{w_0}{w(z)} \approx \frac{b}{2z}$
 	
 	Für kleine Öffnungswinkel erhalten wir näherungsweise:\\
-	$\theta_0 = \frac{2w_0}{b} = \frac{2}{nk_0w_0} = \frac{\lambda_0}{\pi w_0 n} = \frac{\lambda}{\pi w_0}$\\
+	$\theta_0 = \frac{\lambda}{\pi w_0} = \frac{2w_0}{b} = \frac{2}{nk_0w_0} = \frac{\lambda_0}{\pi w_0 n}$\\
 	$b=\frac{2 \lambda}{\pi \theta_{0}^{2}}$
 
 	\includegraphics[width = \columnwidth]{./img/gauss_strahl.png}\\
@@ -613,11 +615,13 @@ Im Lastwiderstand umgesetzte Leistung: $P_L = \frac{|V_+|^2}{Z_0}(1-|\rho|^2)$
 \begin{sectionbox}
 	\subsection{Transformation ins Smith-Diagramm}
 	Mit einer konformen Abbildung können Reflexionsfaktor und Leitungsimpedanz ineinander überführt werden.\\
+	\begin{emphbox}
+		$z=\frac{Z_L}{Z_0}, \quad \text{dann} \quad \begin{cases}
+			\rho = \frac{z-1}{z+1} = \frac{Z_L-Z_0}{Z_L+Z_0}\\
+			z = \frac{1+\rho}{1-\rho}
+		\end{cases}$
+	\end{emphbox}
 	
-	$z=\frac{Z_L}{Z_0} \text{dann} \quad \begin{cases}
-		\rho = \frac{z-1}{z+1}\\
-		z = \frac{1+\rho}{1-\rho}
-	\end{cases}$
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -640,12 +644,35 @@ Im Lastwiderstand umgesetzte Leistung: $P_L = \frac{|V_+|^2}{Z_0}(1-|\rho|^2)$
 \begin{sectionbox}
 	\subsection{Planare Leitungen}
 	\begin{tabular*}{\columnwidth}{cc}
-		\includegraphics[width = 3cm]{./img/streifenleitung.png} & \includegraphics[width = 3cm]{./img/koplanar_leitung.png}\\
-		Streifenleitung & Koplanarleitung\\
+		\includegraphics[width = 3cm]{./img/streifenleitung.png} & \includegraphics[width = 3cm]{./img/koplanar_streifen_leitung.png}\\
+		Streifenleitung & Koplanare Streifenleitung\\
 		\hline\\
-		\includegraphics[width = 3cm]{./img/mikrostreifen_leitung.png} & \includegraphics[width = 3cm]{./img/koplanar_streifen_leitung.png}\\
-		Mikrostreifenleitung & Koplanare Streifenleitung
+		\includegraphics[width = 3cm]{./img/mikrostreifen_leitung.png} & \includegraphics[width = 3cm]{./img/koplanar_leitung.png}\\
+		Mikrostreifenleitung & Koplanarleitung\\
 	\end{tabular*}
+	\vspace{-6mm}
+	\begin{multicols*}{2}
+	\begin{itemize}
+		\item[+] einfache Fertigung
+		\item[+] verlustarm
+		\item[+] umepfindlich gg. Diskontinuitäten
+		\item[+] Serienelemente leicht integrierbar
+		\item[-] Parallelelemente schwierig
+		\item[-] Leiterbreite nicht skalierbar
+		\item[-] messtechnisch schwierig
+	\end{itemize}
+	\columnbreak
+	\begin{itemize}
+		\item[+] einseitige Metallisierung
+		\item[+] Leiterbreite skalierbar
+		\item[+] Serienelemente leicht integrierbar
+		\item[+] Serienelemente leicht integrierbar
+		\item[+] Parallelelemente leicht integrierbar
+		\item[-] mittlere Verluste
+		\item[-] zwei Moden $\rightarrow$ Leiterbrücken 
+		\item[-] empfindlich gg. Diskontinuitäten 
+	\end{itemize}
+\end{multicols*}
 
 Die einzige planare Leitung auf der eine TEM-Welle natürlich ausbreitungsfähig ist ist die Streifenleitung
 
@@ -739,8 +766,9 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 % \end{sectionbox}
 
 \begin{sectionbox}
-	\subsection{Reziprozität, Symmetrie, Verlustfreiheit}
+	\subsection{Anpassung, Reziprozität, Symmetrie, Verlustfreiheit}
 	\begin{emphbox}
+		Anpassung: $S_{ii} = 0 \forall i$\\
 		Reziprozität: $[S] = [S]^T$ ($[Y] = [Y]^T$)\\
 		Symmetrie: $[S] = [S]^T$ und $S_{ii} = S_{jj} \forall i,j$\\
 		Verlustfreiheit: $[S]^T[S]^* = [E]$
@@ -862,14 +890,20 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	Übertragungsleistungsverstärkung/Gewinn\\(Ausgangsleistung bezogen auf verfügbare Generatorleistung):\\
 	$G=\frac{P_{A}}{P_{G V}} = \frac{1-\left|\rho_{G}\right|^{2}}{\left|1-\rho_{G} \rho_{E}\right|^{2}} \cdot\left|S_{21}\right|^{2} \cdot \frac{1-\left|\rho_{L}\right|^{2}}{\left|1-\rho_{L} S_{22}\right|^{2}}$\\
 	
+	Wenn $Z_G = Z_L = Z_0$ $\rightarrow$ Anpassung: $\rho_G = \rho_L = 0$\\
+	$\rightarrow$ $G = |S_{21}|^2$\\
+	
 	Maximale Leistungsverstärkung (maximaler Gewinn) bei Wirkleistungsanpassung am Eingang und Ausgang:
 	$\rho_{G}=\rho_{E}^{*} ; \rho_{L}=\rho_{A}^{*}$\\
 
+	Rückwirkungsfreiheit ($|S_{12}| / |S_{21}| < 0.1$): $\rho_{E} = S_{11}$\\
+
+	Ohne Anpassung: $\rho_{L} = \frac{Z_{L}-Z_{0}}{Z_{L}+Z_{0}}$ \\
 	\begin{emphbox}
 		Gewinn rückwirkungsfreier Verstärker ($|S_{12}| / |S_{21}| < 0.1$), $\rho_{E}=S_{11}$:\\
 		$G=\underbrace{\frac{1-\left|\rho_{G}\right|^{2}} {\left|1-\rho_{G} S_{11}\right|^{2}}}_{\text{Gewinn der Quelle}}\cdot \underbrace{\left|S_{21}\right|^{2}}_{\text {des Zweitors }} \cdot  \underbrace{\frac{1-\left|\rho_{L}\right|^{2}}{\left|1-\rho_{L} S_{22}\right|^{2}}}_{\text {der Last }}$\\
 		
-		Maximaler Gewinn für beidseitige Wirkleistungsanpassung: $\rho_{G}=\rho_{E}^{*}=S_{11}^{*} ; \rho_{L}=\rho_{A}^{*}=S_{22}^{*}$\\
+		Maximaler Gewinn für beidseitige Wirkleistungsanpassung: $\rho_{G}=\rho_{E}^{*}=S_{11}^{*} ; \rho_{L}=\rho_{A}^{*}=\rho_{G}^{*}=S_{22}^{*}$\\
 		$G_{\max }=\frac{\left|S_{21}\right|^{2}}{\left(1-\left|S_{11}\right|^{2}\right) \cdot\left(1-\left|S_{22}\right|^{2}\right)}$
 	\end{emphbox}
 \end{sectionbox}	
@@ -888,7 +922,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		\item Die Tore verhalten sich unabhängig der passiven Beschaltung passiv
 		\item Der Verstärker ist unabhängig von der Beschaltung stabil
 	\end{itemize}
-	Mathematisch: $\left|\rho_{E}\right|<1$ für $\left|\rho_{L}\right|<1 \quad \wedge \quad\left|\rho_{A}\right|<1$ für $\left|\rho_{G}\right|<1$\\
+	Mathematisch: $\left|\rho_{E}\right|\le1$ für $\left|\rho_{L}\right|\le1 \quad \wedge \quad\left|\rho_{A}\right|\le1$ für $\left|\rho_{G}\right|\le1$\\
 	\includegraphics[width = 6.8cm]{./img/stablilitaet.png}\\
 	\begin{emphbox}
 		5 notwendige und hinreichende Bedingungnen für absolute Stabilität:\\
@@ -902,18 +936,23 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\end{emphbox}
 
 	\textbf{Stabilitätskreise}:\\
-	Zur Überprüfung wird die Ortskurve $\left|\rho_{L}\right|=1$ bzw $\left|\rho_{G}\right|=1$ zum Ein- /Ausgang transformiert:
+	Zur Überprüfung wird die Ortskurve $\left|\rho_{L}\right|=1$ bzw $\left|\rho_{G}\right|=1$ zum Ein- /Ausgang transformiert:\\
+	$\left|\rho_{E}\right|=\left|s_{11}+\frac{s_{12} \cdot s_{21} \rho_{L}}{1-s_{22} \rho_{L}}\right| \stackrel{!}{=} 1$ ($\rho_L$-Ebene) eingangseitige Stab.\\
+	$\left|\rho_{A}\right|=\left|s_{22}+\frac{s_{12} \cdot s_{21} \rho_{G}}{1-s_{11} \rho_{G}}\right| \stackrel{!}{=} 1$ ($\rho_G$-Ebene) ausgangseitige Stab.
+	$C_L, R_L$: alle $\rho_L$ auf Kreis $(C_L, R_L)$ ergeben einen Eingangsreflexionsfaktor $|\rho_E| = 1$\\
+	$C_G, R_G$: alle $\rho_G$ auf Kreis $(C_G, R_G)$ ergeben einen Eingangsreflexionsfaktor $|\rho_A| = 1$
 	\begin{emphbox}
 		Bild des Eingangsreflexionsfaktors in der Lastebene:\\
-		$C_{L}=\frac{\left(S_{22}-\Delta_{S} S_{11}^{*}\right)^{*}}{\left|S_{22}\right|^{2}-\left|\Delta_{S}\right|^{2}}$, $R_{L}=\left|\begin{array}{c}
-			S_{12} S_{21} \\
-			\left|S_{22}\right|^{2}-\left|\Delta_{S}\right|^{2}
-			\end{array}\right|$\\
+		$C_{L}=\frac{\left(S_{22}-\Delta_{S} S_{11}^{*}\right)^{*}}{\left|S_{22}\right|^{2}-\left|\Delta_{S}\right|^{2}}$, 
+		$R_{L}=\left|\frac{S_{12} S_{21}}{\left|S_{22}\right|^{2}-\left|\Delta_{S}\right|^{2}}\right|$\\
 		Bild des Ausgangsreflexionsfaktors in der Eingangsebene:\\
-		$C_{G}=\frac{\left(S_{11}-\Delta_{S} S_{22}^{*}\right)^{*}}{\left|S_{11}\right|^{2}-\left|\Delta_{S}\right|^{2}}$, $R_{G}=\left|\frac{S_{12} S_{21}}{\left|S_{11}\right|^{2}-\left|\Delta_{S}\right|^{2}}\right|$
+		$C_{G}=\frac{\left(S_{11}-\Delta_{S} S_{22}^{*}\right)^{*}}{\left|S_{11}\right|^{2}-\left|\Delta_{S}\right|^{2}}$, $R_{G}=\left|\frac{S_{12} S_{21}}{\left|S_{11}\right|^{2}-\left|\Delta_{S}\right|^{2}}\right|$\\
+		\vspace{1em}
+		With $\Delta_{S} = det(S) = S_{11}S_{22}-S_{12}S_{21}$
 	\end{emphbox}
 	\comment{Kriterium für die Wahl der stabilen Seite hinzufügen.}\\
-	\comment{Einfügen von Widerständen zur Stabilisierung hinzufügen.}
+	\comment{Einfügen von Widerständen zur Stabilisierung hinzufügen.}\\ 
+	Finden eines Punktes der stabil sein muss. Das ist bei Anpassung. z.B. $\rho_L=S^*_{22}$
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -942,7 +981,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		$S_{41}=\frac{j\left(z_{e}-\frac{1}{z_{e}}\right) \sin \beta l}{2 \cos \beta l+j\left(z_{e}+\frac{1}{z_{e}}\right) \sin \beta l}$
 		\begin{itemize}
 			\item $S_{11} = S_{31} = 0$ \textbf{frequenzunabhängig}
-			\item $S_{21}$ und $S_{41}$ unterscheiden sich \textbf{frequenzunabhängig} um $90$deg
+			\item $S_{21}$ und $S_{41}$ unterscheiden sich \textbf{frequenzunabhängig} um $90^\circ$
 		\end{itemize}
 	\end{emphbox}
 \end{sectionbox}
@@ -1019,8 +1058,12 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\subsection{Elektromagnetische Energiebilanz in Zeigerdarstellung}
 	\begin{emphbox}
 	$-\oiint\limits_{A(V)} \vec{S} \cdot d \vec{A}=P_{V}-2 j \omega\left(\bar{W}_{e}-\bar{W}_{m}\right)$\\
+	Gilt nur in Felder mit harmonischer Zeitabhängigkeit.
 	\end{emphbox}
-	Wirkleistungsfluss durch A (Verlustleistung in V): $P_{V}=P_{\kappa}+P_{\varepsilon}+P_{\mu}$
+	Realteil: Der Wirkleistungsfluss durch die Hülle A entspricht der umgesetzten Verlustleistung im Volumen V.\\
+	Imaginärteil: Differenz der mittleren elektrischen und magnetischen	Feldenergie im Volumen V.\\
+	Wirkleistungsfluss durch A (Verlustleistung in V): $P_{V}=P_{\kappa}+P_{\varepsilon}+P_{\mu}=Re\left\{\oiint \vec{S} \cdot d \vec{A}\right\}$\\
+	$\left(\bar{W}_{e}-\bar{W}_{m}\right) = \frac{1}{2\omega} Im\left\{\oiint \vec{S} \cdot d \vec{A}\right\} $
 
 	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{10mm}\extracolsep\fill}}
 		ohmsche Verlustleistung: & $P_{\kappa}=\frac{1}{2} \iiint\limits_{V}\left[\kappa \vec{E} \cdot \vec{E}^{*}\right] d v$\\
@@ -1031,6 +1074,10 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\end{tablebox}	
 	Komplexer Pointing Vektor: $\vec{S}=\frac{1}{2} \vec{E} \times \vec{H}^{*}$\\
 	$\frac{1}{2} \operatorname{Re}\left(\vec{E} \times \vec{H}^{*}\right)=\overline{\vec{e}(t) \times \vec{h}(t)}=\frac{1}{T} \int_{0}^{T}(\vec{e}(t) \times \vec{h}(t)) d t$\\
+	Bei Gleichstrom $\vec{S}=\vec{E} \times \vec{H}$\\\\
+	ideal elektirsche leitende Wände $\Rightarrow$ Randbedingung: $E_{tm}=n \times \vec{E} = 0$\\
+	Hohlraum mit verlustfreien Dielektrikum $\Rightarrow P_v=0$
+
 \end{sectionbox}
 \begin{sectionbox}
 	\subsection{Eindeutigkeitstheorem}
@@ -1050,6 +1097,239 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	$\Rightarrow$ Für verlustfreie Medien (ideale Resonatoren) oder negativen Materialien existieren mehrere Lösungen.
 
 \end{sectionbox}	
+
+\begin{sectionbox}
+	\subsection{Reziprozität}
+	Umkehrbarkeit: In einem System die Position von Ursache und Wirkung vertauscht. 
+	Die Reaktion des Feldes a auf Quelle von b ist gleich der Reaktion des Feldes b auf die Quelle von a.\\
+	$\vec{J}, \vec{M} \rightarrow \vec{E}, \vec{H} \Rightarrow \vec{E}, \vec{H} \rightarrow \vec{J}, \vec{M}$\\
+	Betrachte Quellen $\vec{J}_{1}, \vec{M}_{1}$ mit dem Feld $\vec{E}_{1}, \vec{H}_{1}$ und\\
+	Betrachte Quellen $\vec{J}_{2}, \vec{M}_{2}$ mit dem Feld $\vec{E}_{2}, \vec{H}_{2}$ mit MWG:\\
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{10mm}\extracolsep\fill}}
+		(1) $\nabla \times \vec{H}_{1}=j \omega \varepsilon \vec{E}_{1}+\vec{J}_{1}$ & (3) $\nabla \times \vec{H}_{2}=j \omega \varepsilon \vec{E}_{2}+\vec{J}_{2}$ \\
+		(2) $\nabla \times \vec{E}_{1}=-j \omega \mu \vec{H}_{1}-\vec{M}_{1}$ & (4) $\nabla \times \vec{E}_{2}=-j \omega \mu \vec{H}_{2}-\vec{M}_{2}$
+	\end{tablebox}
+	\textbf{Annahmen:}: Materialien sind isotrop (trotzdem gg. ortsabhängig).\\
+	\textbf{Ansatz}: Berechne $(3) \cdot \vec{E}_{1}-(2) \cdot \vec{H}_{2} - ((1) \cdot \vec{E}_{2}-(4) \cdot \vec{H}_{1})$. RHS liefert Beiträge nur in Quellregionen. Satz v. Gauss. Ergebnis:\\
+	\begin{emphbox}
+		$-\oiint\limits_{A(V)}\left(\vec{E}_{1} \times \vec{H}_{2}-\vec{E}_{2} \times \vec{H}_{1}\right) \cdot d \vec{A}=\iiint\limits_{V}\left(\vec{E}_{1} \cdot \vec{J}_{2}+\vec{H}_{2} \cdot \vec{M}_{1}-\vec{E}_{2} \cdot \vec{J}_{1}-\vec{H}_{1} \cdot \vec{M}_{2}\right) d v$
+	\end{emphbox}
+	\begin{emphbox}
+		\textbf{Für Quellefreie Gebiete}:\\
+		Diff. Form: $-\nabla \cdot\left(\vec{E}_{1} \times \vec{H}_{2}-\vec{E}_{2} \times \vec{H}_{1}\right)=0$\\
+		Integralform: $\oiint\limits_{A(V)}\left(\vec{E}_{1} \times \vec{H}_{2}-\vec{E}_{2} \times \vec{H}_{1}\right) \cdot d \vec{A}=0$
+	\end{emphbox}
+	Wähle $A(V)$ als die Fernkugeloberfläche $r \rightarrow \infty$ (lokale ebene Welle).\\
+	$E_{\vartheta}=Z H_{\varphi}$ u. $E_{\varphi}=-Z H_{\vartheta}$, das Oberflächenintegral verschwindet:\\
+	\begin{emphbox}
+		$\iiint\limits_{V}\left(\vec{E}_{1} \cdot \vec{J}_{2}-\vec{H}_{1} \cdot \vec{M}_{2}\right) d v=\iiint\limits_{V}\left(\vec{E}_{2} \cdot \vec{J}_{1}-\vec{H}_{2} \cdot \vec{M}_{1}\right) d v$
+	\end{emphbox}
+
+	\textbf{Für idealen elektrischen Leiter (PEC)}:\\
+	Da keine mag. Ströme existieren: $\vec{M}_{1} = \vec{M}_{2} = 0$.\\
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
+		$\iiint_{V}\left(\vec{E}_{1} \cdot \vec{J}_{2}\right) d v=\iiint_{V}\left(\vec{E}_{2} \cdot \vec{J}_{1}\right) d v$		
+	\end{tablebox}
+	Eingeprägter Strom $\vec{J}_{1}$ nur im PEC und $\vec{E}_{2} = 0$ im PEC $\rightarrow$ Integral ist $0$ $\rightarrow$ beliebige Wahl von $\vec{J}_{2}$ erfordert $\vec{E}_{1} = 0$ für alle $\vec{r}$.\\
+	
+	$\Rightarrow$ Elektrischer Strom $\vec{J}$ auf/in PEC straht kein Feld ab.\\
+	$\Rightarrow$ Magnetischer Strom $\vec{M}$ auf/in PMC straht kein Feld ab.\\
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Reziprozität von Antennen}
+	Senderverhalten = Empfangsverhalten\\
+	Betrachte zwei beliebige metallische PEC Antennen (auch für nicht-PEC):\\
+	\includegraphics[width = 6.8cm]{./img/reziproke_antennen.jpeg}\\
+
+	Nutze $\iiint\limits_{V}\left(\vec{E}_{12} \cdot \vec{J}_{1}\right) d v=\iiint\limits_{V}\left(\vec{E}_{21} \cdot \vec{J}_{2}\right) d v$.\\
+	Weitere Annahmen: $\vec{J}_{1} \neq \vec{f}(h)$ u. $\vec{E}_{12}=\text { konst. } \text { in } A$\\$\Rightarrow$ $\int \vec{E}_{12} \cdot d \vec{h}=-U_{10} \quad \iint \vec{J}_{1} \cdot d \vec{A}=I_{1}$\\
+	\begin{emphbox}
+		$\frac{U_{10}}{I_{2}}=Z_{12}=\frac{U_{20}}{I_{1}}=Z_{21}$
+	\end{emphbox}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Elektromagnetische Potentiale}
+	Zerlegung in elektrische und magnetische Felder:
+	\begin{center}$\vec{E} = \vec{E}_{e} + \vec{E}_{m} \qquad \vec{H} = \vec{H}_{e} + \vec{H}_{m}$\end{center}
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
+		\textbf{Elektrische Ströme} & \textbf{Magnetische Ströme}\\
+		\hline
+		MWG: & \\
+		$\begin{aligned}
+			\nabla \times \vec{H}_{e} &=j \omega \varepsilon \vec{E}_{e}+\vec{J} \\
+			\nabla \times \vec{E}_{e} &=-j \omega \mu \vec{H}_{e} \\
+			\nabla \cdot\left(\varepsilon \vec{E}_{e}\right) &=\rho \\
+			\nabla \cdot\left(\mu \vec{H}_{e}\right) &=0
+			\end{aligned}$ & $\begin{aligned}
+				-\nabla \times \vec{E}_{m} &=j \omega \mu \vec{H}_{m}+\vec{M} \\
+				\nabla \times \vec{H}_{m} &=j \omega \varepsilon \vec{E}_{m} \\
+				\nabla \cdot\left(\mu \vec{H}_{m}\right) &=\rho_{m} \\
+				\nabla \cdot\left(\varepsilon \vec{E}_{m}\right) &=0
+				\end{aligned}$\\
+		\hline
+		Felddarstellung über Potentiale: & \\
+		$\begin{aligned}
+			\vec{H}_{e}(\vec{r}) &=\frac{1}{\mu} \nabla \times \vec{A}(\vec{r}) \\
+			\vec{E}_{e}(\vec{r}) &=-j \omega \vec{A}-\nabla \phi
+			\end{aligned}$ & $\begin{aligned}
+				\vec{E}_{m}(\vec{r}) &=-\frac{1}{\varepsilon} \nabla \times \vec{F}(\vec{r}) \\
+				\vec{H}_{m}(\vec{r}) &=-j \omega \vec{F}-\nabla \psi 
+				\end{aligned}$\\
+			$=-j \omega\left(\vec{A}(\vec{r})+\frac{1}{k^{2}} \nabla \nabla \cdot \vec{A}(\vec{r})\right)$ & $=-j \omega\left(\vec{F}(\vec{r})+\frac{1}{k^{2}} \nabla \nabla \cdot \vec{F}(\vec{r})\right)$\\
+		\hline
+		Lorenz-Eichung: & \\
+		$\nabla \cdot \vec{A}(\vec{r})+j \omega \mu \varepsilon \phi(\vec{r})=0$ & $\nabla \cdot \vec{F}(\vec{r})+j \omega \mu \varepsilon \psi(\vec{r})=0$\\
+		\hline
+		Helmholtz-Gleichungen: & \\
+		$\begin{aligned}
+			&\Delta \vec{A}(\vec{r})+k^{2} \vec{A}(\vec{r})=-\mu \vec{J}(\vec{r}) \\
+			&\Delta \phi(\vec{r})+k^{2} \phi(\vec{r})=-\frac{\rho(\vec{r})}{\varepsilon}
+			\end{aligned}$ & $\begin{aligned}
+				&\Delta \vec{F}(\vec{r})+k^{2} \vec{F}(\vec{r})=-\varepsilon \vec{M}(\vec{r}) \\
+				&\Delta \psi(\vec{r})+k^{2} \psi(\vec{r})=-\frac{\rho_{m}(\vec{r})}{\mu}
+				\end{aligned}$\\
+	\end{tablebox}
+	\textbf{Idee:} \comment{Kurze Beschreibung der Vorteile der Darstellung (Entkopplung v. Gleichungen, Entfernen von Redundanz in MWG, Modellierungsfreiheit, Green'sche Funktionen skalar)}
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Dualität}
+	Besitzen zwei Gleichungssysteme, die unterschiedliche physikalische Phänomene beschreiben, die gleiche mathematische Form, so nehmen ihre Lösungen die gleiche mathematische Form an.
+
+	Felder elektrischer Quellen sind dual zu Feldern magnetischer Quellen.\\
+	Duale Lösungen erfordern zueinander duale Randbedingungen.\\
+	\textbf{Anwendungen:}
+	\begin{itemize}
+		\item Verifizierung von zueinander dualen Gleichung und Lösungen.
+		\item Ersetzen von Größen in einer Lösung durch duale Größen führt zur dualen Lösung.
+	\end{itemize}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Green'sche Funktionen}
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
+	Green‘sche Funktion des magnetischen Vektorpotentials\\
+	$\vec{G}^{A}\left(\vec{r}, \vec{r}^{\prime}\right)=\mu \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \vec{I}$\\
+	Green‘sche Funktion des elektrischen Vektorpotentials\\
+	$\vec{G}^{F}\left(\vec{r}, \vec{r}^{\prime}\right)=\varepsilon \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \vec{I}$\\
+	Elektrischen Feldes bei Anregung mit elektrischen Strömen\\
+	$\vec{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right)=-j \omega \mu\left[\left(\vec{I}+\frac{1}{k^{2}} \nabla \nabla\right) \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|}\right]$\\
+	Magnetischen Feldes bei Anregung mit elektrischen Strömen\\
+	$\vec{G}_{J}^{H}\left(\vec{r}, \vec{r}^{\prime}\right)=\nabla \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \times \vec{I}$\\
+	Elektrisches Feld, Anregung mit magnetischen Strömen\\
+	$\vec{G}_{M}^{E}\left(\vec{r}, \vec{r}^{\prime}\right)=-\nabla \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \times \vec{I}$\\
+	Magnetisches Feld, Anregung mit magnetischen Strömen\\
+	$\vec{G}_{M}^{H}\left(\vec{r}, \vec{r}^{\prime}\right)=-j \omega \varepsilon\left[\left(\vec{I}+\frac{1}{k^{2}} \nabla \nabla\right) \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|}\right]$\\
+	\end{tablebox}
+	Beispiel: $\vec{E}\left(\vec{r}\right) = \iiint\limits_{V}\vec{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}\left(\vec{r^{\prime}}\right)\,dv $
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Huygens'sches Prinzip}
+	\textbf{Idee}: Das Feld einer Primärquelle im Gebiet $V_a$ kann durch äquivalente Oberflächenströme $\vec{J}_A$, $\vec{M}_A$ auf der Grenzfläche $A(V_b)$ ersetzt werden. $V_a$ wird dadurch feldfrei und kann mit beliebigen Materialien (zb. PEC) gefüllt werden. Die Flächenströme sind Sekundärquellen, die zur Berechnung des Felds in $V_b$ verwendet werden können.\\
+	$\begin{aligned}
+		&\vec{E}(\vec{r})=\iiint\limits_{V_{b}}\left[\overleftrightarrow{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}\left(\vec{r}^{\prime}\right)+\overleftrightarrow{G}_{M}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{M}\left(\vec{r}^{\prime}\right)\right] d v^{\prime} \\
+		&+\oiint\limits_{A\left(V_{b}\right)}\left[\overleftrightarrow{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}_{A}\left(\vec{r}^{\prime}\right)+\overleftrightarrow{G}_{M}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{M}_{A}\left(\vec{r}^{\prime}\right)\right] d a^{\prime}
+		\end{aligned}$\\
+	\begin{emphbox}
+		$\begin{aligned}
+			&\vec{J}_{A}\left(\vec{r}\right)=\vec{n} \times \vec{H}\left(\vec{r}\right) \\
+			&\vec{M}_{A}\left(\vec{r}\right)=-\vec{n} \times \vec{E}\left(\vec{r}\right)
+		\end{aligned}$\\
+		$\rightarrow$ Felder in $V_a$ verschwinden.
+	\end{emphbox}
+	\textbf{Eindeutigkeitsprinzip}: Das Feld in $V_b$ ist eindeutig über die Quellen und die tangentialen Ströme auf $A(V_b)$ gegeben (außer im Fall von Resonanzen). Der Beitrag der äußeren Hüllfläche entfällt, falls im Unendlichen.\\
+	
+	\textbf{Äquivalente Formulierungen}: Da die Felder in $V_a$ verschwinden, kann $V_a$ mit beliebigen Materialen gefüllt werden. Gängige Materialen:\\
+	Freiraum:\\
+	$\vec{E}(\vec{r})=\iint_{A}\left[\overleftrightarrow{G}_{J, 0}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}_{A}\left(\vec{r}^{\prime}\right)+\overleftrightarrow{G}_{M, 0}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{M}_{A}\left(\vec{r}^{\prime}\right)\right] d a^{\prime}$\\
+	PMC: $\vec{E}(\vec{r})=\iint_{A}\left[\overleftrightarrow{G}_{J, 1}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}_{A}\left(\vec{r}^{\prime}\right)\right] d a^{\prime}$\\
+	PEC: $\vec{E}(\vec{r})=\iint_{A}\left[\overleftrightarrow{G}_{M, 2}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{M}_{A}\left(\vec{r}^{\prime}\right)\right] d a^{\prime}$\\
+	
+	\textbf{Nutze Spiegelungsprinzip bei PEC/PMC Halbräumen}:\\
+	PMC: $M_A$ = 0, $2J_A$ strahlt in freien Raum\\
+	PEC: $J_A$ = 0, $2M_A$ strahlt in freien Raum\\
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Nah- und Fernfeld (im Freien Raum)}
+	
+	\begin{center}\includegraphics[width = 2.3cm]{./img/fernfeld.png}\end{center}
+
+	Approximiere $\vec{A}(\vec{r})$ unter den Annahmen $r = |\vec{r}|\gg |\vec{r}^{\prime}|$, $r \gg \lambda$.\\
+	$\rightarrow$ $|\vec{r} - \vec{r}^{\prime}| \approx r$ im Nenner, und $|\vec{r} - \vec{r}^{\prime}| \approx r - \frac{\vec{r}\cdot\vec{r}^{\prime}}{r}$ im Exp.\\
+
+	\begin{emphbox}
+		$\begin{aligned}
+			&\vec{A}(\vec{r})=\mu \frac{\mathrm{e}^{-j k r}}{4 \pi r} \iiint\limits_{V} \vec{J}\left(\vec{r}^{\prime}\right) \mathrm{e}^{+j k \frac{\vec{r}\cdot \vec{r}^{\prime}}{r} } d v^{\prime} \\
+			&\vec{F}(\vec{r})=\varepsilon \frac{\mathrm{e}^{-j k r}}{4 \pi r} \iiint\limits_{V} \vec{M}\left(\vec{r}^{\prime}\right) \mathrm{e}^{+j k \frac{\vec{r}\cdot \vec{r}^{\prime} }{r}} d v^{\prime}
+			\end{aligned}$
+	\end{emphbox}
+	\begin{emphbox}
+		$\begin{aligned}
+			&\overleftrightarrow{G}^A(\vec{r}, \vec{r}^\prime)=\mu \frac{\mathrm{e}^{-j k r}}{4 \pi r} \mathrm{e}^{+j k \frac{\vec{r}\cdot \vec{r}^{\prime}}{r} } \overleftrightarrow{I} \\
+			&\overleftrightarrow{G}^F(\vec{r}, \vec{r}^\prime)=\varepsilon \frac{\mathrm{e}^{-j k r}}{4 \pi r} \mathrm{e}^{+j k \frac{\vec{r}\cdot \vec{r}^{\prime}}{r} } \overleftrightarrow{I}
+			\end{aligned}$\\
+			\vspace{1em}
+			Einheitsdyade ist karthesisch: $\overleftrightarrow{I} = \vec{e}_x\vec{e}_x + \vec{e}_y\vec{e}_y + \vec{e}_z\vec{e}_z$.
+	\end{emphbox}
+	\begin{emphbox}
+		Rotationsoperator im Fernfeld:\\
+		$\nabla \times \vec{A} \approx -jk \vec{e}_r \times \vec{A}$\\
+		Divergenzoperator im Fernfeld:\\
+		$\nabla \cdot \vec{A} \approx -jk \vec{e}_r \cdot \vec{A}$\\
+	\end{emphbox}
+	\textbf{Sphärische Feldkomponenten im Fernfeld}:
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
+		Felder aufgrund elektr. Ströme: & \\
+			$\vec{H}_1(\vec{r}) = -\frac{jk}{\mu}\vec{e}_r \times \vec{A}(\vec{r})$ & $\vec{E}_1(\vec{r}) = -j\omega \left(\vec{A}(\vec{r}) - \vec{e}_rA_r(\vec{r})\right)$\\
+			$H_{r 1}=0$ &  $E_{r 1}=0$ \\
+			$H_{\vartheta 1}=\frac{j k}{\mu} A_{\varphi}$ & $E_{\vartheta 1}=-j \omega A_{\vartheta}=Z_{F} H_{\varphi 1}$\\
+			$H_{\varphi 1}=-\frac{j k}{\mu} A_{\vartheta}$ & $E_{\varphi 1}=-j \omega A_{\varphi}=-Z_{F} H_{\vartheta 1}$\\
+
+		Felder aufgrund magnet. Ströme: & \\
+			$\vec{E}_{2}(\vec{r})= \frac{j k}{\varepsilon} \vec{e}_{r} \times \vec{F}(\vec{r})$ & $\vec{H}_{2}(\vec{r}) = -j \omega\left(\vec{F}(\vec{r})-\vec{e}_{r} F_{r}(\vec{r})\right)$ \\
+			$E_{r 2}=0 $ & $H_{r 2}=0$\\
+			$E_{\vartheta 2}=-\frac{j k}{\varepsilon} F_{\varphi}=Z_{F} H_{\varphi 2} $ & $H_{\vartheta 2}=-j \omega F_{\vartheta}$\\
+			$E_{\varphi 2}=\frac{j k}{\varepsilon} F_{\vartheta}=-Z_{F} H_{\vartheta 2}$ & $H_{\varphi 2}=-j \omega F_{\varphi}$\\
+	\end{tablebox}
+	$Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{TEM Wellen}
+	$\vec{H} = \frac{1}{Z_F} \vec{e}_z \times \vec{E}$\\
+	$\vec{E} = -Z_F \vec{e}_z \times \vec{H}$\\
+	$\vec{E} \perp \vec{H} \perp \vec{e}_z$, $\vec{e}_z$ ist Ausbreitungsrichtung.\\
+	Nutze Rechte-Hand-Regel für schnelle Berechnung von Kreuzprodukten.
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Smithchart Tricks}
+
+	\textbf{Impedanz $\rightarrow$ Bauteilwert}\\
+	$L=\frac{(z_L / j)Z_0}{\omega} \quad C=\frac{1}{(-z_C / j)Z_0\omega}$\\
+	\textbf{Admittanz $\rightarrow$ Bauteilwert}\\
+	$C=\frac{y_C / j}{Z_0 \omega} \quad L = \frac{Z_0}{(-y_L / j) \omega}$\\
+\end{sectionbox}
+
+
+
+\section{Antennen}
+\begin{sectionbox}
+	\subsection{Basics schonmal vorab für Altklausuren}
+	$P_R = P_0 (1 - |r|^2)G_tG_r\left(\frac{\lambda}{4\pi d}\right)^2$\\
+	$G_{\text{dBi}} = 10\text{lg}(G / 10)$\\
+	$S_{ij, \text{dB}} = 20\text{lg}(S_{ij} / 10)$\\
+\end{sectionbox}
+
+
+\section{Tricks aus Altklausuren}
+\begin{sectionbox}
+	\subsection{Näherungen}
+	$w/2$ sehr klein: $\int\limits_{-w/2}^{w/2}f(x^{\prime}) d x^{\prime} \approx w f(0)$\\
+\end{sectionbox}
 
 
 % ======================================================================
