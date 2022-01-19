@@ -1127,6 +1127,9 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 	\textbf{Für idealen elektrischen Leiter (PEC)}:\\
 	Da keine mag. Ströme existieren: $\vec{M}_{1} = \vec{M}_{2} = 0$.\\
+	$\vec{n} \times \vec{E} = \vec{0}$\\
+	\textbf{Für idealen magnetischen Leiter (PMC)}:\\
+	$\vec{n} \times \vec{H} = \vec{0}$
 	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
 		$\iiint_{V}\left(\vec{E}_{1} \cdot \vec{J}_{2}\right) d v=\iiint_{V}\left(\vec{E}_{2} \cdot \vec{J}_{1}\right) d v$		
 	\end{tablebox}
@@ -1209,20 +1212,34 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \begin{sectionbox}
 	\subsection{Green'sche Funktionen}
 	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
-	Green‘sche Funktion des magnetischen Vektorpotentials\\
-	$\vec{G}^{A}\left(\vec{r}, \vec{r}^{\prime}\right)=\mu \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \vec{I}$\\
-	Green‘sche Funktion des elektrischen Vektorpotentials\\
-	$\vec{G}^{F}\left(\vec{r}, \vec{r}^{\prime}\right)=\varepsilon \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \vec{I}$\\
-	Elektrischen Feldes bei Anregung mit elektrischen Strömen\\
-	$\vec{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right)=-j \omega \mu\left[\left(\vec{I}+\frac{1}{k^{2}} \nabla \nabla\right) \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|}\right]$\\
-	Magnetischen Feldes bei Anregung mit elektrischen Strömen\\
-	$\vec{G}_{J}^{H}\left(\vec{r}, \vec{r}^{\prime}\right)=\nabla \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \times \vec{I}$\\
-	Elektrisches Feld, Anregung mit magnetischen Strömen\\
-	$\vec{G}_{M}^{E}\left(\vec{r}, \vec{r}^{\prime}\right)=-\nabla \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \times \vec{I}$\\
-	Magnetisches Feld, Anregung mit magnetischen Strömen\\
-	$\vec{G}_{M}^{H}\left(\vec{r}, \vec{r}^{\prime}\right)=-j \omega \varepsilon\left[\left(\vec{I}+\frac{1}{k^{2}} \nabla \nabla\right) \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|}\right]$\\
+		Green‘sche Funktion des magnetischen Vektorpotentials\\
+		$\vec{G}^{A}\left(\vec{r}, \vec{r}^{\prime}\right)=\mu \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \vec{I}$\\
+		Green‘sche Funktion des elektrischen Vektorpotentials\\
+		$\vec{G}^{F}\left(\vec{r}, \vec{r}^{\prime}\right)=\varepsilon \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \vec{I}$\\
+		Elektrischen Feldes bei Anregung mit elektrischen Strömen\\
+		$\vec{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right)=-j \omega \mu\left[\left(\vec{I}+\frac{1}{k^{2}} \nabla \nabla\right) \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|}\right]$\\
+		Magnetischen Feldes bei Anregung mit elektrischen Strömen\\
+		$\vec{G}_{J}^{H}\left(\vec{r}, \vec{r}^{\prime}\right)=\nabla \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \times \vec{I}$\\
+		Elektrisches Feld, Anregung mit magnetischen Strömen\\
+		$\vec{G}_{M}^{E}\left(\vec{r}, \vec{r}^{\prime}\right)=-\nabla \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \times \vec{I}$\\
+		Magnetisches Feld, Anregung mit magnetischen Strömen\\
+		$\vec{G}_{M}^{H}\left(\vec{r}, \vec{r}^{\prime}\right)=-j \omega \varepsilon\left[\left(\vec{I}+\frac{1}{k^{2}} \nabla \nabla\right) \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|}\right]$\\
 	\end{tablebox}
-	Beispiel: $\vec{E}\left(\vec{r}\right) = \iiint\limits_{V}\vec{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}\left(\vec{r^{\prime}}\right)\,dv $
+	Beispiel: $\vec{E}\left(\vec{r}\right) = \iiint\limits_{V}\vec{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}\left(\vec{r^{\prime}}\right)\,dv $\\
+	$\vec{A}\left(\vec{r}\right) = \iiint\limits_{V}\vec{G}^{A}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}\left(\vec{r^{\prime}}\right)\,dv $
+
+	Elektrisches Feld, Anregung mit elektrischen Strömen. Ist das magnetische Vektorpotential gegeben, gilt für das elektrische Feld\\
+	$\vec{E}(\vec{r})=-j \omega\left[\vec{A}(\vec{r})+\frac{1}{k^{2}} \nabla \nabla \cdot \vec{A}(\vec{r})\right]\\$
+	$\vec{E}(\vec{r})=-j \omega\left[\vec{I}+\frac{1}{k^{2}} \nabla \nabla\right] \cdot \vec{A}(\vec{r})$		
+	mit $k=\frac{\omega}{c}=\varepsilon\mu\omega^2$\\
+	Magnetisches Feld, Anregung mit elektrischen Strömen.Ist das magnetische Vektorpotential gegeben, gilt für das magnetische Feld\\
+	$\vec{H}(\vec{r})=\frac{1}{\mu} \nabla \times \vec{A}(\vec{r})$\\
+	\begin{center}\includegraphics[width = 6.5cm]{green_zsm.png}\end{center}
+
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Spiegelungsprinzip}
+	\begin{center}\includegraphics[width = 6.5cm]{spiegelungsprinzip.png}\end{center}
 \end{sectionbox}
 
 \begin{sectionbox}
