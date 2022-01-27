@@ -1275,6 +1275,78 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \end{sectionbox}
 
 \begin{sectionbox}
+	\subsection{Hohlleiter}
+	Dispersionsrelation (Eigenwertgleichung) einer Mode (Feldverteilung):\\
+	$k^{2}=k_{x}^{2}+k_{y}^{2}+k_{z}^{2}=q^{2}+k_{z}^{2}$\\
+	mit $k=\omega\sqrt{\varepsilon_0\mu_0}=\frac{2\pi f}{c}$, wenn $k_z=0 \rightarrow$ Grenzfrequenz $f_c=\frac{cq}{2\pi}$\\
+	q: der modenspezifische, geometrieabhängige Eigenwert einer Mode\\
+	$k_z$: Wellenzahl in z-Richtung\\
+	Grenzfrequenz: Unterhalb keine Wellenausbreitung möglich.\\
+	Dispersion = frequenzabhängig\\
+
+	Welle im zylindrischen Wellenleiter, Felder aufgetrennt in longitudinale und transversale Komponenten.
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}}
+		Welle in +z-Richtung\\
+		$\vec{E}(u, v, z)=\left[\vec{E}_{t}(u, v)+\vec{e}_{z} E_{z}\right] \mathrm{e}^{-\gamma z}$\\
+		$\vec{H}(u, v, z)=\left[\vec{H}_{t}(u, v)+\vec{e}_{z} H_{z}\right] \mathrm{e}^{-\gamma z}$ \\
+		$\nabla=\nabla_{t}+\vec{e}_{z} \frac{\partial}{\partial z}$\\
+		$\nabla^{2}=\Delta=\nabla_{t}^{2}+\frac{\partial^{2}}{\partial z^{2}}$ \\
+	\end{tablebox}
+	Mit dem Ansatz
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
+		$\vec{A}=\vec{e}_{z} \psi_{E}, \vec{F}=0$ & $\vec{F}=\vec{e}_{z} \psi_{H}, \vec{A}=0$ \\
+		$\psi_{E}=\psi_{Et} \mathrm{e}^{-\gamma_{E} z}$ & $\psi_{H}=\psi_{Ht} \mathrm{e}^{-gamma_{H} z}$\\
+	\end{tablebox}
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}}
+		$\vec{E}=\frac{1}{j \omega \varepsilon \mu} \nabla \times \nabla \times \vec{A}=-\frac{\gamma_{E}}{j \omega \varepsilon \mu} \nabla_{t} \psi_{E}-\vec{e}_{z} \frac{\nabla_{t}^{2} \psi_{E}}{j \omega \varepsilon \mu}$\\
+		$\vec{H}=\frac{1}{\mu} \nabla \times \vec{A}=-\vec{e}_{z} \times \frac{1}{\mu} \nabla_{t} \psi_{E}$\\
+		$\vec{H_z}=0$\\\\
+
+		$\vec{E}=-\frac{1}{\varepsilon} \nabla \times \vec{F}=\vec{e}_{z} \times \frac{1}{\varepsilon} \nabla_{t} \psi_{H}$\\
+		$\vec{E_z}=0$\\
+		$\vec{H}=\frac{1}{j \omega \varepsilon \mu} \nabla \times \nabla \times \vec{F}=-\frac{\gamma_{H}}{j \omega \varepsilon \mu} \nabla_{t} \psi_{H}-\vec{e}_{z} \frac{\nabla_{t}^{2} \psi_{H}}{j \omega \varepsilon \mu}$
+	\end{tablebox}
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
+		E (TM) – Moden / Feldtypen & H (TE) – Moden / Feldtypen \\
+		$\vec{E}_{t}=-\frac{\gamma_{E}}{j \omega \varepsilon \mu} \nabla_{t} \psi_{E t}$ & $\vec{E}_{t}=\vec{e}_{z} \times \frac{1}{\varepsilon} \nabla_{t} \psi_{H t}$\\
+		$\vec{H}_{t}=-\vec{e}_{z} \times \frac{1}{\mu} \nabla_{t} \psi_{E t}$ & $\vec{H}_{t}=-\frac{\gamma_{H}}{j \omega \varepsilon \mu} \nabla_{t} \psi_{H t}$ \\
+		$\vec{e}_{z} \times \vec{E}_{t}=Z_{F E} \vec{H}_{t}$ & $\vec{e}_{z} \times \vec{E}_{t}=Z_{F H} \vec{H}_{t}$ \\
+		Feldwellen(typ)widerstand: & \\
+		$Z_{F E}=\frac{\gamma_{E}}{j \omega \varepsilon}$ & $Z_{F H}=\frac{j \omega \mu}{\gamma_{H}}$ \\
+	\end{tablebox}
+	Die transversalen E- und H-Felder stehen bei beiden Feldtypen senkrecht aufeinander.
+	Die Feldwellen(typ)widerstände sind ortsunabhängig konstant
+	$\gamma=\sqrt{q^{2}-k^{2}}$\\
+	Für Eigenwerte:
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
+		$q<=k$ & $q>k$\\
+		$\gamma =j\beta, \alpha=0$ Wellentyp & $\gamma = \alpha, \beta=0$ Dämpfungstyp\\
+		Wellenlänge: $\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}}$ & \\
+		$Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$ & \\
+		$Z_{F E}=\frac{\gamma_{E}}{j \omega \varepsilon}=\frac{\beta_{E}}{\omega \varepsilon}=\frac{\lambda_{H E W}}{\lambda_{g}} Z_{F}$ &\\\\
+		&\hspace{-5em}$Z_{F H}=\frac{j \omega \mu}{\gamma_{H}}=\frac{\omega \mu}{\beta_{H}}=\frac{\lambda_{g}}{\lambda_{H E W}} Z_{F}$\\
+	\end{tablebox}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Geschwindigkeiten}
+	\vspace{1em}
+	Phasengeschwindigkeiten
+	\begin{emphbox}
+		$v_{p}=\frac{\omega}{\beta}=\frac{\omega}{\sqrt{\omega^{2} \varepsilon \mu-q^{2}}}=\frac{v \frac{f}{f_{c}}}{\sqrt{\left(\frac{f}{f_{c}}\right)^{2}}-1}$\\
+		$v=\frac{1}{\sqrt{\varepsilon \mu}}=v_{\mathrm{HEW}}$
+	\end{emphbox}
+	Gruppengeschwindigkeit
+	\begin{emphbox}
+		$\frac{1}{v_{g}}=\frac{d \beta}{d \omega}=\frac{d}{d \omega}\left\{\frac{2 \pi}{\lambda_{g}}\right\}=\frac{\omega \varepsilon \mu}{\sqrt{\omega^{2} \varepsilon \mu-q^{2}}}$\\
+		$v_{g}=\frac{v}{\frac{f}{f_{c}}} \sqrt{\left(\frac{f}{f_{c}}\right)^{2}}-1$
+	\end{emphbox}
+	Die Phasengeschwindigkeit ist größer als die Ausbreitungsgeschwindigkeit einer homogenen ebenen Welle im freien Raum (Lichtgeschwindigkeit) und geht bei Annäherung an die Cut-off-Frequenz gegen Unendlich.\\
+	Die Gruppengeschwindigkeit, die maßgeblich ist für Energie- und Informationstransport, ist jedoch immer kleiner als die Lichtgeschwindigkeit und geht bei der Cut-off-Frequenz gegen Null.
+	\begin{center}\includegraphics[width = 5cm]{./img/geschwindigkeiten.png}\end{center}
+\end{sectionbox}
+
+\begin{sectionbox}
 	\subsection{Nah- und Fernfeld (im Freien Raum)}
 	
 	\begin{center}\includegraphics[width = 2.3cm]{./img/fernfeld.png}\end{center}
