@@ -1277,12 +1277,19 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \begin{sectionbox}
 	\subsection{Hohlleiter}
 	Dispersionsrelation (Eigenwertgleichung) einer Mode (Feldverteilung):\\
-	$k^{2}=k_{x}^{2}+k_{y}^{2}+k_{z}^{2}=q^{2}+k_{z}^{2}$\\
-	mit $k=\omega\sqrt{\varepsilon_0\mu_0}=\frac{2\pi f}{c}$, wenn $k_z=0 \rightarrow$ Grenzfrequenz $f_c=\frac{cq}{2\pi}$\\
+	\begin{emphbox}
+		$k^{2}=k_{x}^{2}+k_{y}^{2}+k_{z}^{2}=q^{2}+k_{z}^{2} = (\frac{m\pi}{a})^2+(\frac{n\pi}{b})^2 + k_z^2$\\
+		mit $k=\omega\sqrt{\varepsilon_0\mu_0}=\frac{2\pi f}{c}$, wenn $k_z=0 \rightarrow$ Grenzfrequenz $f_c=\frac{cq}{2\pi}$\\
+	\end{emphbox}
 	q: der modenspezifische, geometrieabhängige Eigenwert einer Mode\\
 	$k_z$: Wellenzahl in z-Richtung\\
 	Grenzfrequenz: Unterhalb keine Wellenausbreitung möglich.\\
 	Dispersion = frequenzabhängig\\
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}}
+		$\gamma = \alpha + j\beta$ Ausbreitungskonstante\\
+		$ k = \beta - j \alpha$ Wellenzahl\\
+		$\gamma = jk$
+	\end{tablebox}
 
 	Welle im zylindrischen Wellenleiter, Felder aufgetrennt in longitudinale und transversale Komponenten.
 	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}}
@@ -1316,11 +1323,11 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\end{tablebox}
 	Die transversalen E- und H-Felder stehen bei beiden Feldtypen senkrecht aufeinander.
 	Die Feldwellen(typ)widerstände sind ortsunabhängig konstant
-	$\gamma=\sqrt{q^{2}-k^{2}}$\\
+	$\gamma=\sqrt{q^{2}-k^{2}}$ (Ausbreitungskonstante)\\
 	Für Eigenwerte:
 	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
-		$q<=k$ & $q>k$\\
-		$\gamma =j\beta, \alpha=0$ Wellentyp & $\gamma = \alpha, \beta=0$ Dämpfungstyp\\
+		$q<=k$ Ausbreitungstyp & $q>k$ Dämpfungstyp\\
+		$\gamma =j\beta, \alpha=0$ Wellentyp & $\gamma = \alpha, \beta=0$\\
 		Wellenlänge: $\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}}$ & \\
 		$Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$ & \\
 		$Z_{F E}=\frac{\gamma_{E}}{j \omega \varepsilon}=\frac{\beta_{E}}{\omega \varepsilon}=\frac{\lambda_{H E W}}{\lambda_{g}} Z_{F}$ &\\\\
