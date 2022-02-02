@@ -52,7 +52,7 @@
 \newcommand{\comment}[1]{\textcolor{red}{#1}}
 
 \usepackage{multirow}
-
+\usepackage{booktabs}
 
 % ======================================================================
 % Begin
@@ -1081,7 +1081,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \end{sectionbox}
 \begin{sectionbox}
 	\subsection{Eindeutigkeitstheorem}
-	\textbf{Frage}: Unter welchen Voraussetzungen (Randbedingungnen) ist die Feldlösung in einem durch $A$ geschlossenen Lösungsgebiet für eine Anregung eindeutig bestimmt?\\
+	\textbf{Frage}: Unter welchen Voraussetzungen (Randbedingungen) ist die Feldlösung in einem durch $A$ geschlossenen Lösungsgebiet für eine Anregung eindeutig bestimmt?\\
 	\begin{center}\includegraphics[width = 4cm]{./img/eindeutigkeitsthm.png}\end{center}
 	\textbf{Ansatz}: Nehme an, es gäbe zwei Feldlösungen der MWG $\vec{E}_1, \vec{H}_1$ und $\vec{E}_2, \vec{H}_2$ im gleichen Gebiet $V_b$ mit gleicher Anregung $\vec{J}, \vec{M}$. Durch Differenzbildung der Lösungen, Einsetzen in die MWG (1-2), und Erweiterung mit $\delta \vec{H}^{*}$ bzw. $\delta \vec{E}$, Differenzbildung, Satz v. Gauß ergibt sich:
  	$\iiint_{V_{b}} \nabla \cdot\left(\delta \vec{E}(\vec{r}) \times \delta \vec{H}^{*}(\vec{r})\right) d v \quad=\oiint_{A}\left(\delta \vec{E}(\vec{r}) \times \delta \vec{H}^{*}(\vec{r})\right) \cdot d\vec{a} = \iiint_{V_{b}}\left[-j \omega \mu(\vec{r})|\delta \vec{H}(\vec{r})|^{2}+j \omega \varepsilon^{*}(\vec{r})|\delta \vec{E}(\vec{r})|^{2}\right] d v$.\\
@@ -1127,6 +1127,9 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 	\textbf{Für idealen elektrischen Leiter (PEC)}:\\
 	Da keine mag. Ströme existieren: $\vec{M}_{1} = \vec{M}_{2} = 0$.\\
+	$\vec{n} \times \vec{E} = \vec{0}$\\
+	\textbf{Für idealen magnetischen Leiter (PMC)}:\\
+	$\vec{n} \times \vec{H} = \vec{0}$
 	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
 		$\iiint_{V}\left(\vec{E}_{1} \cdot \vec{J}_{2}\right) d v=\iiint_{V}\left(\vec{E}_{2} \cdot \vec{J}_{1}\right) d v$		
 	\end{tablebox}
@@ -1193,6 +1196,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\end{tablebox}
 	\textbf{Idee:} \comment{Kurze Beschreibung der Vorteile der Darstellung (Entkopplung v. Gleichungen, Entfernen von Redundanz in MWG, Modellierungsfreiheit, Green'sche Funktionen skalar)}
 \end{sectionbox}
+
 \begin{sectionbox}
 	\subsection{Dualität}
 	Besitzen zwei Gleichungssysteme, die unterschiedliche physikalische Phänomene beschreiben, die gleiche mathematische Form, so nehmen ihre Lösungen die gleiche mathematische Form an.
@@ -1206,23 +1210,44 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\end{itemize}
 \end{sectionbox}
 
+
 \begin{sectionbox}
 	\subsection{Green'sche Funktionen}
 	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
-	Green‘sche Funktion des magnetischen Vektorpotentials\\
-	$\vec{G}^{A}\left(\vec{r}, \vec{r}^{\prime}\right)=\mu \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \vec{I}$\\
-	Green‘sche Funktion des elektrischen Vektorpotentials\\
-	$\vec{G}^{F}\left(\vec{r}, \vec{r}^{\prime}\right)=\varepsilon \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \vec{I}$\\
-	Elektrischen Feldes bei Anregung mit elektrischen Strömen\\
-	$\vec{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right)=-j \omega \mu\left[\left(\vec{I}+\frac{1}{k^{2}} \nabla \nabla\right) \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|}\right]$\\
-	Magnetischen Feldes bei Anregung mit elektrischen Strömen\\
-	$\vec{G}_{J}^{H}\left(\vec{r}, \vec{r}^{\prime}\right)=\nabla \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \times \vec{I}$\\
-	Elektrisches Feld, Anregung mit magnetischen Strömen\\
-	$\vec{G}_{M}^{E}\left(\vec{r}, \vec{r}^{\prime}\right)=-\nabla \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \times \vec{I}$\\
-	Magnetisches Feld, Anregung mit magnetischen Strömen\\
-	$\vec{G}_{M}^{H}\left(\vec{r}, \vec{r}^{\prime}\right)=-j \omega \varepsilon\left[\left(\vec{I}+\frac{1}{k^{2}} \nabla \nabla\right) \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|}\right]$\\
+		$\vec{r}:$ Beobachtungsvektor, $\vec{r}^{\prime}:$ Quellvektor, $k=\frac{\omega}{c}=\varepsilon\mu\omega^2$\\
+		Green'sche Funktion des magnetischen Vektorpotentials\\
+		$\vec{G}^{A}\left(\vec{r}, \vec{r}^{\prime}\right)=\mu \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \overleftrightarrow{I}$\\
+		Green'sche Funktion des elektrischen Vektorpotentials\\
+		$\vec{G}^{F}\left(\vec{r}, \vec{r}^{\prime}\right)=\varepsilon \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \overleftrightarrow{I}$\\
+		Elektrischen Feldes bei Anregung mit elektrischen Strömen\\
+		$\vec{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right)=-j \omega \mu\left[\left(\overleftrightarrow{I}+\frac{1}{k^{2}} \nabla \nabla\right) \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|}\right]$\\
+		Magnetischen Feldes bei Anregung mit elektrischen Strömen\\
+		$\vec{G}_{J}^{H}\left(\vec{r}, \vec{r}^{\prime}\right)=\nabla \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \times \overleftrightarrow{I}$\\
+		Elektrisches Feld, Anregung mit magnetischen Strömen\\
+		$\vec{G}_{M}^{E}\left(\vec{r}, \vec{r}^{\prime}\right)=-\nabla \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \times \overleftrightarrow{I}$\\
+		Magnetisches Feld, Anregung mit magnetischen Strömen\\
+		$\vec{G}_{M}^{H}\left(\vec{r}, \vec{r}^{\prime}\right)=-j \omega \varepsilon\left[\left(\overleftrightarrow{I}+\frac{1}{k^{2}} \nabla \nabla\right) \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|}\right]$\\
 	\end{tablebox}
-	Beispiel: $\vec{E}\left(\vec{r}\right) = \iiint\limits_{V}\vec{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}\left(\vec{r^{\prime}}\right)\,dv $
+
+	Beispiel: $\vec{E}\left(\vec{r}\right) = \iiint\limits_{V}\vec{G}_{J}^{E}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}\left(\vec{r^{\prime}}\right)\,dv $\\
+	$\vec{A}\left(\vec{r}\right) = \iiint\limits_{V}\vec{G}^{A}\left(\vec{r}, \vec{r}^{\prime}\right) \cdot \vec{J}\left(\vec{r^{\prime}}\right)\,dv $
+
+	Elektrisches Feld, Anregung mit elektrischen Strömen. Ist das magnetische Vektorpotential gegeben, gilt für das elektrische Feld\\
+	\begin{emphbox}
+		$\vec{E}(\vec{r})=-j \omega\left[\vec{A}(\vec{r})+\frac{1}{k^{2}} \nabla \nabla \cdot \vec{A}(\vec{r})\right]$\\
+		$\vec{E}(\vec{r})=-j \omega\left[\overleftrightarrow{I}+\frac{1}{k^{2}} \nabla \nabla\right] \cdot \vec{A}(\vec{r})$		
+		mit $k=\frac{\omega}{c}=\varepsilon\mu\omega^2$\\
+	\end{emphbox}
+	Magnetisches Feld, Anregung mit elektrischen Strömen.Ist das magnetische Vektorpotential gegeben, gilt für das magnetische Feld\\
+	\begin{emphbox}
+		$\vec{H}(\vec{r})=\frac{1}{\mu} \nabla \times \vec{A}(\vec{r})$\\
+	\end{emphbox}
+	\begin{center}\includegraphics[width = 6.5cm]{green_zsm.png}\end{center}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Spiegelungsprinzip}
+	\begin{center}\includegraphics[width = 6.5cm]{spiegelungsprinzip.png}\end{center}
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -1305,6 +1330,229 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	Nutze Rechte-Hand-Regel für schnelle Berechnung von Kreuzprodukten.
 \end{sectionbox}
 
+\section{Hohlleiter}
+\begin{sectionbox}
+	\subsection{Hohlleiter}
+	\textbf{Dispersionsrelation} (Eigenwertgleichung) in karteischen Koordinaten:
+	\begin{emphbox}
+		$k^{2}=k_{x}^{2}+k_{y}^{2}+k_{z}^{2}$\\
+		$q^2 = k_{x}^{2}+k_{y}^{2}$
+	\end{emphbox}
+	Wellenzahl im Freiraum: $k = \omega\sqrt{\varepsilon \mu} = \frac{\omega}{c} = \frac{2\pi f}{c} = \frac{2\pi}{\lambda}$\\
+	Wellenzahl in z-Richtung: $k_z = \sqrt{k^2 - q^2}$\\
+	q: geometrieabhängiger Eigenwert einer Mode\\
+	Dispersion: frequenzabhängige Ausbreitungsgeschwindigkeit\\
+
+	Ausbreitungskonstante: $\gamma = \alpha + j\beta jk$\\
+	Wellenzahl: $ k = \beta - j \alpha$\\
+
+	\textbf{Grenzfrequenz} $f_c$:\\
+	Unterhalb $f_c$ ist keine Wellenausbreitung möglich $\rightarrow k_z = 0$ bei $f = f_c$ 
+	\begin{emphbox}
+		$f_c = \frac{qc}{2\pi}$
+	\end{emphbox}
+	
+	\textbf{Ausbreitungstyp} $q\leq k$ bzw. $f_c \leq f$:\\
+	$\gamma = j\beta$, $\alpha=0$, $\beta = \sqrt{k^2 - q^2}$\\
+
+	% Ausbreitungseigenschaften:
+	\begin{emphbox}
+		$\frac{k_z}{k} = \frac{\lambda}{\lambda_G} = \sqrt{1- \left(\frac{f_c}{f}\right)^2}$\\
+		$\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}} \geq \lambda$ (g: guided)\\
+		$Z_{F H} = \frac{j \omega \mu}{\gamma_{H}}=\frac{\omega \mu}{\beta_{H}}=\frac{Z_{F}}{\sqrt{1 - \left(\frac{f_c}{f}\right)^2}}$\\
+		$Z_{F E} = \frac{\gamma_{E}}{j \omega \varepsilon}=\frac{\beta_{E}}{\omega \varepsilon}=\sqrt{1 - \left(\frac{f_c}{f}\right)^2}Z_{F}$\\
+	\end{emphbox}
+	H-Mode: $Z_{F H} = \frac{E_x}{H_y} = -\frac{E_y}{H_x} > Z_F$\\
+	E-Mode: $Z_{F E} = \frac{E_x}{H_y} = -\frac{E_y}{H_x} < Z_F$\\
+	Wellenwiderstand im freien Raum (TEM): $Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$\\
+	Die Feldwellenwiderstände sind ortsunabhängig konstant.\\
+
+	\textbf{Dämpfungstyp} $k < q$ bzw. $f < f_c$: $\gamma = \alpha, \quad \beta=0$\\
+
+	% Wellenlänge: $\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}}$ & \\
+	% $Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$ & \\
+	% 	$Z_{F E}=\frac{\gamma_{E}}{j \omega \varepsilon}=\frac{\beta_{E}}{\omega \varepsilon}=\frac{\lambda_{H E W}}{\lambda_{g}} Z_{F}$ &\\\\
+	% 	&\hspace{-5em}$Z_{F H}=\frac{j \omega \mu}{\gamma_{H}}=\frac{\omega \mu}{\beta_{H}}=\frac{\lambda_{g}}{\lambda_{H E W}} Z_{F}$\\
+
+	%Welle im zylindrischen Wellenleiter, Felder aufgetrennt in longitudinale und transversale Komponenten.
+	%\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}}
+	% 	Welle in +z-Richtung\\
+	% 	$\vec{E}(u, v, z)=\left[\vec{E}_{t}(u, v)+\vec{e}_{z} E_{z}\right] \mathrm{e}^{-\gamma z}$\\
+	% 	$\vec{H}(u, v, z)=\left[\vec{H}_{t}(u, v)+\vec{e}_{z} H_{z}\right] \mathrm{e}^{-\gamma z}$ \\
+	% 	$\nabla=\nabla_{t}+\vec{e}_{z} \frac{\partial}{\partial z}$\\
+	% 	$\nabla^{2}=\Delta=\nabla_{t}^{2}+\frac{\partial^{2}}{\partial z^{2}}$ \\
+	% \end{tablebox}
+	% Mit dem Ansatz
+	% \begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
+	% 	$\vec{A}=\vec{e}_{z} \psi_{E}, \vec{F}=0$ & $\vec{F}=\vec{e}_{z} \psi_{H}, \vec{A}=0$ \\
+	% 	$\psi_{E}=\psi_{Et} \mathrm{e}^{-\gamma_{E} z}$ & $\psi_{H}=\psi_{Ht} \mathrm{e}^{-gamma_{H} z}$\\
+	% \end{tablebox}
+	% \begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}}
+	% 	$\vec{E}=\frac{1}{j \omega \varepsilon \mu} \nabla \times \nabla \times \vec{A}=-\frac{\gamma_{E}}{j \omega \varepsilon \mu} \nabla_{t} \psi_{E}-\vec{e}_{z} \frac{\nabla_{t}^{2} \psi_{E}}{j \omega \varepsilon \mu}$\\
+	% 	$\vec{H}=\frac{1}{\mu} \nabla \times \vec{A}=-\vec{e}_{z} \times \frac{1}{\mu} \nabla_{t} \psi_{E}$\\
+	% 	$\vec{H_z}=0$\\\\
+
+	% 	$\vec{E}=-\frac{1}{\varepsilon} \nabla \times \vec{F}=\vec{e}_{z} \times \frac{1}{\varepsilon} \nabla_{t} \psi_{H}$\\
+	% 	$\vec{E_z}=0$\\
+	% 	$\vec{H}=\frac{1}{j \omega \varepsilon \mu} \nabla \times \nabla \times \vec{F}=-\frac{\gamma_{H}}{j \omega \varepsilon \mu} \nabla_{t} \psi_{H}-\vec{e}_{z} \frac{\nabla_{t}^{2} \psi_{H}}{j \omega \varepsilon \mu}$
+	% \end{tablebox}
+	
+	% Die transversalen E- und H-Felder stehen bei beiden Feldtypen senkrecht aufeinander.
+	% Die Feldwellen(typ)widerstände sind ortsunabhängig konstant.
+	% $\gamma=\sqrt{q^{2}-k^{2}}$ (Ausbreitungskonstante)\\
+
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Geschwindigkeiten}
+	% übertrieben komplizierte Gleichgung aus der VL die man nie braucht: \frac{\omega}{\sqrt{\omega^{2} \varepsilon \mu-q^{2}}}=\frac{v \frac{f}{f_{c}}}{\sqrt{\left(\frac{f}{f_{c}}\right)^{2}}-1}
+	% $v=\frac{1}{\sqrt{\varepsilon \mu}}=v_{\mathrm{HEW}}$
+	% Johannes: habe die Gleichungen aus der Übung genommen
+	\textbf{Phasengeschwindigkeit}
+	\begin{emphbox}
+		$v_{p}=\frac{\omega}{\beta}$ $\Rightarrow$ $\frac{v_p}{c} = \frac{1}{\sqrt{1 - \left(\frac{f_c}{f}\right)^2}}$\\
+	\end{emphbox}
+
+	% noch eine: \frac{\omega \varepsilon \mu}{\sqrt{\omega^{2} \varepsilon \mu-q^{2}}}
+	% $v_{g}=\frac{v}{\frac{f}{f_{c}}} \sqrt{\left(\frac{f}{f_{c}}\right)^{2}}-1$
+	% \frac{d}{d \omega}\left\{\frac{2 \pi}{\lambda_{g}}\right\}
+
+	\textbf{Gruppengeschwindigkeit}
+	\begin{emphbox}
+		$v_{g}= \left(\frac{d \beta}{d \omega}\right)^{-1}$ $\Rightarrow$ $\frac{v_G}{c} = \frac{k_z}{k} = \sqrt{1-\left(\frac{f_c}{f}\right)^2}$\\
+	\end{emphbox}
+	Reziproker Zusammenhang: $v_g v_p = c^2$\\
+
+	\begin{itemize}
+		\item $v_p > c$ ($c$ ist Lichtgeschwindigkeit im freien Raum)
+		\item $v_g < c$ (maßgeblich für Energie- und Informationstransport)
+	\end{itemize}
+	\begin{center}\includegraphics[width = 5cm]{./img/geschwindigkeiten.png}\end{center}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Übersicht 5-Komponenten Felder}
+	Ansatz: trenne Welle in longitudinalen und transversalen Anteil auf (Ausbreitung in +z-Richtung):\\
+	$\begin{aligned}
+		&\vec{E}(u, v, z)=\left[\vec{E}_{t}(u, v)+\vec{e}_{z} E_{z}\right] \mathrm{e}^{-\gamma z} \\
+		&\vec{H}(u, v, z)=\left[\vec{H}_{t}(u, v)+\vec{e}_{z} H_{z}\right] \mathrm{e}^{-\gamma z}
+	\end{aligned}$\\
+
+	Resultierende Differentaloperatoren:\\
+	$\nabla=\nabla_{t}+\vec{e}_{z} \frac{\partial}{\partial z}$\\
+	$\nabla^{2}=\Delta=\nabla_{t}^{2}+\frac{\partial^{2}}{\partial z^{2}}$ \\
+
+	Je nach Ansatz ergeben sich E (TM)- und H (TE)-Moden:\\
+	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
+		E (TM) – Moden / Feldtypen & H (TE) – Moden / Feldtypen \\
+		$\vec{A}=\vec{e}_{z} \psi_{E}, \quad \vec{F}=0$ & $\vec{F}=\vec{e}_{z} \psi_{H}, \quad \vec{A}=0$\\
+		$\psi_{E}=\psi_{E t} \mathrm{e}^{-\gamma_{E} z}$ & $\psi_{H}=\psi_{H t} \mathrm{e}^{-\gamma_{H} z}$\\
+		$\rightarrow H_z = 0$ & $\rightarrow E_z = 0$\\
+		\midrule
+		$\vec{E}_{t}=-\frac{\gamma_{E}}{j \omega \varepsilon \mu} \nabla_{t} \psi_{E t}$ & $\vec{E}_{t}=\vec{e}_{z} \times \frac{1}{\varepsilon} \nabla_{t} \psi_{H t}$\\
+		$\vec{H}_{t}=-\vec{e}_{z} \times \frac{1}{\mu} \nabla_{t} \psi_{E t}$ & $\vec{H}_{t}=-\frac{\gamma_{H}}{j \omega \varepsilon \mu} \nabla_{t} \psi_{H t}$ \\
+		$\vec{e}_{z} \times \vec{E}_{t}=Z_{F E} \vec{H}_{t}$ & $\vec{e}_{z} \times \vec{E}_{t}=Z_{F H} \vec{H}_{t}$ \\
+		Feldwellen(typ)widerstand: & \\
+		$Z_{F E}=\frac{\gamma_{E}}{j \omega \varepsilon}$ & $Z_{F H}=\frac{j \omega \mu}{\gamma_{H}}$ \\
+	\end{tablebox}
+	Kenntniss der z-Kompenente reicht zur Berechnung der übrigen 4 Komponenten.
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{E (TM)-Moden in kartesischen Koordinaten}
+	\begin{center}\includegraphics[width = 4cm]{./img/TM-kartesisch.png}\end{center}
+\end{sectionbox}
+ 
+\begin{sectionbox}
+	\subsection{H (TE)-Moden in kartesischen Koordinaten}
+	\begin{center}\includegraphics[width = 4cm]{./img/TE-kartesisch.png}\end{center}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{E (TM)-Moden in Zylinderkoordinaten}
+	\begin{center}\includegraphics[width = 4cm]{./img/TE-zylinder.png}\end{center}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{H (TE)-Moden in Zylinderkoordinaten}
+	\begin{center}\includegraphics[width = 4cm]{./img/TM-zylinder.png}\end{center}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Übergang zu TEM}
+	E (TM) - Moden/Feldtypen:\\
+	$\gamma_E = jk$ $\rightarrow$ $q_E = 0$ $\rightarrow$ $\Delta_t\psi_{Et} = 0$ $\rightarrow$ $E_z = H_z = 0$\\
+
+	H (TE) - Moden/Feldtypen:\\
+	$\gamma_H = jk$ $\rightarrow$ $q_H = 0$ $\rightarrow$ $\Delta_t\psi_{Ht} = 0$ $\rightarrow$ $E_z = H_z = 0$\\
+	
+	Für $\psi_{E} = \psi_{H}$ stehen die Felder beider Typen senkrecht aufeinander. $\rightarrow$ Die E- und H- Felder beider Typen sind miteinander vertauscht. Der autretende Feldtyp wird durch die Randbedingungen bestimmt.
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Ansatz im Rechteck Hohlleiter}
+	Randbedingungen: $E_{\text{tan}} = 0$ auf $x = [0;a]$ und $y = [0,b]$\\
+	Separationsansatz: $\psi_{H t}(x, y)=H_{0} X(x) Y(y)$ bzw. $\psi_{E t}(x, y)=E_{0} X(x) Y(y)$\\
+	$\rightarrow$ unabhängige Lösung von $X(x)$ und $Y(y)$\\
+
+	\textbf{TM(E)-Moden}:\\
+	$\psi_{E t}=\frac{j \omega \varepsilon \mu}{q_{E}^{2}} E_{0} \sin \left(\frac{m \pi}{a} x\right) \sin \left(\frac{n \pi}{b} y\right)$\\
+	\textbf{TE(H)-Moden}:\\
+	$\psi_{H t}=\frac{j \omega \varepsilon \mu}{q_{H}^{2}} H_{0} \cos \left(\frac{m \pi}{a} x\right) \cos \left(\frac{n \pi}{b} y\right)$\\
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{TE(H)-Moden im Rechteck Hohlleiter}
+	\textbf{$\text{H}_{mn}$-Mode}:\\
+	$E_z = 0$
+	\begin{center}\includegraphics[width = 4cm]{./img/Hmn.png}\end{center}
+
+	%Lösung für $m=n=0$ nicht möglich ohne die Randbedingungen zu verletzen.\\
+
+	\textbf{$\text{H}_{10}$-Mode}:
+	\begin{center}\includegraphics[width = 4cm]{./img/H10.png}\end{center}
+	\includegraphics[width = 2.5cm]{./img/H10-comb.jpeg}\includegraphics[width = 4.2cm]{./img/H10-bild2.png}
+	\textbf{$\text{H}_{11}$-Mode}:\\
+	\includegraphics[width = 2.5cm]{./img/H11-bild1.png}\includegraphics[width = 4.2cm]{./img/H11-bild2.png}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{TM(E)-Moden im Rechteck Hohlleiter}
+	\textbf{$\text{E}_{mn}$-Mode}: $m,n \geq 1$\\
+	$H_z = 0$
+	\begin{center}\includegraphics[width = 4cm]{./img/Emn.png}\end{center}
+
+	\textbf{$\text{E}_{11}$-Mode}:\\
+	\includegraphics[width = 6.8cm]{./img/E11-bild1.png}
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Rechteck Hohlleiter}
+	Dispersionsrelation:
+	\begin{emphbox}
+		$k_x^2 + k_y^2 + k_z^2 = (\frac{m\pi}{a})^2+(\frac{n\pi}{b})^2 + k_z^2$\\
+		$k_x = \frac{m\pi}{a}$ und $k_y = \frac{n\pi}{b}$\\
+	\end{emphbox}
+	
+	\begin{emphbox}
+		$f_c = \frac{c}{2}\sqrt{\left(\frac{m}{a}\right)^2+\left(\frac{n}{b}\right)^2}$ (= $\frac{c}{2a}$ für $\text{TE}_{10}$)\\
+		$\lambda_c = \frac{c}{f_c}$, $\beta_c = \frac{2\pi}{\lambda_c}$\\
+	\end{emphbox}
+	
+	\begin{itemize}
+		\item meist nur einwelliger Betrieb sinnvoll (Dispersion) $\rightarrow$ nur TE(H)$_{10}$
+		\item maximale Leistung erfordert maximales $b$
+		\item minimale Verluste erfordert maximales $a$ und $b$
+		\item maximaler Einwelligkeitsbereicht erfordert minimales $b$
+	\end{itemize}
+	$\Rightarrow$ $b = a / 2$ für maximalen Einwelligkeitsbereich und geringe Verluste
+
+	\begin{center}\includegraphics[width = 4cm]{./img/hohlleiter-reflexion.png}\end{center}
+	$\sin \alpha=\sqrt{1-\left(\frac{\lambda_{H E W}}{2 a}\right)^{2}}$, $\cos \alpha=\frac{\lambda_{H E W}}{2 a}$\\
+
+	\comment{bis Folie 219}
+\end{sectionbox}
+
 \begin{sectionbox}
 	\subsection{Smithchart Tricks}
 
@@ -1314,8 +1562,6 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	$C=\frac{y_C / j}{Z_0 \omega} \quad L = \frac{Z_0}{(-y_L / j) \omega}$\\
 \end{sectionbox}
 
-
-
 \section{Antennen}
 \begin{sectionbox}
 	\subsection{Basics schonmal vorab für Altklausuren}
@@ -1324,14 +1570,11 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	$S_{ij, \text{dB}} = 20\text{lg}(S_{ij} / 10)$\\
 \end{sectionbox}
 
-
 \section{Tricks aus Altklausuren}
 \begin{sectionbox}
 	\subsection{Näherungen}
 	$w/2$ sehr klein: $\int\limits_{-w/2}^{w/2}f(x^{\prime}) d x^{\prime} \approx w f(0)$\\
 \end{sectionbox}
-
-
 % ======================================================================
 % End
 % ======================================================================
