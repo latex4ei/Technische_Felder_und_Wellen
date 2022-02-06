@@ -1564,10 +1564,203 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 \section{Antennen}
 \begin{sectionbox}
-	\subsection{Basics schonmal vorab für Altklausuren}
-	$P_R = P_0 (1 - |r|^2)G_tG_r\left(\frac{\lambda}{4\pi d}\right)^2$\\
-	$G_{\text{dBi}} = 10\text{lg}(G / 10)$\\
-	$S_{ij, \text{dB}} = 20\text{lg}(S_{ij} / 10)$\\
+Antennen sind Wellentypwandler, der geführte Leitungswelle in sich frei ausbreitende Welle umwandelt und umgekehrt.
+Ziele bei Antennendesigns:
+\begin{itemize}
+	\item keine Reflexion
+	\item keine Verluste
+\end{itemize}
+Charakterisierung der Antenneneigenschaften unter \textbf{Fernfeldbedingungen}.
+$D$ ist der Durchmesser der minimalen Hüllfläche, welche die Antenne umschließt.
+Antennenfeldzonen:
+\begin{center}\includegraphics[width = \textwidth]{./img/antennen_feldzonen.png}
+\end{center}
+\subsection{Isotroper Kugelstrahler}
+Beim isotropen Kugelstrahler verteilt sich der Leistungsfluss gleichmäßig auf eine umschließende Kugeloberfläche.
+Isotroper Kugelstrahler kann nicht realisiert werden 
+Abgestrahlte Leistung: $4\pi r^2 S_I = P_t$
+
+$$S_I = \frac{P_t}{4\pi r^2}$$
+
+\begin{center}\includegraphics[width = 0.25\textwidth]{./img/antennen_isotroper_strahler.png}
+\end{center}
+\subsection{Sektorstrahler}
+Ein Sektorstrahler mit scharfen Kanten kann auch nicht realisiert werden!
+Leistung wird über einen Sektor gleichmäßig verteilt:
+
+$$P_t \approx S r \pi_{a} r \theta^{'} = S r \Omega_{a}$$
+
+\begin{center}\includegraphics[width = 4cm]{./img/antennen_sektor_strahler.png}
+\end{center}
+\end{sectionbox}
+
+\begin{sectionbox}
+\subsection{Ersatzschaltbilder- Sendeantenne}
+\includegraphics[width = \textwidth]{./img/antenne_sende_ersatz.png}
+
+\includegraphics[width = \textwidth]{./img/antenne_sende_ersatz_02.png}
+
+
+Eingangsreflexion
+$r = \frac{Z - Z_0}{Z + Z_0} = \frac{Y - Y_0}{Y + Y_0}$
+
+Gute Impedanzanpassung einer Antenne für:
+
+$|S_{11}|^2 < 0.1$$ oder $$20\log_{10} |S_{11}| < -10\text{db}$
+
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Ersatzschaltbilder- Empfangsantenne}
+	\includegraphics[width = \textwidth]{./img/antenne_empfang_ersatz.png}
+\end{sectionbox}	
+\begin{sectionbox}
+	
+	\includegraphics[width = \textwidth]{./img/antenne_empfang_ersatz_02.png}
+	
+	
+$U_0$ und $I_0$ repräsentieren das Empfangssignal.
+\end{sectionbox}
+\begin{sectionbox}
+\subsection{Strahlungscharakteristik}
+Die Strahlungscharakteristik für Empfangs- und Sendeantenne sind identisch. Dies folgt aus dem Reziprozitätstheorem:
+$$
+C_{t}(\vartheta, \varphi)=C_{r}(\vartheta, \varphi)
+$$
+Gewinn der Transmittantenne \textbf{Tx}: 
+$$G_{t}=\left(\frac{S}{S_{I}}\right)_{P_{t_{0}}}
+\quad 
+\frac{g_{t}}{\mathrm{dBi}}=10 \lg G_{t}
+$$
+Richtfaktor, Directivity von \textbf{Tx}:
+$$
+D_{t}=\left(\frac{S}{S_{I}}\right)_{P_{t}}=\frac{1}{\eta} G_{t}
+\quad 
+\frac{d_{t}}{\mathrm{dBi}}=10 \lg D_{t}
+$$
+Abgestrahlte Leistung von \textbf{Tx}:
+$$
+P_{t}=\iint_{\text {Sphere }} \vec{S}(\vartheta, \varphi) \cdot d \vec{A}
+$$
+Berechnung von $D$ aus Strahlungscharakteristik $C( \vartheta , \varphi)$:
+\begin{emphbox}
+$$
+D=\frac{S_{\max }}{S_{I}}=\frac{S_{\max } 4 \pi r^{2}}{P_{t}} \quad S_{I}=\frac{P_{t}}{4 \pi r^{2}}
+$$
+$$
+D=\frac{4 \pi}{\iint|C(\vartheta, \varphi)|^{2} \sin \vartheta d \vartheta d \varphi} \quad \sin \vartheta d \vartheta d \varphi=d \Omega$$
+$$ \iint|C(\vartheta, \varphi)|^{2} \sin \vartheta d \vartheta d \varphi=\Omega_{a}\quad
+D=\frac{4 \pi}{\Omega_{a}}
+$$
+$$
+D \approx \frac{4 \pi}{\varphi_{3 \mathrm{~dB}} \vartheta_{3 \mathrm{~dB}}^{\prime}}
+$$
+\end{emphbox}
+\end{sectionbox}                         
+\begin{sectionbox}
+Nimmt man den $3$dB Abfall der Leistung als scharfe Grenze kann man ein Antennendiagramm in einen 3D-Sektorstrahler überführen.
+	\includegraphics[width = \textwidth]{./img/antenne_3d_sektor.png}
+	
+\begin{emphbox}
+$$
+S(\vartheta, \varphi)=\left\{\begin{array}{c}
+	S_{\max }: \text { in } \Omega_{a} \\
+	0 \text { : sonst }
+\end{array}\right. \quad
+D \approx \frac{4 \pi}{\varphi_{3 \mathrm{~dB}} \vartheta_{3 \mathrm{~dB}}^{\prime}}
+$$
+\end{emphbox}
+\end{sectionbox}
+\begin{sectionbox}
+\subsection{Effektive Wirkfläche}
+Einer Antenne kann eine effektive Wirkfläche zugeordnet werden, da sie aus dem Poynting-Vektor gemäß der Wirkfläche Leistung zieht. $P_{r,\max} = A_e S$.\\
+\includegraphics[width=\textwidth]{./img/antenne_eff_fläche.png}
+\begin{emphbox}
+Effektive Wirkfläche: $A_e = \frac{P_{r,\max}}{S}$
+$$
+A_{e}(\vartheta, \varphi)=A_{e, \max }\left|C_{r}(\vartheta, \varphi)\right|^{2}
+$$
+Theoretische Wirkfläche (maximale Wirkfläche:)
+$$A_0 = \frac{P_{r0, \max}}{S}$$
+
+Maximale Empfangsleistung: $P_{r0, \max}$
+
+
+Reziprozität:
+$$
+A_{0}(\vartheta, \varphi)=\frac{\lambda^{2}}{4 \pi} D(\vartheta, \varphi), A_{e}(\vartheta \quad \varphi)=\frac{\lambda^{2}}{4 \pi} G(\vartheta, \varphi)=$$
+$$
+\eta A_{0}(\vartheta, \varphi)
+$$
+\end{emphbox}
+\end{sectionbox}
+\begin{sectionbox}
+\subsection{Hertz'scher Dipol}
+Es wird eine negative und eine positive Ladung im Abstand von $\ell$ 
+im Raum angebracht. Zusammen bilden die Ladungen einen elektrischen Dipol, der sich im Ursprung befindet. Für $\ell \to 0$ und $q \to \infty$, aber $\ell q = \text{konst}$ ergibt sich der ideale elektrische Dipol.\\
+Der Hertz'sche Dipol ist ein idealer elektrische Dipol, welcher mit der Frequenz $\omega$ oszilliert.
+Die oszillierenden Ladungen erzeugen einen Strom $I=j\omega q$. Somit ist die Amplitude des  Hertz'schen Dipols $I\ell = j\omega q \ell$.
+
+$$
+\vec{J}(\vec{r})=j \omega q \ell \delta(\vec{r}) \vec{e}_{z}=I \ell \delta(\vec{r}) \vec{e}_{z}
+$$
+\begin{center}
+	\includegraphics[width=0.5\textwidth]{./img/antennen_fritz_gerald.png}
+\end{center}
+$$
+\vec{A}(\vec{r})=I \ell \iiint_{V} \mu \frac{\mathrm{e}^{-j k\left|\vec{r}-\vec{r}^{\prime}\right|}}{4 \pi\left|\vec{r}-\vec{r}^{\prime}\right|} \delta\left(\vec{r}^{\prime}\right) d v^{\prime} \vec{e}_{z}
+$$
+\begin{emphbox}
+$$
+\vec{A}(\vec{r})=\mu I \ell \frac{\mathrm{e}^{-j k r}}{4 \pi r} \vec{e}_{z}
+$$
+\end{emphbox}
+Komplette Lösung des elektrischen Feldes $\vec{E}$ und magnetischen Feldes $\vec{H}$
+$$
+\begin{aligned}
+	\vec{E} &=-j \omega\left(\vec{A}+\frac{1}{k^{2}} \nabla \nabla \cdot \vec{A}\right) \\
+	&=Z_{F} k I \ell \frac{\mathrm{e}^{-j k r}}{2 \pi r}\left(\frac{1}{k r}+\frac{1}{j k^{2} r^{2}}\right) \cos \vartheta \vec{e}_{r}\\
+	&+j Z_{F} k I \ell \frac{\mathrm{e}^{-j k r}}{4 \pi r}\left(1+\frac{1}{j k r}-\frac{1}{k^{2} r^{2}}\right) \sin \vartheta \vec{e}_{\vartheta}
+\end{aligned}
+$$
+$$
+\vec{H}=\frac{1}{\mu} \nabla \times \vec{A}=j k I \ell \frac{\mathrm{e}^{-j k r}}{4 \pi r}\left(1+\frac{1}{j k r}\right) \sin \vartheta \vec{e}_{\varphi}
+$$
+\end{sectionbox}
+\begin{sectionbox}
+\subsection{Hertz'scher Dipol - Fernfeld}
+Im Fernfeld gilt $r >> \lambda$ oder $kr >> 2\pi$. Es können damit alle Terme mit $1/r^2$ oder höher vernachlässigt werden. Das elektrische Feld $\vec{E}$ und magnetische Feld $\vec{H}$ im Fernfeld besitzen somit folgende Formen:
+\begin{emphbox}
+$$
+\vec{E} \approx 0 \vec{e}_{r}+j Z_{F} k I \ell \frac{\mathrm{e}^{-j k r}}{4 \pi r} \sin \vartheta \vec{e}_{\vartheta}
+$$
+$$
+\vec{H} \approx j k I \ell \frac{\mathrm{e}^{-j k r}}{4 \pi r} \sin \vartheta \vec{e}_{\varphi}
+$$
+$$
+\vec{S}=\frac{1}{2} \vec{E} \times \vec{H}^{*}=\mathrm{Z}_{F} k^{2} \frac{|I|^{2} \ell^{2}}{32 \pi^{2} r^{2}} \sin ^{2} \vartheta \vec{e}_{r}
+$$
+\end{emphbox}
+Effektiv bedeutet das, dass im Fernfeld $\vec{E}$ und $\vec{H}$ \textbf{senkrecht} aufeinander stehen und ein reiner \textbf{Wirkleistungstransport} stattfindet!
+Die Amplituden von elektrischen und magnetischem Feld sind über den Feldwellenwiderstand verknüpft:
+$$
+E_{\vartheta}=Z_{F} H_{\varphi}
+$$
+Für den Hertz'schen Dipol im Fernfeld lässt sich ein Strahlungswiderstand ermitteln.
+\textbf{Strahlungswiderstand}
+$$
+R_{r}=\frac{2 P}{|I|^{2}}=Z_{F} \frac{k^{2} \ell^{2}}{6 \pi}=80 \pi^{2} \frac{\ell^{2}}{\lambda^{2}}
+$$
+\textbf{Richtcharakteristik}
+$$
+D=\frac{4 \pi r^{2} Z_{F} \cdot k^{2} \frac{|I|^{2} \ell^{2}}{32 \pi^{2} r^{2}}}{Z_{F} \frac{k^{2}|I|^{2} \ell^{2}}{12 \pi}}=1,5=1,76 \mathrm{dBi}
+$$
+\end{sectionbox}
+
+\begin{sectionbox}
+\subsection{Basics schonmal vorab für Altklausuren}
+$P_R = P_0 (1 - |r|^2)G_tG_r\left(\frac{\lambda}{4\pi d}\right)^2$\\
+$G_{\text{dBi}} = 10\text{lg}(G / 10)$\\
+$S_{ij, \text{dB}} = 20\text{lg}(S_{ij} / 10)$\\
 \end{sectionbox}
 
 \section{Tricks aus Altklausuren}
