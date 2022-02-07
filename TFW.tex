@@ -1315,7 +1315,10 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		Divergenzoperator im Fernfeld:\\
 		$\nabla \cdot \vec{A} \approx -jk \vec{e}_r \cdot \vec{A}$\\
 	\end{emphbox}
-	\textbf{Sphärische Feldkomponenten im Fernfeld}:
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Sphärische Feldkomponenten im Fernfeld}
 	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
 		Felder aufgrund elektr. Ströme: & \\
 			$\vec{H}_1(\vec{r}) = -\frac{jk}{\mu}\vec{e}_r \times \vec{A}(\vec{r})$ & $\vec{E}_1(\vec{r}) = -j\omega \left(\vec{A}(\vec{r}) - \vec{e}_rA_r(\vec{r})\right)$\\
@@ -1353,7 +1356,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	q: geometrieabhängiger Eigenwert einer Mode\\
 	Dispersion: frequenzabhängige Ausbreitungsgeschwindigkeit\\
 
-	Ausbreitungskonstante: $\gamma = \alpha + j\beta jk$\\
+	Ausbreitungskonstante: $\gamma = \alpha + j\beta = jk$\\
 	Wellenzahl: $ k = \beta - j \alpha$\\
 
 	\textbf{Grenzfrequenz} $f_c$:\\
@@ -1378,7 +1381,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	Die Feldwellenwiderstände sind ortsunabhängig konstant.\\
 
 	\textbf{Dämpfungstyp} $k < q$ bzw. $f < f_c$: $\gamma = \alpha, \quad \beta=0$\\
-
+	siehe Abschnitt: Dämpfungstyp
 	% Wellenlänge: $\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}}$ & \\
 	% $Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$ & \\
 	% 	$Z_{F E}=\frac{\gamma_{E}}{j \omega \varepsilon}=\frac{\beta_{E}}{\omega \varepsilon}=\frac{\lambda_{H E W}}{\lambda_{g}} Z_{F}$ &\\\\
@@ -1439,6 +1442,20 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\end{itemize}
 	\begin{center}\includegraphics[width = 5cm]{./img/geschwindigkeiten.png}\end{center}
 \end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Dämpfungstyp (evaeszente Moden)}
+	kein Leistungstransport: $Z_{\text{FH}}$ bzw. $Z_{\text{FE}}$ ist imaginär $\rightarrow$ $90^\circ$ zwischen Querfeldstärken\\
+	Exponentieller Dämpfungsfaktor:\\
+	$\alpha=\frac{2 \pi}{\lambda_{H E W}} \sqrt{\left(\frac{\lambda_{H E W}}{\lambda_{c}}\right)^{2}-1}=\underbrace{\frac{2 \pi}{\lambda_{c}}}_{\alpha_{c}} \sqrt{1-\left(\frac{f}{f_{c}}\right)^{2}}$\\
+	Dämpfung einer Schirmung:\\ 
+	$\frac{\alpha}{\mathrm{Np}}=\alpha(a) l=\underbrace{\frac{\pi}{a}}_{\alpha_c} \sqrt{1-\left(\frac{\lambda_{c}}{\lambda_{H E W}}\right)^{2}} l$\\
+	\begin{center}\includegraphics[width = 1.8cm]{./img/hl-schirmung.png}\includegraphics[width = 2.5cm]{./img/hl-schirmung3.png}\includegraphics[width = 2.5cm]{./img/hl-daempfung.png}\end{center}
+	Spezialfall: Achse durch Gehäuse\\
+	\begin{center}\includegraphics[width = 4cm]{./img/hl-schirmung2.jpeg}\end{center}
+	Dielektrische Achse: $\alpha_{c}=\frac{2 \pi}{1,71 D}$ bestimmt Dämpfung\\
+\end{sectionbox}
+
 
 \begin{sectionbox}
 	\subsection{Übersicht 5-Komponenten Felder}
@@ -1618,6 +1635,32 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	Dielektrische Verluste sind bereits perfekt über die feldtheoretischen Ansatz abgedeckt.\\
 	Sie sind von Bedeutung in substratintegrieten Hohlleitern.\\
 	$\alpha_{D} \approx \frac{1}{2} \beta_{0} \sqrt{\varepsilon_{r}^{\prime}} \tan \delta_{\varepsilon} \frac{\frac{f}{f_{c}}}{\sqrt{\left(\frac{f}{f_{c}}\right)^{2}-1}}$\\
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Runde Hohlleiter}
+	Separationsansatz führt auf Bessel'sche Differentialgleichung\\
+	H-Feld Typen:\\
+	$\psi_{H t}=\frac{j \omega \varepsilon \mu}{q_{H}^{2}} H_{0} R(\rho) \cos \left(m \varphi-\varphi_{0}\right)$\\ 
+	Randbedingung: $\left.\frac{\partial}{\partial \rho} R(\rho)\right|_{\rho=D / 2}=0$\\
+	Lösung: $H_{z}=H_{0} J_{m}\left(\beta_{c} \rho\right) \cos \left(m \varphi-\varphi_{0}\right) \mathrm{e}^{-j \beta z}$\\
+	TE(H)$_{11}$-Mode$\quad\quad\quad\quad\quad\quad\quad\quad\quad$TE(H)$_{01}$-Mode
+	\begin{center}\includegraphics[width = 3.4cm]{./img/hl-rund-h11.png}\includegraphics[width = 3.4cm]{./img/hl-rund-h01.jpeg}\end{center}
+	\textbf{TE(H)$_{11}$-Mode}:\\
+	magnetischer Grundwellentyp\\
+	11: m=1 und 1. Nullstelle der Ableitung der Besselfkt 1. Ordnung\\
+	Technisch relevant für die Speisung von Hörnern\\
+	$\phi = 0$ und $\phi = \pi / 2$ ergeben symmetrische orthogonale Wellen:\\
+	\begin{center}\includegraphics[width = 6cm]{./img/hl-rund-h11_2.png}\end{center}
+	\textbf{TE(H)$_{01}$-Mode}:\\
+	rotationssymmetrisch, fehlende Längsströme $\rightarrow$ geringe Dämpfung
+	\begin{center}\includegraphics[width = 6cm]{./img/hl-rund-h01_2.png}\end{center}
+	TH(E)$_{mn}$-Mode$\quad\quad\quad\quad\quad\quad\quad\quad\quad$TH(E)$_{01}$-Mode:
+	\begin{center}\includegraphics[width = 3.4cm]{./img/hl-rund-emn.png}\includegraphics[width = 3.4cm]{./img/hl-rund-e01.png}\end{center}
+	\textbf{TH(E)$_{01}$-Mode}:\\ 
+	rotationssymmetrisch $\rightarrow$ Rotationskopplungen
+	\begin{center}\includegraphics[width = 6cm]{./img/hl-rund-e01_2.png}\end{center}
+
 \end{sectionbox}
 
 \section{Antennen}
