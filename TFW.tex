@@ -392,7 +392,6 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell und $\mathbf{k}\cdot\mathbf{k} 
 		\item $\mathbf{H} = \frac{1}{Z_F}(\mathbf{e}_k \times \mathbf{E}_0) e^{-j\mathbf{k}\cdot \mathbf{r}} $
 		\item $\mathbf{k} = k \mathbf{e}_k$, \quad $k=\omega\sqrt{\epsilon\mu}$
 		\item Leistungstransport: $\mathbf{S} = \frac{\mathbf{e}_k}{2Z^*_F}  \mathbf{E} \cdot \mathbf{E} = \frac{\mathbf{e}_k Z^*_F}{2}\mathbf{H}\cdot\mathbf{H}^*$
-		
 	\end{itemize}
 \textbf{2. Fall}: $\alpha \cdot \beta = 0$
 \begin{itemize}
@@ -480,6 +479,17 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell und $\mathbf{k}\cdot\mathbf{k} 
 		\item Die zweite Teilwelle ist eine reflexionsfreie "Oberflächenwelle" entlang der Grenzfläche
 	\end{itemize}
 \end{sectionbox}
+
+% passt hier vom Layout am besten hin
+\begin{sectionbox}
+	\subsection{Smithchart Tricks}
+
+	\textbf{Impedanz $\rightarrow$ Bauteilwert}\\
+	$L=\frac{(z_L / j)Z_0}{\omega} \quad C=\frac{1}{(-z_C / j)Z_0\omega}$\\
+	\textbf{Admittanz $\rightarrow$ Bauteilwert}\\
+	$C=\frac{y_C / j}{Z_0 \omega} \quad L = \frac{Z_0}{(-y_L / j) \omega}$\\
+\end{sectionbox}
+
 \begin{sectionbox}
 	\subsection{Gauß'scher Strahl}
 	\begin{emphbox}
@@ -1410,7 +1420,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	% Johannes: habe die Gleichungen aus der Übung genommen
 	\textbf{Phasengeschwindigkeit}
 	\begin{emphbox}
-		$v_{p}=\frac{\omega}{\beta}$ $\Rightarrow$ $\frac{v_p}{c} = \frac{1}{\sqrt{1 - \left(\frac{f_c}{f}\right)^2}}$\\
+		$v_{p}=\frac{\omega}{\beta}$ $\Rightarrow$ $\frac{v_p}{c} = \frac{1}{\sqrt{1 - \left(\frac{f_c}{f}\right)^2}} > 1$\\
 	\end{emphbox}
 
 	% noch eine: \frac{\omega \varepsilon \mu}{\sqrt{\omega^{2} \varepsilon \mu-q^{2}}}
@@ -1419,7 +1429,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 	\textbf{Gruppengeschwindigkeit}
 	\begin{emphbox}
-		$v_{g}= \left(\frac{d \beta}{d \omega}\right)^{-1}$ $\Rightarrow$ $\frac{v_G}{c} = \frac{k_z}{k} = \sqrt{1-\left(\frac{f_c}{f}\right)^2}$\\
+		$v_{g}= \left(\frac{d \beta}{d \omega}\right)^{-1}$ $\Rightarrow$ $\frac{v_G}{c} = \frac{k_z}{k} = \sqrt{1-\left(\frac{f_c}{f}\right)^2} < 1$\\
 	\end{emphbox}
 	Reziproker Zusammenhang: $v_g v_p = c^2$\\
 
@@ -1459,24 +1469,26 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \end{sectionbox}
 
 \begin{sectionbox}
-	\subsection{E (TM)-Moden in kartesischen Koordinaten}
-	\begin{center}\includegraphics[width = 4cm]{./img/TM-kartesisch.png}\end{center}
+	\subsection{E (TM) und H (TE)-Moden in kartesischen Koordinaten}
+	E (TM)-Moden$\quad\quad\quad\quad\quad\quad\quad\quad\quad$ H (TE)-Moden
+	\begin{center}\includegraphics[width = 3.4cm]{./img/TM-kartesisch.png}\includegraphics[width = 3.4cm]{./img/TE-kartesisch.png}\end{center}
 \end{sectionbox}
  
-\begin{sectionbox}
-	\subsection{H (TE)-Moden in kartesischen Koordinaten}
-	\begin{center}\includegraphics[width = 4cm]{./img/TE-kartesisch.png}\end{center}
-\end{sectionbox}
+% \begin{sectionbox}
+% 	\subsection{H (TE)-Moden in kartesischen Koordinaten}
+% 	\begin{center}\end{center}
+% \end{sectionbox}
 
 \begin{sectionbox}
-	\subsection{E (TM)-Moden in Zylinderkoordinaten}
-	\begin{center}\includegraphics[width = 4cm]{./img/TE-zylinder.png}\end{center}
+	\subsection{E (TM) und H (TE)-Moden in Zylinderkoordinaten}
+	E (TM)-Moden$\quad\quad\quad\quad\quad\quad\quad\quad\quad$ H (TE)-Moden
+	\begin{center}\includegraphics[width = 3.4cm]{./img/TM-zylinder.png}\includegraphics[width = 3.4cm]{./img/TE-zylinder.png}\end{center}
 \end{sectionbox}
 
-\begin{sectionbox}
-	\subsection{H (TE)-Moden in Zylinderkoordinaten}
-	\begin{center}\includegraphics[width = 4cm]{./img/TM-zylinder.png}\end{center}
-\end{sectionbox}
+% \begin{sectionbox}
+% 	\subsection{H (TE)-Moden in Zylinderkoordinaten}
+% 	\begin{center}\end{center}
+% \end{sectionbox}
 
 \begin{sectionbox}
 	\subsection{Übergang zu TEM}
@@ -1532,34 +1544,80 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\begin{emphbox}
 		$k_x^2 + k_y^2 + k_z^2 = (\frac{m\pi}{a})^2+(\frac{n\pi}{b})^2 + k_z^2$\\
 		$k_x = \frac{m\pi}{a}$ und $k_y = \frac{n\pi}{b}$\\
+		$q^2 = (\frac{m\pi}{a})^2+(\frac{n\pi}{b})^2$
 	\end{emphbox}
 	
 	\begin{emphbox}
 		$f_c = \frac{c}{2}\sqrt{\left(\frac{m}{a}\right)^2+\left(\frac{n}{b}\right)^2}$ (= $\frac{c}{2a}$ für $\text{TE}_{10}$)\\
 		$\lambda_c = \frac{c}{f_c}$, $\beta_c = \frac{2\pi}{\lambda_c}$\\
 	\end{emphbox}
+
+	In der Nähe der Grenzfrequenz wird der Hohlleiter extrem dispersiv $\rightarrow$ Betriebsbereich von 1.25 bis 1.9 der unteren Grenzfrequenz.\\
+
+	Nützliche Umformungen:\\
+	$\frac{Z_F}{\omega\mu} = \frac{1}{k}$\\
 	
+	Wahl der Geometrie:
 	\begin{itemize}
 		\item meist nur einwelliger Betrieb sinnvoll (Dispersion) $\rightarrow$ nur TE(H)$_{10}$
 		\item maximale Leistung erfordert maximales $b$
 		\item minimale Verluste erfordert maximales $a$ und $b$
 		\item maximaler Einwelligkeitsbereicht erfordert minimales $b$
 	\end{itemize}
-	$\Rightarrow$ $b = a / 2$ für maximalen Einwelligkeitsbereich und geringe Verluste
+	$\Rightarrow$ $b = a / 2$ für maximalen Einwelligkeitsbereich und optimalen Leistungsfestigkeit\\
 
+	Interpretation als Überlagerung ebener Wellen:\\
 	\begin{center}\includegraphics[width = 4cm]{./img/hohlleiter-reflexion.png}\end{center}
 	$\sin \alpha=\sqrt{1-\left(\frac{\lambda_{H E W}}{2 a}\right)^{2}}$, $\cos \alpha=\frac{\lambda_{H E W}}{2 a}$\\
-
-	\comment{bis Folie 219}
 \end{sectionbox}
 
 \begin{sectionbox}
-	\subsection{Smithchart Tricks}
+	\subsection{Stromkreise im Rechteck Hohlleiter (H$_{10}$-Mode)}
+	\begin{center}\includegraphics[width = 3.5cm]{./img/stromkreise-hl.jpeg}\end{center}
+	Stromkreise werden duch Verschiebungsströme geschlossen.
+	\begin{center}\includegraphics[width = 4cm]{./img/strom-hl.jpeg}\end{center}
+	Resonanzfrequenz des Parallelresonators = Cut-off Frequenz $f_c$
+\end{sectionbox}
 
-	\textbf{Impedanz $\rightarrow$ Bauteilwert}\\
-	$L=\frac{(z_L / j)Z_0}{\omega} \quad C=\frac{1}{(-z_C / j)Z_0\omega}$\\
-	\textbf{Admittanz $\rightarrow$ Bauteilwert}\\
-	$C=\frac{y_C / j}{Z_0 \omega} \quad L = \frac{Z_0}{(-y_L / j) \omega}$\\
+\begin{sectionbox}
+	\subsection{Wandstromverluste, Störungsrechnung}
+	1. Bestimme Feldverteilung unter Annahme idealer Leitfähigkeit\\
+	2. Berechne transportierte Leistung\\
+	$P=\int_{y=0}^{b} \int_{x=0}^{a} \operatorname{Re}\left\{S_{z}\right\} d x d y$\\
+	3. Betrachte Strom im differentiellen Skin-Schicht Element ringsrum
+	\begin{center}\includegraphics[width = 2.5cm]{./img/verluste-hl.png}\includegraphics[width = 2.5cm]{./img/hl-verluste2.png}\end{center}
+	4. Berechne differentielle Verluste im Volumenelement (verwende $R_{\square}$)\\
+	5. Integriere entlang der Seitenwände des Querschnitts $\rightarrow$ $\Delta P_{1,2,3} / \Delta z$\\
+	6. Bestimme Dämpfungskonstante (mit $\Delta P = \Delta P_{1}+\Delta P_{2}+\Delta P_{3})$:\\ 
+	$\begin{aligned}
+		&P(z)=P(0) \mathrm{e}^{-2 \alpha z} \\
+		&\rightarrow \frac{d P(z)}{d z}=P(0)(-\alpha) 2 \mathrm{e}^{-2 \alpha z}=-\alpha 2 P(z) \\
+		&\rightarrow \alpha=-\frac{1}{2} \frac{d P(z)}{d z} \frac{1}{P(z)}
+		\end{aligned}$\\
+
+	\textbf{In H$_{10}$}:\\
+	Transportierte Leistung: $\rightarrow = \frac{a b}{4} \frac{\left|E_{0}\right|^{2}}{\operatorname{Re}\left\{Z_{F H}\right\}}$\\
+	Differentielle Verluste (nach Integration über Querschnitt):\\
+	$\Delta P_{1}=-\frac{1}{4} R_{\square} a \frac{\left|E_{0}\right|^{2}}{\left|Z_{F H}\right|^{2}} \Delta z$\\
+	$\Delta P_{2}=-\frac{1}{4} R_{\square} a \frac{\left|E_{0}\right|^{2}}{\left|Z_{F 0}\right|^{2}}\left(\frac{\lambda_{0}}{2 a}\right)^{2} \Delta z$ \\
+	$\Delta P_{3}=-\frac{1}{2} R_{\square} b \frac{\left|E_{0}\right|^{2}}{\left|Z_{F 0}\right|^{2}}\left(\frac{\lambda_{0}}{2 a}\right)^{2} \Delta z$\\
+	\begin{emphbox}
+		Dämpfungskonstante:\\
+		$\alpha=\frac{R_{\square}}{Z_{F 0}} \frac{\frac{1}{b}+\frac{2}{a}\left(\frac{\lambda_{0}}{2 a}\right)^{2}}{\sqrt{1-\left(\frac{\lambda_{0}}{2 a}\right)^{2}}}$\\ 
+		$P(z) = P(0) e^{-2\alpha z}$ 
+	\end{emphbox}
+
+	Längsverluste $\Delta P_{1}$: $\alpha \sim \sqrt{f}$ wegen $R_{\square}=\sqrt{\frac{\omega \mu_{0}}{2 \kappa}}$\\ 
+	Querverluste $\Delta P_{2}, \Delta P_{3}$: $\alpha \sim R_{\square} \lambda_{0}{ }^{2} \sim \frac{\sqrt{f}}{f^{2}}|_{f \rightarrow \infty} \rightarrow 0$\\ 
+	Bei steigenden Frequenzen überwiegen die Längsverluste, die Querverluste gehen langesam gegen 0.
+
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Dielektrische Verluste}
+	Dielektrische Verluste sind bereits perfekt über die feldtheoretischen Ansatz abgedeckt.\\
+	Sie sind von Bedeutung in substratintegrieten Hohlleitern.\\
+	$\alpha_{D} \approx \frac{1}{2} \beta_{0} \sqrt{\varepsilon_{r}^{\prime}} \tan \delta_{\varepsilon} \frac{\frac{f}{f_{c}}}{\sqrt{\left(\frac{f}{f_{c}}\right)^{2}-1}}$\\
 \end{sectionbox}
 
 \section{Antennen}
@@ -1673,7 +1731,7 @@ $$
 \begin{sectionbox}
 \subsection{Effektive Wirkfläche}
 Einer Antenne kann eine effektive Wirkfläche zugeordnet werden, da sie aus dem Poynting-Vektor gemäß der Wirkfläche Leistung zieht. $P_{r,\max} = A_e S$.\\
-\includegraphics[width=\textwidth]{./img/antenne_eff_fläche.png}
+\includegraphics[width=\textwidth]{./img/antenne_eff_flaeche.png}
 \begin{emphbox}
 Effektive Wirkfläche: $A_e = \frac{P_{r,\max}}{S}$
 $$
