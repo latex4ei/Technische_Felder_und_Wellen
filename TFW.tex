@@ -1861,14 +1861,90 @@ $$
 D=\frac{4 \pi r^{2} Z_{F} \cdot k^{2} \frac{|I|^{2} \ell^{2}}{32 \pi^{2} r^{2}}}{Z_{F} \frac{k^{2}|I|^{2} \ell^{2}}{12 \pi}}=1,5=1,76 \mathrm{dBi}
 $$
 \end{sectionbox}
-
 \begin{sectionbox}
+\subsection{Fritzgerald Dipol}
+Der Fritzgerald Dipol ist das duale Element zum Hertzschen Dipol. Anstatt elektrischer Ladung werden hier zwei magnetische Ladungen $q_m$ im Abstand von $\ell$ im Raum angebracht.
+Die magnetische Stromdichte ist: $I_m \ell$.
+$$
+\vec{M}(\vec{r})=j \omega q_{m} \ell \delta(\vec{r}) \vec{e}_{z}=I_{m} \ell \delta(\vec{r}) \vec{e}_{z}
+$$
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./img/antennen_fritz_gerald_dipol.png}
+\end{center}
+
+\begin{emphbox}
+\begin{flushleft}
+\textbf{Elektrisches Vektorpotential}\\
+$\vec{F}(\vec{r})=\varepsilon I_{m} \ell \frac{\mathrm{e}^{-j k r}}{r} \vec{e}_{z}$
+\end{flushleft}
+\end{emphbox}
+Komplette Lösung des Feldes für Fritzgerald Dipol:\\
+
+$\begin{aligned} \vec{E} &=-\frac{1}{\varepsilon} \nabla \times \vec{F}=-j k I_{m} \ell \frac{\mathrm{e}^{-j k r}}{4 \pi r}\left(1+\frac{1}{j k r}\right) \sin \vartheta \vec{e}_{\varphi} \\ \vec{H} &=-j \omega\left(\vec{F}+\frac{1}{k^{2}} \nabla \nabla \cdot \vec{F}\right) \\ &=\frac{k I_{m} \ell}{Z_{F}} \frac{\mathrm{e}^{-j k r}}{2 \pi r}\left(\frac{1}{k r}+\frac{1}{j k^{2} r^{2}}\right) \cos \vartheta \vec{e}_{r}\\
+&+j \frac{k I_{m} \ell}{Z_{F}} \frac{\mathrm{e}^{-j k r}}{4 \pi r}\left(1+\frac{1}{j k r}-\frac{1}{k^{2} r^{2}}\right) \sin \vartheta \vec{e}_{\vartheta} \end{aligned}$
+
+\end{sectionbox}
+\begin{sectionbox}
+\begin{sectionbox}
+\subsection{Äquivalenz Ringstrom - Stromelement}
+Ein elektrischer Ringstrom mit Amplitude $I$, welcher die Fläche $A$ umschließt ist für: $A\to 0$, $I \to \infty$ und $AI = \text{konst}$ äquivalent zu einem magnetischen Stromelement.\\
+Analog ist ein magnetischer Ringstrom $I_m$ äquivalent zu einem elektrischen Stromelement, wenn die Grafik wie unten gezeigt gilt:\\
+\includegraphics[width=\textwidth]{./img/antennen_ringstrom_zwei.png}
+\end{sectionbox}
 \subsection{Basics schonmal vorab für Altklausuren}
 $P_R = P_0 (1 - |r|^2)G_tG_r\left(\frac{\lambda}{4\pi d}\right)^2$\\
 $G_{\text{dBi}} = 10\text{lg}(G / 10)$\\
 $S_{ij, \text{dB}} = 20\text{lg}(S_{ij} / 10)$\\
 \end{sectionbox}
+\begin{sectionbox}
+\begin{sectionbox}
+\subsection{Charakteristische Größen von Antennen}
+In den nachfolgenden Abschnitten gilt folgende Indizierung:\\
+\begin{emphbox}
+\begin{flushleft}
+t:=Sendefall \\
+r:=Empfangsfall,\\
+0:=ohne Verluste,\\
+max := Hauptstrahlrichtung/-empfangsrichtung.
+\end{flushleft}
 
+\end{emphbox}
+\end{sectionbox}
+\subsection{Senden}
+$$
+\begin{array}{ll}	
+
+	\text { Gesendete Leistung (ohne } & P_{t 0} \\
+	\text { Verluste) } & P_{t} \\
+	\text { Gesendete Leistung } & S(r, \vartheta, \varphi) \\
+	\text { Leistungsflussdichte } & S_{i}(r)=\frac{P}{4 \pi r^{2}} \\
+	\text { Leistungsflussdichte (isotroper } & \\
+	\text { Kugelstrahler) } & C_{t}(\vartheta, \varphi)=\left.\frac{E(\vartheta, \varphi)}{E_{\max }}\right|_{r=\mathrm{konst}} \\
+	\text { Strahlungscharakteristik } & D_{t}=\left.\frac{S_{\max }}{S_{i}}\right|_{P_{t}}=\frac{4 \pi r^{2} S_{\max }}{P_{t}} \\
+	\text { Direktivität } & G_{t}=\left.\frac{S_{\max }}{S_{i}}\right|_{P_{t 0}}=\frac{4 \pi r^{2} S_{\max }}{P_{t 0}} \\
+	\text { Gewinn } & \eta_{t}=\frac{G_{t}}{D_{t}}
+\end{array}
+$$
+\end{sectionbox}
+\begin{sectionbox}
+\subsection{Empfangen}
+$\begin{array}{ll}\text { Empfangene Leistung (ohne } & P_{r 0} \\ \text { Verluste) } & P_{r} \\ \text { Empfangene Leistung } & \\ & \\ \text { Empfangscharakteristik } & C_{r}(\vartheta, \varphi)=\left.\frac{U(\vartheta, \varphi)}{U_{\max }}\right|_{S=\text { konst. }} \\ \text { effektive Wirkfläche (ohne } & A_{0}=\frac{P_{r 0, \max }}{S}=\frac{\lambda^{2}}{4 \pi} D_{r} \\ \text { Verluste) } & A_{e}=\frac{P_{r, \max }}{S}=\frac{\lambda^{2}}{4 \pi} G_{r} \\ \text { effektive Wirkfläche } & \eta_{r}=\frac{A_{e}}{A_{0}} \\ \text { Wirkungsgrad (ohmsche } & \end{array}$
+\end{sectionbox}
+\begin{sectionbox}
+
+\begin{emphbox}
+\begin{flushleft}
+Effektive Wirkfläche 	$A_{e}=\frac{\lambda^{2}}{4 \pi}G_{\mathrm{r}}$\\
+Sendeantenne optimal ausgerichtet:\\
+$\left|C_{t}(\vartheta, \varphi)\right|=1 \quad \Rightarrow \quad S(r, \vartheta, \varphi)=S_{\max }(r)$\\
+Empfangsantenne optimal ausgerichtet:\\
+$\left|C_{r}(\vartheta, \varphi)\right|=1 \quad \Rightarrow \quad P_{\mathrm{r}}=P_{\mathrm{r}, \max }$
+\end{flushleft}
+\end{emphbox}
+\end{sectionbox}
+\begin{sectionbox}
+	\includegraphics[width=10cm, angle=90]{./img/antennen_blockdiagram.png}
+\end{sectionbox}
 \section{Tricks aus Altklausuren}
 \begin{sectionbox}
 	\subsection{Näherungen}
