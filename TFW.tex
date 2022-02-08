@@ -302,15 +302,15 @@ Im guten Leiter $\kappa >> \omega\epsilon$ gilt:
 	\item[2.] In einer dünnen Schicht unter der Oberfläche existieren nennenswerte Stromdichten
 	\item[3.] Für die Verluste sind also nur die obersten Schichten (die Haut) des Leiters entscheidend
 \end{itemize}
-Für die Stromverteilung im Leiter gilt: $J_z = J_z(0)\cdot e^{-ky}\cdot e^{-jky}$ mit $k = \sqrt{\frac{\omega\mu\kappa}{2}}\quad[\frac{1}{m}]$\\
+Für die Stromverteilung im Leiter gilt: $J_z = J_z(0) e^{-ky} e^{-jky}$ mit $k = \sqrt{\frac{\omega\mu\kappa}{2}}\quad[\frac{1}{m}]$\\
 Der Kehrwert der Abklingkonstante/Wellenzahl $k$ wird als Eindringtiefe bezeichnet. Das Amplitude der Stromdichte ist nach dieser Tiefe auf $1/e$ abgefallen.
 \begin{emphbox}
-Eindringtiefe: $\delta = \frac{1}{k} = \sqrt{\frac{2}{\omega \mu \kappa}}$
+Eindringtiefe: $\delta = \frac{1}{k} = \sqrt{\frac{2}{\omega \mu \kappa}}$, $J_z = J_z(0) e^{-ky} e^{-jky}$
 \end{emphbox}
 Die Verluste im Material lassen sich berechnen (Platte mit Querschnitt $\delta \cdot a$)\\
 \begin{tabular*}{\columnwidth}{ll}
 	Oberflächenresistanz & $R_S = \frac{\omega\mu}{2\kappa} \quad [\Omega]$ \\
-	Oberflächenimpedanz & $Z_S = R_S\cdot(1+j)$ \\
+	Oberflächenimpedanz & $Z_S = R_S(1+j)$ \\
 	Verluste durch Oberflächenströme & $P_J = \frac{1}{2} \iint R_S |H_0|^2 d\mathbf{A}$ \\
 \end{tabular*}
 \begin{tabular*}{\columnwidth}{ll}
@@ -1356,8 +1356,8 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	q: geometrieabhängiger Eigenwert einer Mode\\
 	Dispersion: frequenzabhängige Ausbreitungsgeschwindigkeit\\
 
-	Ausbreitungskonstante: $\gamma = \alpha + j\beta = jk$\\
-	Wellenzahl: $ k = \beta - j \alpha$\\
+	Ausbreitungskonstante in z-Richtung: $\gamma = \alpha + j\beta = jk_z$\\
+	Wellenzahl in z-Richtung: $ k_z = \beta - j \alpha$\\
 
 	\textbf{Grenzfrequenz} $f_c$:\\
 	Unterhalb $f_c$ ist keine Wellenausbreitung möglich $\rightarrow k_z = 0$ bei $f = f_c$ 
@@ -1366,14 +1366,14 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\end{emphbox}
 	
 	\textbf{Ausbreitungstyp} $q\leq k$ bzw. $f_c \leq f$:\\
-	$\gamma = j\beta$, $\alpha=0$, $\beta = \sqrt{k^2 - q^2}$\\
+	$\gamma = j\beta$, $\alpha=0$, $\beta = k_z = \sqrt{k^2 - q^2}$\\
 
 	% Ausbreitungseigenschaften:
 	\begin{emphbox}
-		$\frac{k_z}{k} = \frac{\lambda}{\lambda_G} = \sqrt{1- \left(\frac{f_c}{f}\right)^2}$\\
-		$\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}} \geq \lambda$ (g: guided)\\
-		$Z_{F H} = \frac{j \omega \mu}{\gamma_{H}}=\frac{\omega \mu}{\beta_{H}}=\frac{Z_{F}}{\sqrt{1 - \left(\frac{f_c}{f}\right)^2}}$\\
-		$Z_{F E} = \frac{\gamma_{E}}{j \omega \varepsilon}=\frac{\beta_{E}}{\omega \varepsilon}=\sqrt{1 - \left(\frac{f_c}{f}\right)^2}Z_{F}$\\
+		$\frac{k_z}{k} = \frac{\lambda}{\lambda_G} = \sqrt{1- \left(\frac{f_c}{f}\right)^2}=\frac{1}{k}\sqrt{\frac{\omega^{2}}{c^{2}}-k_{c}^{2}}$\\
+		$\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}} \geq \lambda$ (g: guided, z)\\
+		$Z_{F H} = \frac{j \omega \mu}{\gamma_{H}}=\frac{\omega \mu}{\beta_{H}}=\frac{k}{k_z}Z_F=\frac{Z_{F}}{\sqrt{1 - \left(\frac{f_c}{f}\right)^2}}$\\
+		$Z_{F E} = \frac{\gamma_{E}}{j \omega \varepsilon}=\frac{\beta_{E}}{\omega \varepsilon}=\frac{k_z}{k}Z_F=\sqrt{1 - \left(\frac{f_c}{f}\right)^2}Z_{F}$\\
 	\end{emphbox}
 	H-Mode: $Z_{F H} = \frac{E_x}{H_y} = -\frac{E_y}{H_x} > Z_F$\\
 	E-Mode: $Z_{F E} = \frac{E_x}{H_y} = -\frac{E_y}{H_x} < Z_F$\\
@@ -1381,6 +1381,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	Die Feldwellenwiderstände sind ortsunabhängig konstant.\\
 
 	\textbf{Dämpfungstyp} $k < q$ bzw. $f < f_c$: $\gamma = \alpha, \quad \beta=0$\\
+	$\alpha=\sqrt{k_{x}^{2}+k_{y}^{2}-k^{2}}$\\
 	siehe Abschnitt: Dämpfungstyp
 	% Wellenlänge: $\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}}$ & \\
 	% $Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$ & \\
@@ -1417,6 +1418,10 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \end{sectionbox}
 
 \begin{sectionbox}
+\begin{center}\includegraphics[width = 4.5cm]{./img/hl-widerstand.png}\end{center}
+\end{sectionbox}
+
+\begin{sectionbox}
 	\subsection{Geschwindigkeiten}
 	% übertrieben komplizierte Gleichgung aus der VL die man nie braucht: \frac{\omega}{\sqrt{\omega^{2} \varepsilon \mu-q^{2}}}=\frac{v \frac{f}{f_{c}}}{\sqrt{\left(\frac{f}{f_{c}}\right)^{2}}-1}
 	% $v=\frac{1}{\sqrt{\varepsilon \mu}}=v_{\mathrm{HEW}}$
@@ -1432,7 +1437,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 	\textbf{Gruppengeschwindigkeit}
 	\begin{emphbox}
-		$v_{g}= \left(\frac{d \beta}{d \omega}\right)^{-1}$ $\Rightarrow$ $\frac{v_G}{c} = \frac{k_z}{k} = \sqrt{1-\left(\frac{f_c}{f}\right)^2} < 1$\\
+		$v_{g}= \left(\frac{d \beta}{d \omega}\right)^{-1}$ $\Rightarrow$ $\frac{v_g}{c} = \frac{k_z}{k} = \sqrt{1-\left(\frac{f_c}{f}\right)^2} < 1$\\
 	\end{emphbox}
 	Reziproker Zusammenhang: $v_g v_p = c^2$\\
 
@@ -1440,14 +1445,14 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		\item $v_p > c$ ($c$ ist Lichtgeschwindigkeit im freien Raum)
 		\item $v_g < c$ (maßgeblich für Energie- und Informationstransport)
 	\end{itemize}
-	\begin{center}\includegraphics[width = 5cm]{./img/geschwindigkeiten.png}\end{center}
+	\begin{center}\includegraphics[width = 4cm]{./img/geschwindigkeiten.png}\end{center}
 \end{sectionbox}
 
 \begin{sectionbox}
 	\subsection{Dämpfungstyp (evaeszente Moden)}
 	kein Leistungstransport: $Z_{\text{FH}}$ bzw. $Z_{\text{FE}}$ ist imaginär $\rightarrow$ $90^\circ$ zwischen Querfeldstärken\\
 	Exponentieller Dämpfungsfaktor:\\
-	$\alpha=\frac{2 \pi}{\lambda_{H E W}} \sqrt{\left(\frac{\lambda_{H E W}}{\lambda_{c}}\right)^{2}-1}=\underbrace{\frac{2 \pi}{\lambda_{c}}}_{\alpha_{c}} \sqrt{1-\left(\frac{f}{f_{c}}\right)^{2}}$\\
+	$\alpha=\sqrt{k_{x}^{2}+k_{y}^{2}-k^{2}}=\underbrace{\frac{2 \pi}{\lambda_{c}}}_{\alpha_{c}} \sqrt{1-\left(\frac{f}{f_{c}}\right)^{2}}$\\
 	Dämpfung einer Schirmung:\\ 
 	$\frac{\alpha}{\mathrm{Np}}=\alpha(a) l=\underbrace{\frac{\pi}{a}}_{\alpha_c} \sqrt{1-\left(\frac{\lambda_{c}}{\lambda_{H E W}}\right)^{2}} l$\\
 	\begin{center}\includegraphics[width = 1.8cm]{./img/hl-schirmung.png}\includegraphics[width = 2.5cm]{./img/hl-schirmung3.png}\includegraphics[width = 2.5cm]{./img/hl-daempfung.png}\end{center}
