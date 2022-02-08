@@ -1856,8 +1856,36 @@ $$
 D=\frac{4 \pi r^{2} Z_{F} \cdot k^{2} \frac{|I|^{2} \ell^{2}}{32 \pi^{2} r^{2}}}{Z_{F} \frac{k^{2}|I|^{2} \ell^{2}}{12 \pi}}=1,5=1,76 \mathrm{dBi}
 $$
 \end{sectionbox}
-
 \begin{sectionbox}
+\subsection{Fritzgerald Dipol}
+Der Fritzgerald Dipol ist das duale Element zum Hertzschen Dipol. Anstatt elektrischer Ladung werden hier zwei magnetische Ladungen $q_m$ im Abstand von $\ell$ im Raum angebracht.
+Die magnetische Stromdichte ist: $I_m \ell$.
+$$
+\vec{M}(\vec{r})=j \omega q_{m} \ell \delta(\vec{r}) \vec{e}_{z}=I_{m} \ell \delta(\vec{r}) \vec{e}_{z}
+$$
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./img/antennen_fritz_gerald_dipol.png}
+\end{center}
+
+\begin{emphbox}
+\begin{flushleft}
+\textbf{Elektrisches Vektorpotential}\\
+$\vec{F}(\vec{r})=\varepsilon I_{m} \ell \frac{\mathrm{e}^{-j k r}}{r} \vec{e}_{z}$
+\end{flushleft}
+\end{emphbox}
+Komplette Lösung des Feldes für Fritzgerald Dipol:\\
+
+$\begin{aligned} \vec{E} &=-\frac{1}{\varepsilon} \nabla \times \vec{F}=-j k I_{m} \ell \frac{\mathrm{e}^{-j k r}}{4 \pi r}\left(1+\frac{1}{j k r}\right) \sin \vartheta \vec{e}_{\varphi} \\ \vec{H} &=-j \omega\left(\vec{F}+\frac{1}{k^{2}} \nabla \nabla \cdot \vec{F}\right) \\ &=\frac{k I_{m} \ell}{Z_{F}} \frac{\mathrm{e}^{-j k r}}{2 \pi r}\left(\frac{1}{k r}+\frac{1}{j k^{2} r^{2}}\right) \cos \vartheta \vec{e}_{r}\\
+&+j \frac{k I_{m} \ell}{Z_{F}} \frac{\mathrm{e}^{-j k r}}{4 \pi r}\left(1+\frac{1}{j k r}-\frac{1}{k^{2} r^{2}}\right) \sin \vartheta \vec{e}_{\vartheta} \end{aligned}$
+
+\end{sectionbox}
+\begin{sectionbox}
+\begin{sectionbox}
+\subsection{Äquivalenz Ringstrom - Stromelement}
+Ein elektrischer Ringstrom mit Amplitude $I$, welcher die Fläche $A$ umschließt ist für: $A\to 0$, $I \to \infty$ und $AI = \text{konst}$ äquivalent zu einem magnetischen Stromelement.\\
+Analog ist ein magnetischer Ringstrom $I_m$ äquivalent zu einem elektrischen Stromelement, wenn die Grafik wie unten gezeigt gilt:\\
+\includegraphics[width=\textwidth]{./img/antennen_ringstrom_zwei.png}
+\end{sectionbox}
 \subsection{Basics schonmal vorab für Altklausuren}
 $P_R = P_0 (1 - |r|^2)G_tG_r\left(\frac{\lambda}{4\pi d}\right)^2$\\
 $G_{\text{dBi}} = 10\text{lg}(G / 10)$\\
