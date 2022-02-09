@@ -302,15 +302,15 @@ Im guten Leiter $\kappa >> \omega\epsilon$ gilt:
 	\item[2.] In einer dünnen Schicht unter der Oberfläche existieren nennenswerte Stromdichten
 	\item[3.] Für die Verluste sind also nur die obersten Schichten (die Haut) des Leiters entscheidend
 \end{itemize}
-Für die Stromverteilung im Leiter gilt: $J_z = J_z(0)\cdot e^{-ky}\cdot e^{-jky}$ mit $k = \sqrt{\frac{\omega\mu\kappa}{2}}\quad[\frac{1}{m}]$\\
+Für die Stromverteilung im Leiter gilt: $J_z = J_z(0) e^{-ky} e^{-jky}$ mit $k = \sqrt{\frac{\omega\mu\kappa}{2}}\quad[\frac{1}{m}]$\\
 Der Kehrwert der Abklingkonstante/Wellenzahl $k$ wird als Eindringtiefe bezeichnet. Das Amplitude der Stromdichte ist nach dieser Tiefe auf $1/e$ abgefallen.
 \begin{emphbox}
-Eindringtiefe: $\delta = \frac{1}{k} = \sqrt{\frac{2}{\omega \mu \kappa}}$
+Eindringtiefe: $\delta = \frac{1}{k} = \sqrt{\frac{2}{\omega \mu \kappa}}$, $J_z = J_z(0) e^{-ky} e^{-jky}$
 \end{emphbox}
 Die Verluste im Material lassen sich berechnen (Platte mit Querschnitt $\delta \cdot a$)\\
 \begin{tabular*}{\columnwidth}{ll}
 	Oberflächenresistanz & $R_S = \frac{\omega\mu}{2\kappa} \quad [\Omega]$ \\
-	Oberflächenimpedanz & $Z_S = R_S\cdot(1+j)$ \\
+	Oberflächenimpedanz & $Z_S = R_S(1+j)$ \\
 	Verluste durch Oberflächenströme & $P_J = \frac{1}{2} \iint R_S |H_0|^2 d\mathbf{A}$ \\
 \end{tabular*}
 \begin{tabular*}{\columnwidth}{ll}
@@ -1359,8 +1359,8 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	q: geometrieabhängiger Eigenwert einer Mode\\
 	Dispersion: frequenzabhängige Ausbreitungsgeschwindigkeit\\
 
-	Ausbreitungskonstante: $\gamma = \alpha + j\beta = jk$\\
-	Wellenzahl: $ k = \beta - j \alpha$\\
+	Ausbreitungskonstante in z-Richtung: $\gamma = \alpha + j\beta = jk_z$\\
+	Wellenzahl in z-Richtung: $ k_z = \beta - j \alpha$\\
 
 	\textbf{Grenzfrequenz} $f_c$:\\
 	Unterhalb $f_c$ ist keine Wellenausbreitung möglich $\rightarrow k_z = 0$ bei $f = f_c$ 
@@ -1369,14 +1369,14 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\end{emphbox}
 	
 	\textbf{Ausbreitungstyp} $q\leq k$ bzw. $f_c \leq f$:\\
-	$\gamma = j\beta$, $\alpha=0$, $\beta = \sqrt{k^2 - q^2}$\\
+	$\gamma = j\beta$, $\alpha=0$, $\beta = k_z = \sqrt{k^2 - q^2}$\\
 
 	% Ausbreitungseigenschaften:
 	\begin{emphbox}
-		$\frac{k_z}{k} = \frac{\lambda}{\lambda_G} = \sqrt{1- \left(\frac{f_c}{f}\right)^2}$\\
-		$\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}} \geq \lambda$ (g: guided)\\
-		$Z_{F H} = \frac{j \omega \mu}{\gamma_{H}}=\frac{\omega \mu}{\beta_{H}}=\frac{Z_{F}}{\sqrt{1 - \left(\frac{f_c}{f}\right)^2}}$\\
-		$Z_{F E} = \frac{\gamma_{E}}{j \omega \varepsilon}=\frac{\beta_{E}}{\omega \varepsilon}=\sqrt{1 - \left(\frac{f_c}{f}\right)^2}Z_{F}$\\
+		$\frac{k_z}{k} = \frac{\lambda}{\lambda_G} = \sqrt{1- \left(\frac{f_c}{f}\right)^2}=\frac{1}{k}\sqrt{\frac{\omega^{2}}{c^{2}}-k_{c}^{2}}$\\
+		$\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}} \geq \lambda$ (g: guided, z)\\
+		$Z_{F H} = \frac{j \omega \mu}{\gamma_{H}}=\frac{\omega \mu}{\beta_{H}}=\frac{k}{k_z}Z_F=\frac{Z_{F}}{\sqrt{1 - \left(\frac{f_c}{f}\right)^2}}$\\
+		$Z_{F E} = \frac{\gamma_{E}}{j \omega \varepsilon}=\frac{\beta_{E}}{\omega \varepsilon}=\frac{k_z}{k}Z_F=\sqrt{1 - \left(\frac{f_c}{f}\right)^2}Z_{F}$\\
 	\end{emphbox}
 	H-Mode: $Z_{F H} = \frac{E_x}{H_y} = -\frac{E_y}{H_x} > Z_F$\\
 	E-Mode: $Z_{F E} = \frac{E_x}{H_y} = -\frac{E_y}{H_x} < Z_F$\\
@@ -1384,6 +1384,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	Die Feldwellenwiderstände sind ortsunabhängig konstant.\\
 
 	\textbf{Dämpfungstyp} $k < q$ bzw. $f < f_c$: $\gamma = \alpha, \quad \beta=0$\\
+	$\alpha=\sqrt{k_{x}^{2}+k_{y}^{2}-k^{2}}$\\
 	siehe Abschnitt: Dämpfungstyp
 	% Wellenlänge: $\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}}$ & \\
 	% $Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$ & \\
@@ -1420,6 +1421,10 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \end{sectionbox}
 
 \begin{sectionbox}
+\begin{center}\includegraphics[width = 4.5cm]{./img/hl-widerstand.png}\end{center}
+\end{sectionbox}
+
+\begin{sectionbox}
 	\subsection{Geschwindigkeiten}
 	% übertrieben komplizierte Gleichgung aus der VL die man nie braucht: \frac{\omega}{\sqrt{\omega^{2} \varepsilon \mu-q^{2}}}=\frac{v \frac{f}{f_{c}}}{\sqrt{\left(\frac{f}{f_{c}}\right)^{2}}-1}
 	% $v=\frac{1}{\sqrt{\varepsilon \mu}}=v_{\mathrm{HEW}}$
@@ -1435,7 +1440,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 	\textbf{Gruppengeschwindigkeit}
 	\begin{emphbox}
-		$v_{g}= \left(\frac{d \beta}{d \omega}\right)^{-1}$ $\Rightarrow$ $\frac{v_G}{c} = \frac{k_z}{k} = \sqrt{1-\left(\frac{f_c}{f}\right)^2} < 1$\\
+		$v_{g}= \left(\frac{d \beta}{d \omega}\right)^{-1}$ $\Rightarrow$ $\frac{v_g}{c} = \frac{k_z}{k} = \sqrt{1-\left(\frac{f_c}{f}\right)^2} < 1$\\
 	\end{emphbox}
 	Reziproker Zusammenhang: $v_g v_p = c^2$\\
 
@@ -1443,14 +1448,14 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		\item $v_p > c$ ($c$ ist Lichtgeschwindigkeit im freien Raum)
 		\item $v_g < c$ (maßgeblich für Energie- und Informationstransport)
 	\end{itemize}
-	\begin{center}\includegraphics[width = 5cm]{./img/geschwindigkeiten.png}\end{center}
+	\begin{center}\includegraphics[width = 4cm]{./img/geschwindigkeiten.png}\end{center}
 \end{sectionbox}
 
 \begin{sectionbox}
 	\subsection{Dämpfungstyp (evaeszente Moden)}
 	kein Leistungstransport: $Z_{\text{FH}}$ bzw. $Z_{\text{FE}}$ ist imaginär $\rightarrow$ $90^\circ$ zwischen Querfeldstärken\\
 	Exponentieller Dämpfungsfaktor:\\
-	$\alpha=\frac{2 \pi}{\lambda_{H E W}} \sqrt{\left(\frac{\lambda_{H E W}}{\lambda_{c}}\right)^{2}-1}=\underbrace{\frac{2 \pi}{\lambda_{c}}}_{\alpha_{c}} \sqrt{1-\left(\frac{f}{f_{c}}\right)^{2}}$\\
+	$\alpha=\sqrt{k_{x}^{2}+k_{y}^{2}-k^{2}}=\underbrace{\frac{2 \pi}{\lambda_{c}}}_{\alpha_{c}} \sqrt{1-\left(\frac{f}{f_{c}}\right)^{2}}$\\
 	Dämpfung einer Schirmung:\\ 
 	$\frac{\alpha}{\mathrm{Np}}=\alpha(a) l=\underbrace{\frac{\pi}{a}}_{\alpha_c} \sqrt{1-\left(\frac{\lambda_{c}}{\lambda_{H E W}}\right)^{2}} l$\\
 	\begin{center}\includegraphics[width = 1.8cm]{./img/hl-schirmung.png}\includegraphics[width = 2.5cm]{./img/hl-schirmung3.png}\includegraphics[width = 2.5cm]{./img/hl-daempfung.png}\end{center}
@@ -1851,47 +1856,128 @@ E_{\vartheta}=Z_{F} H_{\varphi}
 $$
 Für den Hertz'schen Dipol im Fernfeld lässt sich ein Strahlungswiderstand ermitteln.
 \textbf{Strahlungswiderstand}
-$$
-R_{r}=\frac{2 P}{|I|^{2}}=Z_{F} \frac{k^{2} \ell^{2}}{6 \pi}=80 \pi^{2} \frac{\ell^{2}}{\lambda^{2}}
-$$
+\begin{emphbox}
+	$$
+	R_{r}=\frac{2 P}{|I|^{2}}=Z_{F} \frac{k^{2} \ell^{2}}{6 \pi}=80 \pi^{2} \frac{\ell^{2}}{\lambda^{2}}
+	$$
+\end{emphbox}
 \textbf{Richtcharakteristik}
 $$
 D=\frac{4 \pi r^{2} Z_{F} \cdot k^{2} \frac{|I|^{2} \ell^{2}}{32 \pi^{2} r^{2}}}{Z_{F} \frac{k^{2}|I|^{2} \ell^{2}}{12 \pi}}=1,5=1,76 \mathrm{dBi}
 $$
 \end{sectionbox}
-
 \begin{sectionbox}
-	\subsection{Charakteristische Größen von Antennen}
-	$$
-	\begin{aligned}
-	S(r, \vartheta, \varphi) &=\frac{1}{2 Z_{\mathrm{F}, 0}}|E(\vartheta, \varphi)|^{2} \\
-	&=\frac{1}{2 Z_{\mathrm{F}, 0}} \frac{U_{0}^{2}}{16 \pi^{2} r^{2}}\left|C_{\mathrm{t}}(\vartheta, \varphi)\right|^{2}
-	\end{aligned}
-	$$
-	Effektive Wirkfläche:
-	$A_{\mathrm{e}}=\frac{\lambda^{2}}{4 \pi} G_{\mathrm{r}}$\\
-	Sendeantenne optimal ausgerichtet:\\
-	$\left|C_{t}(\vartheta, \varphi)\right|=1 \Rightarrow S(r, \vartheta, \varphi)=S_{\max }(r)$\\
-	Empfangsantenne optimal ausgerichtet:\\
-	$\left|C_{r}(\vartheta, \varphi)\right|=1 \Rightarrow P_{\mathrm{r}}=P_{\mathrm{r}, \max }$\\
-	\includegraphics[width=\textwidth]{./img/sender_empfangs_charakter.png}
-	% $S_{i}=\frac{P_{t}}{4 \pi r^{2}}$
-	\includegraphics[width=\textwidth]{./img/blockschaltbild_Übertragungsstrecke.png}
-	Beispiel: \\
-	$\begin{aligned} P_{\mathrm{r}, \max } &=A_{e}\left|C_{\mathrm{r}}(\vartheta, \varphi)\right|^{2} \frac{1}{4 \pi r^{2}}\left|C_{\mathrm{t}}(\vartheta, \varphi)\right|^{2} G_{t} P_{t 0}\\ 
-		&=\frac{\lambda^{2}}{4 \pi} G_{r} \frac{1}{4 \pi r^{2}} G_{t} P_{\mathrm{t}, 0} \\
-		&=\frac{\lambda^{2}}{16 \pi^{2} r^{2}} G_{r} G_{t} P_{\mathrm{t}, 0} . \end{aligned}$\\
-	Optimal ausgerichtet $\rightarrow C_r$ und $C_t=1$ 
+
+\subsection{Fritzgerald Dipol}
+Der Fritzgerald Dipol ist das duale Element zum Hertzschen Dipol. Anstatt elektrischer Ladung werden hier zwei magnetische Ladungen $q_m$ im Abstand von $\ell$ im Raum angebracht.
+Die magnetische Stromdichte ist: $I_m \ell$.
+$$
+\vec{M}(\vec{r})=j \omega q_{m} \ell \delta(\vec{r}) \vec{e}_{z}=I_{m} \ell \delta(\vec{r}) \vec{e}_{z}
+$$
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./img/antennen_fritz_gerald_dipol.png}
+\end{center}
+
+\begin{emphbox}
+\begin{flushleft}
+\textbf{Elektrisches Vektorpotential}\\
+$\vec{F}(\vec{r})=\varepsilon I_{m} \ell \frac{\mathrm{e}^{-j k r}}{r} \vec{e}_{z}$
+\end{flushleft}
+\end{emphbox}
+Komplette Lösung des Feldes für Fritzgerald Dipol:\\
+
+$\begin{aligned} \vec{E} &=-\frac{1}{\varepsilon} \nabla \times \vec{F}=-j k I_{m} \ell \frac{\mathrm{e}^{-j k r}}{4 \pi r}\left(1+\frac{1}{j k r}\right) \sin \vartheta \vec{e}_{\varphi} \\ \vec{H} &=-j \omega\left(\vec{F}+\frac{1}{k^{2}} \nabla \nabla \cdot \vec{F}\right) \\ &=\frac{k I_{m} \ell}{Z_{F}} \frac{\mathrm{e}^{-j k r}}{2 \pi r}\left(\frac{1}{k r}+\frac{1}{j k^{2} r^{2}}\right) \cos \vartheta \vec{e}_{r}\\
+&+j \frac{k I_{m} \ell}{Z_{F}} \frac{\mathrm{e}^{-j k r}}{4 \pi r}\left(1+\frac{1}{j k r}-\frac{1}{k^{2} r^{2}}\right) \sin \vartheta \vec{e}_{\vartheta} \end{aligned}$
+
 \end{sectionbox}
 
 \begin{sectionbox}
+\subsection{Äquivalenz Ringstrom - Stromelement}
+Ein elektrischer Ringstrom mit Amplitude $I$, welcher die Fläche $A$ umschließt ist für: $A\to 0$, $I \to \infty$ und $AI = \text{konst}$ äquivalent zu einem magnetischen Stromelement.\\
+Analog ist ein magnetischer Ringstrom $I_m$ äquivalent zu einem elektrischen Stromelement, wenn die Grafik wie unten gezeigt gilt:\\
+\includegraphics[width=\textwidth]{./img/antennen_ringstrom_zwei.png}
+\end{sectionbox}
+
+\begin{sectionbox}
+
 \subsection{Basics schonmal vorab für Altklausuren}
 $P_R = P_0 (1 - |r|^2)G_tG_r\left(\frac{\lambda}{4\pi d}\right)^2$\\
 $G_{\text{dBi}} = 10\text{lg}(G / 10)$\\
 $S_{ij, \text{dB}} = 20\text{lg}(S_{ij} / 10)$\\
 $\frac{\lambda}{2}$-Dipol $\rightarrow G_{r} = 1,61$
 \end{sectionbox}
+\begin{sectionbox}
+\begin{sectionbox}
+\subsection{Charakteristische Größen von Antennen}
+In den nachfolgenden Abschnitten gilt folgende Indizierung:\\
+\begin{emphbox}
+\begin{flushleft}
+t:=Sendefall \\
+r:=Empfangsfall,\\
+0:=ohne Verluste,\\
+max := Hauptstrahlrichtung/-empfangsrichtung.
+\end{flushleft}
 
+\end{emphbox}
+\end{sectionbox}
+\subsection{Senden}
+$$
+\begin{array}{ll}	
+
+	\text { Gesendete Leistung } & P_{t 0} \\
+	\text{(ohne Verluste)}&\\
+	\text { Gesendete Leistung } & P_{t}=\frac{1}{2}\left\lvert I_a\right\rvert^2 R_r  \\
+	\text { Leistungsflussdichte } 	& S(r, \vartheta, \varphi) \\
+	\text { Leistungsflussdichte}& S_{i}(r)=\frac{P}{4 \pi r^{2}} \\
+	\text{(isotrop) }	&\\
+	\text { Strahlungscharakteristik }  & C_{t}(\vartheta, \varphi)=\left.\frac{E(\vartheta, \varphi)}{E_{\max }}\right|_{r=\mathrm{konst}} \\
+	\text { Direktivität } & D_{t}=\left.\frac{S_{\max }}{S_{i}}\right|_{P_{t}}=\frac{4 \pi r^{2} S_{\max }}{P_{t}} \\
+	\text { Gewinn } & G_{t}=\left.\frac{S_{\max }}{S_{i}}\right|_{P_{t 0}}=\frac{4 \pi r^{2} S_{\max }}{P_{t 0}} \\
+	& \eta_{t}=\frac{G_{t}}{D_{t}}
+\end{array}
+$$
+$$
+	S(r, \vartheta, \varphi) =\frac{1}{2} \vec{E} \times \vec{H}^{*} =\frac{1}{2 Z_{\mathrm{F}, 0}}|E(\vartheta, \varphi)|^{2} 
+$$
+\end{sectionbox}
+\begin{sectionbox}
+\subsection{Empfangen}
+$\begin{array}{ll}
+	\text { Empfangene Leistung } & P_{r 0} \\  
+	\text{(ohne Verluste)}	&\\
+	\text { Empfangene Leistung } & P_{r} \\ 
+	\text { Empfangscharakteristik } & C_{r}(\vartheta, \varphi)=\left.\frac{U(\vartheta, \varphi)}{U_{\max }}\right|_{S=\text { konst. }} \\
+	\text { effektive Wirkfläche } & A_{0}=\frac{P_{r 0, \max }}{S}=\frac{\lambda^{2}}{4 \pi} D_{r} \\
+	\text{(ohne ohmsche Verluste)}	&\\ 
+	\text { effektive Wirkfläche } & A_{e}=\frac{P_{r, \max }}{S}=\frac{\lambda^{2}}{4 \pi} G_{r} \\  
+	\text{(mit Verlusten)}&\\
+	 \text { Wirkungsgrad}\eta_{r}=\frac{A_{e}}{A_{0}} \\
+\end{array}$
+
+\end{sectionbox}
+\begin{sectionbox}
+
+\begin{emphbox}
+\begin{flushleft}
+Effektive Wirkfläche 	$A_{e}=\frac{\lambda^{2}}{4 \pi}G_{\mathrm{r}}$\\
+Sendeantenne optimal ausgerichtet:\\
+$\left|C_{t}(\vartheta, \varphi)\right|=1 \quad \Rightarrow \quad S(r, \vartheta, \varphi)=S_{\max }(r)$\\
+Empfangsantenne optimal ausgerichtet:\\
+$\left|C_{r}(\vartheta, \varphi)\right|=1 \quad \Rightarrow \quad P_{\mathrm{r}}=P_{\mathrm{r}, \max }$
+\end{flushleft}
+\end{emphbox}
+\end{sectionbox}
+\begin{sectionbox}
+	Beispiel: \\
+	$\begin{aligned} P_{\mathrm{r}, \max } &=A_{e}\left|C_{\mathrm{r}}(\vartheta, \varphi)\right|^{2} \frac{1}{4 \pi r^{2}}\left|C_{\mathrm{t}}(\vartheta, \varphi)\right|^{2} G_{t} P_{t 0}\\ 
+		&=\frac{\lambda^{2}}{4 \pi} G_{r} \frac{1}{4 \pi r^{2}} G_{t} P_{\mathrm{t}, 0} \\
+		&=\frac{\lambda^{2}}{16 \pi^{2} r^{2}} G_{r} G_{t} P_{\mathrm{t}, 0} . \end{aligned}$\\
+	Optimal ausgerichtet $\rightarrow C_r$ und $C_t=1$
+\end{sectionbox}
+
+\begin{sectionbox}
+	\includegraphics[width=10cm, angle=90]{./img/antennen_blockdiagram.png}
+\end{sectionbox}
 \section{Tricks aus Altklausuren}
 \begin{sectionbox}
 	\subsection{Näherungen}
