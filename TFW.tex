@@ -1218,6 +1218,9 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		\item Verifizierung von zueinander dualen Gleichung und Lösungen.
 		\item Ersetzen von Größen in einer Lösung durch duale Größen führt zur dualen Lösung.
 	\end{itemize}
+	\includegraphics[width=\textwidth]{./img/dualität_tabelle.png}
+
+
 \end{sectionbox}
 
 
@@ -1858,10 +1861,35 @@ $$
 \end{sectionbox}
 
 \begin{sectionbox}
+	\subsection{Charakteristische Größen von Antennen}
+	$$
+	\begin{aligned}
+	S(r, \vartheta, \varphi) &=\frac{1}{2 Z_{\mathrm{F}, 0}}|E(\vartheta, \varphi)|^{2} \\
+	&=\frac{1}{2 Z_{\mathrm{F}, 0}} \frac{U_{0}^{2}}{16 \pi^{2} r^{2}}\left|C_{\mathrm{t}}(\vartheta, \varphi)\right|^{2}
+	\end{aligned}
+	$$
+	Effektive Wirkfläche:
+	$A_{\mathrm{e}}=\frac{\lambda^{2}}{4 \pi} G_{\mathrm{r}}$\\
+	Sendeantenne optimal ausgerichtet:\\
+	$\left|C_{t}(\vartheta, \varphi)\right|=1 \Rightarrow S(r, \vartheta, \varphi)=S_{\max }(r)$\\
+	Empfangsantenne optimal ausgerichtet:\\
+	$\left|C_{r}(\vartheta, \varphi)\right|=1 \Rightarrow P_{\mathrm{r}}=P_{\mathrm{r}, \max }$\\
+	\includegraphics[width=\textwidth]{./img/sender_empfangs_charakter.png}
+	% $S_{i}=\frac{P_{t}}{4 \pi r^{2}}$
+	\includegraphics[width=\textwidth]{./img/blockschaltbild_Übertragungsstrecke.png}
+	Beispiel: \\
+	$\begin{aligned} P_{\mathrm{r}, \max } &=A_{e}\left|C_{\mathrm{r}}(\vartheta, \varphi)\right|^{2} \frac{1}{4 \pi r^{2}}\left|C_{\mathrm{t}}(\vartheta, \varphi)\right|^{2} G_{t} P_{t 0}\\ 
+		&=\frac{\lambda^{2}}{4 \pi} G_{r} \frac{1}{4 \pi r^{2}} G_{t} P_{\mathrm{t}, 0} \\
+		&=\frac{\lambda^{2}}{16 \pi^{2} r^{2}} G_{r} G_{t} P_{\mathrm{t}, 0} . \end{aligned}$\\
+	Optimal ausgerichtet $\rightarrow C_r$ und $C_t=1$ 
+\end{sectionbox}
+
+\begin{sectionbox}
 \subsection{Basics schonmal vorab für Altklausuren}
 $P_R = P_0 (1 - |r|^2)G_tG_r\left(\frac{\lambda}{4\pi d}\right)^2$\\
 $G_{\text{dBi}} = 10\text{lg}(G / 10)$\\
 $S_{ij, \text{dB}} = 20\text{lg}(S_{ij} / 10)$\\
+$\frac{\lambda}{2}$-Dipol $\rightarrow G_{r} = 1,61$
 \end{sectionbox}
 
 \section{Tricks aus Altklausuren}
