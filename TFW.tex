@@ -1218,8 +1218,8 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		\item Verifizierung von zueinander dualen Gleichung und Lösungen.
 		\item Ersetzen von Größen in einer Lösung durch duale Größen führt zur dualen Lösung.
 	\end{itemize}
+	\includegraphics[width=\textwidth]{./img/dualitaet_tabelle.png}
 \end{sectionbox}
-
 
 \begin{sectionbox}
 	\subsection{Green'sche Funktionen}
@@ -1856,15 +1856,18 @@ E_{\vartheta}=Z_{F} H_{\varphi}
 $$
 Für den Hertz'schen Dipol im Fernfeld lässt sich ein Strahlungswiderstand ermitteln.
 \textbf{Strahlungswiderstand}
-$$
-R_{r}=\frac{2 P}{|I|^{2}}=Z_{F} \frac{k^{2} \ell^{2}}{6 \pi}=80 \pi^{2} \frac{\ell^{2}}{\lambda^{2}}
-$$
+\begin{emphbox}
+	$$
+	R_{r}=\frac{2 P}{|I|^{2}}=Z_{F} \frac{k^{2} \ell^{2}}{6 \pi}=80 \pi^{2} \frac{\ell^{2}}{\lambda^{2}}
+	$$
+\end{emphbox}
 \textbf{Richtcharakteristik}
 $$
 D=\frac{4 \pi r^{2} Z_{F} \cdot k^{2} \frac{|I|^{2} \ell^{2}}{32 \pi^{2} r^{2}}}{Z_{F} \frac{k^{2}|I|^{2} \ell^{2}}{12 \pi}}=1,5=1,76 \mathrm{dBi}
 $$
 \end{sectionbox}
 \begin{sectionbox}
+
 \subsection{Fritzgerald Dipol}
 Der Fritzgerald Dipol ist das duale Element zum Hertzschen Dipol. Anstatt elektrischer Ladung werden hier zwei magnetische Ladungen $q_m$ im Abstand von $\ell$ im Raum angebracht.
 Die magnetische Stromdichte ist: $I_m \ell$.
@@ -1887,17 +1890,31 @@ $\begin{aligned} \vec{E} &=-\frac{1}{\varepsilon} \nabla \times \vec{F}=-j k I_{
 &+j \frac{k I_{m} \ell}{Z_{F}} \frac{\mathrm{e}^{-j k r}}{4 \pi r}\left(1+\frac{1}{j k r}-\frac{1}{k^{2} r^{2}}\right) \sin \vartheta \vec{e}_{\vartheta} \end{aligned}$
 
 \end{sectionbox}
-\begin{sectionbox}
+
 \begin{sectionbox}
 \subsection{Äquivalenz Ringstrom - Stromelement}
 Ein elektrischer Ringstrom mit Amplitude $I$, welcher die Fläche $A$ umschließt ist für: $A\to 0$, $I \to \infty$ und $AI = \text{konst}$ äquivalent zu einem magnetischen Stromelement.\\
 Analog ist ein magnetischer Ringstrom $I_m$ äquivalent zu einem elektrischen Stromelement, wenn die Grafik wie unten gezeigt gilt:\\
 \includegraphics[width=\textwidth]{./img/antennen_ringstrom_zwei.png}
 \end{sectionbox}
+
+\begin{sectionbox}
+	Elektrisches und magnetisches Feld des elektrischen Stromelements sind:
+	\begin{multline*}
+		\vec{E}(\vec{r})= \mathrm{j} Z_{\mathrm{F}} k I_{e} \ell \frac{\mathrm{e}^{-\mathrm{j} k r}}{4 \pi r} \cdot \\
+		\left[\left(\frac{2}{\mathrm{j} k r}-\frac{2}{k^{2} r^{2}}\right) \cos \vartheta \vec{e}_{r}+\left(1+\frac{1}{\mathrm{j} k r}-\frac{1}{k^{2} r^{2}}\right) \sin \vartheta \vec{e}_{\vartheta}\right]
+	\end{multline*}	
+	$\vec{H}(\vec{r})=\mathrm{j} k I_{e} \ell \frac{\mathrm{e}^{-\mathrm{j} k r}}{4 \pi r}\left(1+\frac{1}{\mathrm{j} k r}\right) \sin \vartheta \vec{e}_{\varphi}$
+
+\end{sectionbox}
+
+\begin{sectionbox}
+
 \subsection{Basics schonmal vorab für Altklausuren}
 $P_R = P_0 (1 - |r|^2)G_tG_r\left(\frac{\lambda}{4\pi d}\right)^2$\\
 $G_{\text{dBi}} = 10\text{lg}(G / 10)$\\
 $S_{ij, \text{dB}} = 20\text{lg}(S_{ij} / 10)$\\
+$\frac{\lambda}{2}$-Dipol $\rightarrow G_{r} = 1,61$
 \end{sectionbox}
 \begin{sectionbox}
 \begin{sectionbox}
@@ -1917,21 +1934,36 @@ max := Hauptstrahlrichtung/-empfangsrichtung.
 $$
 \begin{array}{ll}	
 
-	\text { Gesendete Leistung (ohne } & P_{t 0} \\
-	\text { Verluste) } & P_{t} \\
-	\text { Gesendete Leistung } & S(r, \vartheta, \varphi) \\
-	\text { Leistungsflussdichte } & S_{i}(r)=\frac{P}{4 \pi r^{2}} \\
-	\text { Leistungsflussdichte (isotroper } & \\
-	\text { Kugelstrahler) } & C_{t}(\vartheta, \varphi)=\left.\frac{E(\vartheta, \varphi)}{E_{\max }}\right|_{r=\mathrm{konst}} \\
-	\text { Strahlungscharakteristik } & D_{t}=\left.\frac{S_{\max }}{S_{i}}\right|_{P_{t}}=\frac{4 \pi r^{2} S_{\max }}{P_{t}} \\
-	\text { Direktivität } & G_{t}=\left.\frac{S_{\max }}{S_{i}}\right|_{P_{t 0}}=\frac{4 \pi r^{2} S_{\max }}{P_{t 0}} \\
-	\text { Gewinn } & \eta_{t}=\frac{G_{t}}{D_{t}}
+	\text { Gesendete Leistung } & P_{t 0} \\
+	\text{(ohne Verluste)}&\\
+	\text { Gesendete Leistung } & P_{t}=\frac{1}{2}\left\lvert I_a\right\rvert^2 R_r  \\
+	\text { Leistungsflussdichte } 	& S(r, \vartheta, \varphi) \\
+	\text { Leistungsflussdichte}& S_{i}(r)=\frac{P}{4 \pi r^{2}} \\
+	\text{(isotrop) }	&\\
+	\text { Strahlungscharakteristik }  & C_{t}(\vartheta, \varphi)=\left.\frac{E(\vartheta, \varphi)}{E_{\max }}\right|_{r=\mathrm{konst}} \\
+	\text { Direktivität } & D_{t}=\left.\frac{S_{\max }}{S_{i}}\right|_{P_{t}}=\frac{4 \pi r^{2} S_{\max }}{P_{t}} \\
+	\text { Gewinn } & G_{t}=\left.\frac{S_{\max }}{S_{i}}\right|_{P_{t 0}}=\frac{4 \pi r^{2} S_{\max }}{P_{t 0}} \\
+	& \eta_{t}=\frac{G_{t}}{D_{t}}
 \end{array}
-$$ 
+$$
+$$
+	S(r, \vartheta, \varphi) =\frac{1}{2} \vec{E} \times \vec{H}^{*} =\frac{1}{2 Z_{\mathrm{F}, 0}}|E(\vartheta, \varphi)|^{2} 
+$$
 \end{sectionbox}
 \begin{sectionbox}
 \subsection{Empfangen}
-$\begin{array}{ll}\text { Empfangene Leistung (ohne } & P_{r 0} \\ \text { Verluste) } & P_{r} \\ \text { Empfangene Leistung } & \\ & \\ \text { Empfangscharakteristik } & C_{r}(\vartheta, \varphi)=\left.\frac{U(\vartheta, \varphi)}{U_{\max }}\right|_{S=\text { konst. }} \\ \text { effektive Wirkfläche (ohne } & A_{0}=\frac{P_{r 0, \max }}{S}=\frac{\lambda^{2}}{4 \pi} D_{r} \\ \text { Verluste) } & A_{e}=\frac{P_{r, \max }}{S}=\frac{\lambda^{2}}{4 \pi} G_{r} \\ \text { effektive Wirkfläche } & \eta_{r}=\frac{A_{e}}{A_{0}} \\ \text { Wirkungsgrad (ohmsche } & \end{array}$
+$\begin{array}{ll}
+	\text { Empfangene Leistung } & P_{r 0} \\  
+	\text{(ohne Verluste)}	&\\
+	\text { Empfangene Leistung } & P_{r} \\ 
+	\text { Empfangscharakteristik } & C_{r}(\vartheta, \varphi)=\left.\frac{U(\vartheta, \varphi)}{U_{\max }}\right|_{S=\text { konst. }} \\
+	\text { effektive Wirkfläche } & A_{0}=\frac{P_{r 0, \max }}{S}=\frac{\lambda^{2}}{4 \pi} D_{r} \\
+	\text{(ohne ohmsche Verluste)}	&\\ 
+	\text { effektive Wirkfläche } & A_{e}=\frac{P_{r, \max }}{S}=\frac{\lambda^{2}}{4 \pi} G_{r} \\  
+	\text{(mit Verlusten)}&\\
+	 \text { Wirkungsgrad}\eta_{r}=\frac{A_{e}}{A_{0}} \\
+\end{array}$
+
 \end{sectionbox}
 \begin{sectionbox}
 
@@ -1945,6 +1977,14 @@ $\left|C_{r}(\vartheta, \varphi)\right|=1 \quad \Rightarrow \quad P_{\mathrm{r}}
 \end{flushleft}
 \end{emphbox}
 \end{sectionbox}
+\begin{sectionbox}
+	Beispiel: \\
+	$\begin{aligned} P_{\mathrm{r}, \max } &=A_{e}\left|C_{\mathrm{r}}(\vartheta, \varphi)\right|^{2} \frac{1}{4 \pi r^{2}}\left|C_{\mathrm{t}}(\vartheta, \varphi)\right|^{2} G_{t} P_{t 0}\\ 
+		&=\frac{\lambda^{2}}{4 \pi} G_{r} \frac{1}{4 \pi r^{2}} G_{t} P_{\mathrm{t}, 0} \\
+		&=\frac{\lambda^{2}}{16 \pi^{2} r^{2}} G_{r} G_{t} P_{\mathrm{t}, 0} . \end{aligned}$\\
+	Optimal ausgerichtet $\rightarrow C_r$ und $C_t=1$
+\end{sectionbox}
+
 \begin{sectionbox}
 	\includegraphics[width=10cm, angle=90]{./img/antennen_blockdiagram.png}
 \end{sectionbox}
