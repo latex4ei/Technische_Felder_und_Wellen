@@ -480,16 +480,6 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell und $\mathbf{k}\cdot\mathbf{k} 
 	\end{itemize}
 \end{sectionbox}
 
-% passt hier vom Layout am besten hin
-\begin{sectionbox}
-	\subsection{Smithchart Tricks}
-
-	\textbf{Impedanz $\rightarrow$ Bauteilwert}\\
-	$L=\frac{(z_L / j)Z_0}{\omega} \quad C=\frac{1}{(-z_C / j)Z_0\omega}$\\
-	\textbf{Admittanz $\rightarrow$ Bauteilwert}\\
-	$C=\frac{y_C / j}{Z_0 \omega} \quad L = \frac{Z_0}{(-y_L / j) \omega}$\\
-\end{sectionbox}
-
 \begin{sectionbox}
 	\subsection{Gauß'scher Strahl}
 	\begin{emphbox}
@@ -547,7 +537,7 @@ Typisch: $\frac{c}{c_0} \approx 0.66$ bzw. $c\approx 2 \cdot 10^8 [\frac{m}{s}]$
 	
 	Spannung:\qquad $V(z) = V_+ e^{-j\beta z} + V_- e^{+j\beta z}$\\
 	Strom:	\qquad$I(z) = \frac{V_+}{Z_0} e^{-j\beta z} - \frac{V_-}{Z_0} e^{+j\beta z}$\\
-	Phasenkonstante: $\beta = \omega\sqrt{L' C'} = \frac{\omega}{c}$, $\lambda = \frac{c}{f} = \frac{2\pi}{\beta}$\\
+	Phasenkonstante: $\beta = \omega\sqrt{L' C'} = \frac{\omega}{c}$, $\lambda = \frac{c}{f\sqrt{\varepsilon_r}} = \frac{2\pi}{\beta}$\\
 	Charakteristische Impedanz: $Z_0 = \sqrt{\frac{L'}{C'}}$
 	
 \end{sectionbox}
@@ -642,13 +632,23 @@ Im Lastwiderstand umgesetzte Leistung: $P_L = \frac{|V_+|^2}{Z_0}(1-|\rho|^2)$
 		\item Die Punkte auf dem Umfang entsprechen rein imaginären $z$ bzw $y$.
 		\item Der \textbf{Mittelpunkt} ist der \textbf{Anpasspunkt}.
 		\item Kreise um Mittelpunkte auf der horizontalen Achse (rechts von "M") entsprechen Widerständen mit konstantem Realteil
-		\item Kreise um Mittelpunkte auf der Senkrechen durch $O$ entsprechen Widerständen mit konstantem Imaginärteil
+		\item Kreise um Mittelpunkte auf der Senkrechten durch $O$ entsprechen Widerständen mit konstantem Imaginärteil
 		\item Kreise um Mittelpunkte auf der horizontalen Achse (links von "M") entsprechen Leitwerten mit konstantem Realteil.
-		\item Kreise um Mittelpunkte auf der Senkrechten durch "S" entsprechen Leitwerten mit konstantem Imaginärteil
+		\item Kreise um Mittelpunkte auf der Senkrechten durch \textquotedblleft S\textquotedblright entsprechen Leitwerten mit konstantem Imaginärteil
 		\item Die obere Hälfte des Diagramms entspricht induktiven Reaktanzen bzw. kapazitiven Suszeptanzen
 		\item Die untere Hälfte des Diagramms entspricht kapazitiven Reaktanzen bzw. induktiven Suszeptanzen
 		\item Kreise um den Mittelpunkt entsprechen Leitungstransformationen in verlustlosen Leitungen: Bewegt man sich vom Abschlusswiderstand weg (Vergrößerung der Leitungslänge), dann bewegt man sich im Uhrzeigersinn.
 	\end{itemize}
+\end{sectionbox}
+
+% passt hier vom Layout am besten hin
+\begin{sectionbox}
+	\subsection{Smithchart Tricks}
+
+	\textbf{Impedanz $\rightarrow$ Bauteilwert}\\
+	$L=\frac{(z_L / j)Z_0}{\omega} \quad C=\frac{1}{(-z_C / j)Z_0\omega}$\\
+	\textbf{Admittanz $\rightarrow$ Bauteilwert}\\
+	$C=\frac{y_C / j}{Z_0 \omega} \quad L = \frac{Z_0}{(-y_L / j) \omega}$\\
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -837,6 +837,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 
 \begin{sectionbox}
 	\subsection{Kettenmatrizen häufiger 2-Tore}
+	Vorteil: die Kettenmatrix mehrerer hintereinander geschalteter Vierpole ist gleich dem Produkt der einzelnen Kettenmatrizen
 	$\left[\begin{array}{cc}
 		\mathrm{A} & \mathrm{B} \\
 		\mathrm{C} & \mathrm{D}
@@ -1321,7 +1322,9 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\subsection{Sphärische Feldkomponenten im Fernfeld}
 	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
 		Felder aufgrund elektr. Ströme: & \\
-			$\vec{H}_1(\vec{r}) = -\frac{jk}{\mu}\vec{e}_r \times \vec{A}(\vec{r})$ & $\vec{E}_1(\vec{r}) = -j\omega \left(\vec{A}(\vec{r}) - \vec{e}_rA_r(\vec{r})\right)$\\
+			$\vec{H}_1(\vec{r}) = $ & $\vec{E}_1(\vec{r}) =$ \\
+			$= \frac{1}{\mu} \nabla \times \vec{A}(\vec{r})$ & $= -j \omega\left[\vec{A}(\vec{r})+\frac{1}{k^{2}} \nabla \nabla \cdot \vec{A}(\vec{r})\right]$\\
+			$\approx -\frac{jk}{\mu}\vec{e}_r \times \vec{A}(\vec{r})$ & $\approx -j\omega \left(\vec{A}(\vec{r}) - \vec{e}_rA_r(\vec{r})\right)$\\
 			$H_{r 1}=0$ &  $E_{r 1}=0$ \\
 			$H_{\vartheta 1}=\frac{j k}{\mu} A_{\varphi}$ & $E_{\vartheta 1}=-j \omega A_{\vartheta}=Z_{F} H_{\varphi 1}$\\
 			$H_{\varphi 1}=-\frac{j k}{\mu} A_{\vartheta}$ & $E_{\varphi 1}=-j \omega A_{\varphi}=-Z_{F} H_{\vartheta 1}$\\
@@ -1332,7 +1335,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 			$E_{\vartheta 2}=-\frac{j k}{\varepsilon} F_{\varphi}=Z_{F} H_{\varphi 2} $ & $H_{\vartheta 2}=-j \omega F_{\vartheta}$\\
 			$E_{\varphi 2}=\frac{j k}{\varepsilon} F_{\vartheta}=-Z_{F} H_{\vartheta 2}$ & $H_{\varphi 2}=-j \omega F_{\varphi}$\\
 	\end{tablebox}
-	$Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$
+	$Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$ im Freiraum $\approx 120\pi\Omega \approx 377\Omega$
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -1346,6 +1349,10 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 \section{Hohlleiter}
 \begin{sectionbox}
 	\subsection{Hohlleiter}
+	\textbf{Charakteristisch} in einem Hohlleiter ist:
+	E(TM)-Welle kein H-Feld in Ausbreitungsrichtung, H(TE)-Welle kein E-Feld in Ausbreitungsrichtung.\\
+	\textbf{Anregung} unterhalb der Grenzfrequenz (evaneszente Wellen/Moden) kommt es zu keinem Wirkleistungstransport, sondern Blindleistung klingt exponentiell ab.
+	Oberhalb der Grenzfrequenz wird Wirkleistung transportiert.\\
 	\textbf{Dispersionsrelation} (Eigenwertgleichung) in karteischen Koordinaten:
 	\begin{emphbox}
 		$k^{2}=k_{x}^{2}+k_{y}^{2}+k_{z}^{2}$\\
@@ -1363,10 +1370,12 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	Unterhalb $f_c$ ist keine Wellenausbreitung möglich $\rightarrow k_z = 0$ bei $f = f_c$ 
 	\begin{emphbox}
 		$f_c = \frac{qc}{2\pi}$
-	\end{emphbox}
-	
+	\end{emphbox}	
+\end{sectionbox}
+
+\begin{sectionbox}
 	\textbf{Ausbreitungstyp} $q\leq k$ bzw. $f_c \leq f$:\\
-	$\gamma = j\beta$, $\alpha=0$, $\beta = k_z = \sqrt{k^2 - q^2}$\\
+	$\gamma = j\beta$, $\alpha=0$, $\beta = k_z = \sqrt{k^2 - q^2}$, $Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$\\
 
 	% Ausbreitungseigenschaften:
 	\begin{emphbox}
@@ -1608,7 +1617,9 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	\subsection{Wandstromverluste, Störungsrechnung}
 	1. Bestimme Feldverteilung unter Annahme idealer Leitfähigkeit\\
 	2. Berechne transportierte Leistung\\
-	$P=\int_{y=0}^{b} \int_{x=0}^{a} \operatorname{Re}\left\{S_{z}\right\} d x d y$\\
+	\begin{emphbox}
+		$P=\int_{y=0}^{b} \int_{x=0}^{a} \operatorname{Re}\left\{S_{z}\right\} d x d y$\\
+	\end{emphbox}
 	3. Betrachte Strom im differentiellen Skin-Schicht Element ringsrum
 	\begin{center}\includegraphics[width = 2.5cm]{./img/verluste-hl.png}\includegraphics[width = 2.5cm]{./img/hl-verluste2.png}\end{center}
 	4. Berechne differentielle Verluste im Volumenelement (verwende $R_{\square}$)\\
