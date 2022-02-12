@@ -1330,7 +1330,9 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 			$H_{\varphi 1}=-\frac{j k}{\mu} A_{\vartheta}$ & $E_{\varphi 1}=-j \omega A_{\varphi}=-Z_{F} H_{\vartheta 1}$\\
 
 		Felder aufgrund magnet. Ströme: & \\
-			$\vec{E}_{2}(\vec{r})= \frac{j k}{\varepsilon} \vec{e}_{r} \times \vec{F}(\vec{r})$ & $\vec{H}_{2}(\vec{r}) = -j \omega\left(\vec{F}(\vec{r})-\vec{e}_{r} F_{r}(\vec{r})\right)$ \\
+			$\vec{E}_{2}(\vec{r})= $ & $\vec{H}_{2}(\vec{r}) =$\\
+			$=- \frac{1}{\varepsilon} \nabla \times \vec{F}(\vec{r})$ & $ = -j \omega\left[\vec{F}(\vec{r})+\frac{1}{k^{2}} \nabla \nabla \cdot \vec{F}(\vec{r})\right]$ \\
+			$\approx \frac{j k}{\varepsilon} \vec{e}_{r} \times \vec{F}(\vec{r})$ & $\approx  -j \omega\left(\vec{F}(\vec{r})-\vec{e}_{r} F_{r}(\vec{r})\right)$\\
 			$E_{r 2}=0 $ & $H_{r 2}=0$\\
 			$E_{\vartheta 2}=-\frac{j k}{\varepsilon} F_{\varphi}=Z_{F} H_{\varphi 2} $ & $H_{\vartheta 2}=-j \omega F_{\vartheta}$\\
 			$E_{\varphi 2}=\frac{j k}{\varepsilon} F_{\vartheta}=-Z_{F} H_{\vartheta 2}$ & $H_{\varphi 2}=-j \omega F_{\varphi}$\\
@@ -1876,6 +1878,8 @@ Für den Hertz'schen Dipol im Fernfeld lässt sich ein Strahlungswiderstand ermi
 $$
 D=\frac{4 \pi r^{2} Z_{F} \cdot k^{2} \frac{|I|^{2} \ell^{2}}{32 \pi^{2} r^{2}}}{Z_{F} \frac{k^{2}|I|^{2} \ell^{2}}{12 \pi}}=1,5=1,76 \mathrm{dBi}
 $$
+\textbf{Fernfeld-Distanz} der Sendeantenne: $r_{FF} = \frac{2D^2}{\lambda}$\\
+Distanz, ab der man sich im strahlenden Nahfeld der Sendeantenne $r_{SN} = 0,62\sqrt{\frac{D^3}{\lambda}}$
 \end{sectionbox}
 \begin{sectionbox}
 
@@ -1972,7 +1976,7 @@ $\begin{array}{ll}
 	\text{(ohne ohmsche Verluste)}	&\\ 
 	\text { effektive Wirkfläche } & A_{e}=\frac{P_{r, \max }}{S}=\frac{\lambda^{2}}{4 \pi} G_{r} \\  
 	\text{(mit Verlusten)}&\\
-	 \text { Wirkungsgrad}\eta_{r}=\frac{A_{e}}{A_{0}} \\
+	 \text { Wirkungsgrad} & \eta_{r}=\frac{A_{e}}{A_{0}} \\
 \end{array}$
 
 \end{sectionbox}
@@ -2003,6 +2007,7 @@ $\left|C_{r}(\vartheta, \varphi)\right|=1 \quad \Rightarrow \quad P_{\mathrm{r}}
 \begin{sectionbox}
 	\subsection{Näherungen}
 	$w/2$ sehr klein: $\int\limits_{-w/2}^{w/2}f(x^{\prime}) d x^{\prime} \approx w f(0)$\\
+	Vergrößerung der Apertur führt in der Regel zu einer Vergrößerung der Richtwirkung.\\
 \end{sectionbox}
 % ======================================================================
 % End
