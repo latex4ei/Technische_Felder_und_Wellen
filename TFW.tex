@@ -650,7 +650,11 @@ Im Lastwiderstand umgesetzte Leistung: $P_L = \frac{|V_+|^2}{Z_0}(1-|\rho|^2)$
 	\textbf{Admittanz $\rightarrow$ Bauteilwert}\\
 	$C=\frac{y_C / j}{Z_0 \omega} \quad L = \frac{Z_0}{(-y_L / j) \omega}$\\
 	\textbf{Elektrische/Mechanische Wellenlänge}:\\
-	Elektrisch: $\lambda = \frac{c_0}{f}\quad$ Mechanisch: $\lambda_{eff} = \frac{\lambda}{\sqrt{\varepsilon_r}}$
+	Elektrisch: $\lambda = \frac{c_0}{f}\quad$ Mechanisch: $\lambda_{eff} = \frac{\lambda}{\sqrt{\varepsilon_r}}$ \\
+	Nützlich für Leitung:\\
+	$\frac{L}{\lambda}=X \rightarrow L = X \cdot \lambda = X \cdot \frac{c}{f} = X \cdot \frac{1}{f\sqrt{LC}}$
+	\begin{center}\includegraphics[width = 0.5\textwidth]{./img/smith_para_serie.png}\end{center}
+
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -757,9 +761,9 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	Absolute Stabilität: Die Tore verhalten sich unabhängig von der Beschaltung passiv d.h. $Re\{Z_E\} > 0$ und $Re\{Z_A\} > 0$.\\
 	Für die Reflexionsfaktoren muss gelten:\\
 	\begin{emphbox}
-		$|\rho_E < 1$ und $|\rho_A| < 1$ für\\
+		$|\rho_E| \leq  1$ und $|\rho_A| \leq  1$ für\\
 		
-		$|\rho_L| < 1$ und $|\rho_G| < 1$
+		$|\rho_L| \leq  1$ und $|\rho_G| \leq  1$
 	\end{emphbox}
 \end{sectionbox}
 
@@ -926,6 +930,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		\item Für maximalen Gewinn ist Wirkleistungsanpassung erforderlich
 		\item HF-Verstärker haben frequenzabhängige und stark reaktive Ein/Ausgangsimpedanzen, die angepasst werden müssen
 		\item Problem: Reaktive Anpassungen in der Regel schmalbandig
+		\item Lösung: Breitbandigkeit durch Anpassung mit resistiven Bauteilen, die jedoch eine Dämpfung verursachen.
 		\item Problem: Reflexionen können zu Stabilitätsproblemen führen
 	\end{itemize}
 \end{sectionbox}
@@ -1042,6 +1047,7 @@ $S [\text{dB}] = 10\cdot log(|S|^2), \quad |S|^2 = a^2+b^2$
 		\item $R$ idealerweise verlustfrei da zwischen Punkten gleichen Potential
 		\item Für $R = 2Z_0$ sind die Tore 2 und 3 entkoppelt
 		\item Etwa eine Oktave Bandbreite, erweiterbar durch mehrere Stufen
+		\item symmetrisch, reziprok, angepasst
 	\end{itemize}
 
 \textbf{Alternativer Aufbau} (einfacher zu dimensionieren):\\
