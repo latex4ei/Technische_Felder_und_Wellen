@@ -1349,7 +1349,19 @@ $\vec{H} = \frac{1}{Z_F} \mathbf{e}_z \times E_0\vec{e}_x =\frac{1}{Z_F} E_0 \ve
 		$\nabla \cdot \vec{A} \approx -jk \vec{e}_r \cdot \vec{A}$\\
 	\end{emphbox}
 \end{sectionbox}
-
+Im Fernfeld sollten immer Kugelkoordinaten für $\vec{r}$ verwendet werden. Damit lässt sich das Skalarproduct $\frac{\mathbf{r}\cdot\mathbf{r'}}{r}$ wie folgt ausdrücken:
+$$
+\frac{\mathbf{r}\cdot \mathbf{r}'}{r} = 
+\left(
+\begin{array}{l}
+sin \theta cos\phi \\
+sin \theta sin \phi\\
+cos\theta
+\end{array}
+\right)
+\cdot \vec{r'}
+$$
+Der Quellvektor $\vec{r}'$ muss entsprechend angepasst werden! Bei Flächenströmen können auch mehr als eine Komponente $\neq 0$ sein!
 \begin{sectionbox}
 	\subsection{Sphärische Feldkomponenten im Fernfeld}
 	\begin{tablebox}{@{\hspace{0mm}}l@{\extracolsep\fill}l@{\hspace{0mm}\extracolsep\fill}}
@@ -1374,6 +1386,7 @@ $\vec{H} = \frac{1}{Z_F} \mathbf{e}_z \times E_0\vec{e}_x =\frac{1}{Z_F} E_0 \ve
 
 \begin{sectionbox}
 	\subsection{TEM Wellen}
+	$Z_F = 120\pi \approx 377 \Omega$\\
 	$\vec{H} = \frac{1}{Z_F} \vec{e}_z \times \vec{E}$\\
 	$\vec{E} = -Z_F \vec{e}_z \times \vec{H}$\\
 	$\vec{E} \perp \vec{H} \perp \vec{e}_z$, $\vec{e}_z$ ist Ausbreitungsrichtung.\\
@@ -1410,7 +1423,7 @@ $\vec{H} = \frac{1}{Z_F} \mathbf{e}_z \times E_0\vec{e}_x =\frac{1}{Z_F} E_0 \ve
 \begin{sectionbox}
 	\textbf{Ausbreitungstyp} $q\leq k$ bzw. $f_c \leq f$:\\
 	$\gamma = j\beta$, $\alpha=0$, $\beta = k_z = \sqrt{k^2 - q^2}$, $Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$\\
-
+	$Z_F = 120\pi$
 	% Ausbreitungseigenschaften:
 	\begin{emphbox}
 		$\frac{k_z}{k} = \frac{\lambda}{\lambda_G} = \sqrt{1- \left(\frac{f_c}{f}\right)^2}=\frac{1}{k}\sqrt{\frac{\omega^{2}}{c^{2}}-k_{c}^{2}}$\\
