@@ -1430,11 +1430,12 @@ Der Quellvektor $\vec{r}'$ muss entsprechend angepasst werden! Bei Flächenströ
 \begin{sectionbox}
 	\textbf{Ausbreitungstyp} $q\leq k$ bzw. $f_c \leq f$:\\
 	$\gamma = j\beta$, $\alpha=0$, $\beta = k_z = \sqrt{k^2 - q^2}$, $Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$\\
-	$Z_{F_0} = 120\pi \quad Z_F = \frac{Z_{F_0}}{\sqrt{\varepsilon_r}}$
+	$Z_{F_0} = 120\pi \quad Z_F = \frac{Z_{F_0}}{\sqrt{\varepsilon_r}}$, 
+	$k=\frac{2 \pi f}{c}= \frac{\omega}{c}$ 
 	% Ausbreitungseigenschaften:
 	\begin{emphbox}
 		$\frac{k_z}{k} = \frac{\lambda}{\lambda_G} = \sqrt{1- \left(\frac{f_c}{f}\right)^2}=\frac{1}{k}\sqrt{\frac{\omega^{2}}{c^{2}}-k_{c}^{2}}$\\
-		$\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}} \geq \lambda$ (g: guided, z)\\
+		$\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}} =\frac{2 \pi}{k_z}\geq \lambda$ (g: guided, z)\\
 		$Z_{F H} = \frac{j \omega \mu}{\gamma_{H}}=\frac{\omega \mu}{\beta_{H}}=\frac{k}{k_z}Z_F=\frac{Z_{F}}{\sqrt{1 - \left(\frac{f_c}{f}\right)^2}}$\\
 		$Z_{F E} = \frac{\gamma_{E}}{j \omega \varepsilon}=\frac{\beta_{E}}{\omega \varepsilon}=\frac{k_z}{k}Z_F=\sqrt{1 - \left(\frac{f_c}{f}\right)^2}Z_{F}$\\
 	\end{emphbox}
@@ -1631,8 +1632,8 @@ Der Quellvektor $\vec{r}'$ muss entsprechend angepasst werden! Bei Flächenströ
 
 	Dispersionsrelation:
 	\begin{emphbox}
-		$k_x^2 + k_y^2 + k_z^2 = (\frac{m\pi}{a})^2+(\frac{n\pi}{b})^2 + k_z^2$\\
-		$k_x = \frac{m\pi}{a}$ und $k_y = \frac{n\pi}{b}$\\
+		$k^2=k_x^2 + k_y^2 + k_z^2 = (\frac{m\pi}{a})^2+(\frac{n\pi}{b})^2 + k_z^2$\\
+		$k = \frac{2 \pi f}{c_0}$ und $k_x = \frac{m\pi}{a}$ und $k_y = \frac{n\pi}{b}$\\
 		$q^2 = (\frac{m\pi}{a})^2+(\frac{n\pi}{b})^2$
 	\end{emphbox}
 	
@@ -1645,7 +1646,8 @@ Der Quellvektor $\vec{r}'$ muss entsprechend angepasst werden! Bei Flächenströ
 
 	Nützliche Umformungen:\\
 	$\frac{Z_F}{\omega\mu} = \frac{1}{k}$, 
-	$c=\frac{1}{\sqrt{\varepsilon \mu}}$\\
+	$c=\frac{1}{\sqrt{\varepsilon \mu}}$, 
+	$k \triangleq \left[\frac{1}{m}\right] $\\
 	
 	Wahl der Geometrie:
 	\begin{itemize}
@@ -1737,6 +1739,10 @@ Der Quellvektor $\vec{r}'$ muss entsprechend angepasst werden! Bei Flächenströ
 	rotationssymmetrisch $\rightarrow$ Rotationskopplungen
 	\begin{center}\includegraphics[width = 6cm]{./img/hl-rund-e01_2.png}\end{center}
 
+\end{sectionbox}
+\begin{sectionbox}
+	\textbf{entartete Moden:}
+	Entartete Moden besitzen die gleiche Grenzfrequenz.
 \end{sectionbox}
 
 \section{Antennen}
