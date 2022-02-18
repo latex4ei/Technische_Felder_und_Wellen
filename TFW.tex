@@ -67,86 +67,85 @@
 
 % Section
 % ----------------------------------------------------------------------
-\section{Math}
+% \section{Math}
 % ======================================================================
+% \begin{sectionbox}
+% 	\begin{tabular}{@{}llll}
+% 		$\pi \approx \num{3,14159}$ & $e \approx \num{2,71828}$ & $\sqrt{2} \approx \num{1,414}$ & $\sqrt{3} \approx \num{1,732}$ \\
+% 	\end{tabular}
 
-\begin{sectionbox}
-	\begin{tabular}{@{}llll}
-		$\pi \approx \num{3,14159}$ & $e \approx \num{2,71828}$ & $\sqrt{2} \approx \num{1,414}$ & $\sqrt{3} \approx \num{1,732}$ \\
-	\end{tabular}
+% 	\textbf{Binome, Trinome}\\
+% 	$(a\pm b)^2 = a^2 \pm 2ab + b^2$ \hfill $a^2 - b^2 = (a-b)(a+b)$\\
+% 	$(a \pm b)^3 = a^3 \pm 3a^2b + 3ab^2 \pm b^3$\\
+% 	$(a+b+c)^2 = a^2 + b^2 + c^2 + 2ab + 2ac + 2bc$
+% 	\\[0.5em]
+% 	\textbf{Folgen und Reihen}\\
+% 	$\underset{\text{Aritmetrische Summenformel}}{\sum \limits_{k=1}^{n} k = \frac{n (n+1)}{2}}$ \quad $\underset{\text{Geometrische Summenformel}}{\sum \limits_{k=0}^{n} q^k = \frac{1 - q^{n+1}}{1-q}}$ \quad $\underset{\text{Exponentialreihe}}{\sum\limits_{n = 0}^{\infty} \frac{\cx z^n}{n!} = e^{\cx z}}$\\
+% 	\\[0.5em]
+% 	\textbf{Mittelwerte} \quad ($\sum$ von $i$ bis $N$) \hfill {\small (Median: Mitte einer geordneten Liste)}\\
+% 	\begin{tabular*}{\columnwidth}{@{\extracolsep\fill}l@{\quad\ $\ge$}l@{\quad\ $\ge$}l}
+% 	$\underset{\text{Arithmetisches}}{\ol x_{\ir{ar}} = \frac{1}{N} \sum x_i}$ & $\underset{\text{Geometrisches Mittel}}{\ol x_{\ir{geo}} = \sqrt[N]{ \prod x_i }}$ & $\underset{\text{Harmonisches}}{\ol x_{\ir hm} = }\frac{N}{\sum \frac{1}{x_i}}$\\
+% 	\end{tabular*}
+% 	\\[0.5em]
+% 	\textbf{Ungleichungen:} \hfill Bernoulli-Ungleichung:  $(1+x)^n \ge 1+nx$\\
+% 	$\underset{\text{Dreiecksungleichung}}{\big|\! \abs{x}- \abs{y}\!\big| \le \abs{x \pm y} \le \abs{x} + \abs{y}}$ \hfill
+% 	$\underset{\text{Cauchy-Schwarz-Ungleichung}}{\left| \vec x^\top \bdot \vec y \right| \le \| \vec x\| \cdot \| \vec y\|}$
+% 	\\[0.5em]
+% 	\textbf{Mengen:} De Morgan: $\overline{A \capdot B} = \overline{A} \cupplus \overline{B}$ \hfill $\overline{A \cupplus B} = \overline{A} \capdot \overline{B}$
+% \end{sectionbox}
 
-	\textbf{Binome, Trinome}\\
-	$(a\pm b)^2 = a^2 \pm 2ab + b^2$ \hfill $a^2 - b^2 = (a-b)(a+b)$\\
-	$(a \pm b)^3 = a^3 \pm 3a^2b + 3ab^2 \pm b^3$\\
-	$(a+b+c)^2 = a^2 + b^2 + c^2 + 2ab + 2ac + 2bc$
-	\\[0.5em]
-	\textbf{Folgen und Reihen}\\
-	$\underset{\text{Aritmetrische Summenformel}}{\sum \limits_{k=1}^{n} k = \frac{n (n+1)}{2}}$ \quad $\underset{\text{Geometrische Summenformel}}{\sum \limits_{k=0}^{n} q^k = \frac{1 - q^{n+1}}{1-q}}$ \quad $\underset{\text{Exponentialreihe}}{\sum\limits_{n = 0}^{\infty} \frac{\cx z^n}{n!} = e^{\cx z}}$\\
-	\\[0.5em]
-	\textbf{Mittelwerte} \quad ($\sum$ von $i$ bis $N$) \hfill {\small (Median: Mitte einer geordneten Liste)}\\
-	\begin{tabular*}{\columnwidth}{@{\extracolsep\fill}l@{\quad\ $\ge$}l@{\quad\ $\ge$}l}
-	$\underset{\text{Arithmetisches}}{\ol x_{\ir{ar}} = \frac{1}{N} \sum x_i}$ & $\underset{\text{Geometrisches Mittel}}{\ol x_{\ir{geo}} = \sqrt[N]{ \prod x_i }}$ & $\underset{\text{Harmonisches}}{\ol x_{\ir hm} = }\frac{N}{\sum \frac{1}{x_i}}$\\
-	\end{tabular*}
-	\\[0.5em]
-	\textbf{Ungleichungen:} \hfill Bernoulli-Ungleichung:  $(1+x)^n \ge 1+nx$\\
-	$\underset{\text{Dreiecksungleichung}}{\big|\! \abs{x}- \abs{y}\!\big| \le \abs{x \pm y} \le \abs{x} + \abs{y}}$ \hfill
-	$\underset{\text{Cauchy-Schwarz-Ungleichung}}{\left| \vec x^\top \bdot \vec y \right| \le \| \vec x\| \cdot \| \vec y\|}$
-	\\[0.5em]
-	\textbf{Mengen:} De Morgan: $\overline{A \capdot B} = \overline{A} \cupplus \overline{B}$ \hfill $\overline{A \cupplus B} = \overline{A} \capdot \overline{B}$
-\end{sectionbox}
-
-\begin{sectionbox}
-	\subsection[Exp. und Log.]{Exp. und Log.\ \ $e^x := \lim\limits_{n \rightarrow \infty} \left( 1 + \frac{x}{n} \right)^n \hfill e \approx 2,71828$}
-	\begin{tabular*}{\columnwidth}{@{\extracolsep\fill}lll@{}}
-		$a^x = e^{x \ln a}$ & $\log_a x = \frac{\ln x}{\ln a}$ & $\ln x \le x -1$\\
-		$\ln(x^{a}) = a \ln(x)$ & $\ln(\frac{x}{a}) = \ln x - \ln a$ & $\log(1) = 0$\\
-	\end{tabular*}
-\end{sectionbox}
-
-
-\begin{sectionbox}
-	\subsection[Matrizen]{Matrizen $\ma A \in\mathbb{K}^{m \times n}$}
-	$\ma A=(a_{ij}) \in \mathbb K^{m\times n}$ hat $m$ Zeilen (Index $i$) und $n$ Spalten (Index $j$)
-	\begin{tabular*}{\columnwidth}{ll}
-	$(\ma A + \ma B)^\top = \ma A^\top + \ma B^\top$ & $(\ma A \cdot \ma B)^\top = \ma B^\top \cdot \ma A^\top$\\
-	${(\ma A^\top)}^{-1} = {(\ma A^{-1})}^\top$ & $(\ma A \cdot \ma B)^{-1} = \ma B^{-1}\ma A^{-1}$
-	\end{tabular*}
-	$\dim \mathbb K = n = \rang\ma A + \dim\ker\ma A$ \qquad $\rang\ma A = \rang\ma A^\top$
+% \begin{sectionbox}
+% 	\subsection[Exp. und Log.]{Exp. und Log.\ \ $e^x := \lim\limits_{n \rightarrow \infty} \left( 1 + \frac{x}{n} \right)^n \hfill e \approx 2,71828$}
+% 	\begin{tabular*}{\columnwidth}{@{\extracolsep\fill}lll@{}}
+% 		$a^x = e^{x \ln a}$ & $\log_a x = \frac{\ln x}{\ln a}$ & $\ln x \le x -1$\\
+% 		$\ln(x^{a}) = a \ln(x)$ & $\ln(\frac{x}{a}) = \ln x - \ln a$ & $\log(1) = 0$\\
+% 	\end{tabular*}
+% \end{sectionbox}
 
 
-	\subsubsection{Quadratische Matrizen $A \in \mathbb{K}^{n \times n}$}
-	regulär/invertierbar/nicht-singulär $\Leftrightarrow \det (\ma A) \ne 0 \Leftrightarrow \rang\ma A = n$\\
-	singulär/nicht-invertierbar $\Leftrightarrow \det (\ma A) = 0 \Leftrightarrow \rang\ma A \ne n$\\
-	orthogonal $\Leftrightarrow \ma A^\top=\ma A^{-1} \Ra \det(\ma A) = \pm 1$\\
-	symmetrisch: $\ma A=\ma A^\top$ \qquad schiefsymmetrisch: $\ma A=-\ma A^\top$
-	%\item hermitsch: $\ma A=\overline{\ma A}^\top$, unitär:$\ma A^{-1} = \overline{\ma A}^\top$
+% \begin{sectionbox}
+% 	\subsection[Matrizen]{Matrizen $\ma A \in\mathbb{K}^{m \times n}$}
+% 	$\ma A=(a_{ij}) \in \mathbb K^{m\times n}$ hat $m$ Zeilen (Index $i$) und $n$ Spalten (Index $j$)
+% 	\begin{tabular*}{\columnwidth}{ll}
+% 	$(\ma A + \ma B)^\top = \ma A^\top + \ma B^\top$ & $(\ma A \cdot \ma B)^\top = \ma B^\top \cdot \ma A^\top$\\
+% 	${(\ma A^\top)}^{-1} = {(\ma A^{-1})}^\top$ & $(\ma A \cdot \ma B)^{-1} = \ma B^{-1}\ma A^{-1}$
+% 	\end{tabular*}
+% 	$\dim \mathbb K = n = \rang\ma A + \dim\ker\ma A$ \qquad $\rang\ma A = \rang\ma A^\top$
 
 
-	\subsubsection[Determinante]{Determinante von $\ma A\in \mathbb K^{n\times n}$: $\det(\ma A)=|\ma A|$}
-	$\det\mat{ \ma A & \ma 0 \\ \ma C& \ma D }= \det\mat{ \ma A & \ma B \\ \ma 0 & \ma D } = \det(\ma A)\det(\ma D)$ \\
-	\begin{tabular*}{\columnwidth}{@{\extracolsep\fill}ll}
-	$\det(\ma A) = \det(\ma A^T)$ & $\det(\ma A^{-1}) = \det(\ma A)^{-1}$
-	\end{tabular*}
-	$\det(\ma A\ma B) = \det(\ma A)\det(\ma B) = \det(\ma B)\det(\ma A) = \det(\ma B\ma A)$\\
-	Hat $\ma A$ 2 linear abhäng. Zeilen/Spalten $\Rightarrow |\ma A|=0$ \\
-
-	\subsubsection{Eigenwerte (EW) $\lambda$ und Eigenvektoren (EV) $\underline v$}
-	\begin{emphbox}
-		\large $\ma A \vec v = \lambda \vec v$ \quad\ $\det \ma A = \prod \lambda_i$ \quad\ $\Sp \ma A = \sum a_{ii} = \sum \lambda_i$
-	\end{emphbox}
-	Eigenwerte: $\det(\ma A - \lambda \ma 1) = 0$ Eigenvektoren: $\ker(\ma A - \lambda_i \ma 1) = \vec v_i$\\
-	EW von Dreieck/Diagonal Matrizen sind die Elem. der Hauptdiagonale.
+% 	\subsubsection{Quadratische Matrizen $A \in \mathbb{K}^{n \times n}$}
+% 	regulär/invertierbar/nicht-singulär $\Leftrightarrow \det (\ma A) \ne 0 \Leftrightarrow \rang\ma A = n$\\
+% 	singulär/nicht-invertierbar $\Leftrightarrow \det (\ma A) = 0 \Leftrightarrow \rang\ma A \ne n$\\
+% 	orthogonal $\Leftrightarrow \ma A^\top=\ma A^{-1} \Ra \det(\ma A) = \pm 1$\\
+% 	symmetrisch: $\ma A=\ma A^\top$ \qquad schiefsymmetrisch: $\ma A=-\ma A^\top$
+% 	%\item hermitsch: $\ma A=\overline{\ma A}^\top$, unitär:$\ma A^{-1} = \overline{\ma A}^\top$
 
 
-	\subsubsection{Spezialfall $2 \times 2$ Matrix $A$}
-	\parbox{3cm}{ $\det(\ma A) = ad-bc$ \\ $\Sp(\ma A) = a+d$ } $\mat{a & b\\ c & d}^{-1} = \frac{1}{\det \ma A} \mat{d & -b\\ -c& a}$\\
-	$\lambda_{1/2} = \frac{\Sp \ma A}{2} \pm \sqrt{ \left( \frac{\mathrm{sp} \ma A}{2} \right)^2 - \det \ma A }$
+% 	\subsubsection[Determinante]{Determinante von $\ma A\in \mathbb K^{n\times n}$: $\det(\ma A)=|\ma A|$}
+% 	$\det\mat{ \ma A & \ma 0 \\ \ma C& \ma D }= \det\mat{ \ma A & \ma B \\ \ma 0 & \ma D } = \det(\ma A)\det(\ma D)$ \\
+% 	\begin{tabular*}{\columnwidth}{@{\extracolsep\fill}ll}
+% 	$\det(\ma A) = \det(\ma A^T)$ & $\det(\ma A^{-1}) = \det(\ma A)^{-1}$
+% 	\end{tabular*}
+% 	$\det(\ma A\ma B) = \det(\ma A)\det(\ma B) = \det(\ma B)\det(\ma A) = \det(\ma B\ma A)$\\
+% 	Hat $\ma A$ 2 linear abhäng. Zeilen/Spalten $\Rightarrow |\ma A|=0$ \\
 
-	\subsubsection{Differentiation}
-	$\frac{\partial \vec x^\top \vec y}{\partial \vec x} = \frac{\partial \vec y^\top \vec x}{\partial \vec x} = \vec y$\qquad
-	$\frac{\partial \vec x^\top \ma A \vec x}{\partial \vec x} = (\ma A + \ma A^\top)\vec x$ \\
-	$\frac{\partial \vec x^\top \ma A \vec y}{\partial \ma A} = \vec x \vec y^\top$ \qquad $\frac{\partial \det( \ma B \ma A \ma C )}{\partial \ma A} = \det(\ma B \ma A \ma C) \left( \ma A^{-1} \right)^\top$
-\end{sectionbox}
+% 	\subsubsection{Eigenwerte (EW) $\lambda$ und Eigenvektoren (EV) $\underline v$}
+% 	\begin{emphbox}
+% 		\large $\ma A \vec v = \lambda \vec v$ \quad\ $\det \ma A = \prod \lambda_i$ \quad\ $\Sp \ma A = \sum a_{ii} = \sum \lambda_i$
+% 	\end{emphbox}
+% 	Eigenwerte: $\det(\ma A - \lambda \ma 1) = 0$ Eigenvektoren: $\ker(\ma A - \lambda_i \ma 1) = \vec v_i$\\
+% 	EW von Dreieck/Diagonal Matrizen sind die Elem. der Hauptdiagonale.
+
+
+% 	\subsubsection{Spezialfall $2 \times 2$ Matrix $A$}
+% 	\parbox{3cm}{ $\det(\ma A) = ad-bc$ \\ $\Sp(\ma A) = a+d$ } $\mat{a & b\\ c & d}^{-1} = \frac{1}{\det \ma A} \mat{d & -b\\ -c& a}$\\
+% 	$\lambda_{1/2} = \frac{\Sp \ma A}{2} \pm \sqrt{ \left( \frac{\mathrm{sp} \ma A}{2} \right)^2 - \det \ma A }$
+
+% 	\subsubsection{Differentiation}
+% 	$\frac{\partial \vec x^\top \vec y}{\partial \vec x} = \frac{\partial \vec y^\top \vec x}{\partial \vec x} = \vec y$\qquad
+% 	$\frac{\partial \vec x^\top \ma A \vec x}{\partial \vec x} = (\ma A + \ma A^\top)\vec x$ \\
+% 	$\frac{\partial \vec x^\top \ma A \vec y}{\partial \ma A} = \vec x \vec y^\top$ \qquad $\frac{\partial \det( \ma B \ma A \ma C )}{\partial \ma A} = \det(\ma B \ma A \ma C) \left( \ma A^{-1} \right)^\top$
+% \end{sectionbox}
 
 
 
@@ -302,10 +301,11 @@ Im guten Leiter $\kappa >> \omega\epsilon$ gilt:
 	\item[2.] In einer dünnen Schicht unter der Oberfläche existieren nennenswerte Stromdichten
 	\item[3.] Für die Verluste sind also nur die obersten Schichten (die Haut) des Leiters entscheidend
 \end{itemize}
-Für die Stromverteilung im Leiter gilt: $J_z = J_z(0) e^{-ky} e^{-jky}$ mit $k = \sqrt{\frac{\omega\mu\kappa}{2}}\quad[\frac{1}{m}]$\\
+Für die Stromverteilung im Leiter gilt: $J_z = J_z(0) e^{-ky} e^{-jky}$ mit $k = \sqrt{\frac{\omega\mu\kappa}{2}}\quad[\frac{1}{m}]$, y: Wandstärke\\
 Der Kehrwert der Abklingkonstante/Wellenzahl $k$ wird als Eindringtiefe bezeichnet. Das Amplitude der Stromdichte ist nach dieser Tiefe auf $1/e$ abgefallen.
 \begin{emphbox}
-Eindringtiefe: $\delta = \frac{1}{k} = \sqrt{\frac{2}{\omega \mu \kappa}}$, $J_z = J_z(0) e^{-ky} e^{-jky}$
+Eindringtiefe: $\delta = \frac{1}{k} = \sqrt{\frac{2}{\omega \mu \kappa}}$, $J_z = J_z(0) e^{-ky} e^{-jky}$\\
+Umgestellt mit Dämpfung D[dB]: $z = -\frac{\operatorname{ln}10^{D/20}}{k}$
 \end{emphbox}
 Die Verluste im Material lassen sich berechnen (Platte mit Querschnitt $\delta \cdot a$)\\
 \begin{tabular*}{\columnwidth}{ll}
@@ -314,7 +314,7 @@ Die Verluste im Material lassen sich berechnen (Platte mit Querschnitt $\delta \
 	Verluste durch Oberflächenströme & $P_J = \frac{1}{2} \iint R_S |H_0|^2 d\mathbf{A}$ \\
 \end{tabular*}
 \begin{tabular*}{\columnwidth}{ll}
-\includegraphics[width = 2.5cm]{./img/skin_effekt.png} & \includegraphics[width = 2.5cm]{./img/skin_effekt_verlust.png}\\
+\includegraphics[width = 2cm]{./img/skin_effekt.png} & \includegraphics[width = 2cm]{./img/skin_effekt_verlust.png}\\
 \end{tabular*}
 \end{sectionbox}
 \begin{sectionbox}
@@ -414,7 +414,7 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell und $\mathbf{k}\cdot\mathbf{k} 
 	\end{tablebox}
 	Welle in Medium 1: $\mathbf{E}_1(z) = E_{1i}e^{-j\beta_1z}(1+\rho e^{+2j\beta_1z})\mathbf{u}_x$\\
 	Welle in Medium 2: $\mathbf{E}_2(z) = \tau E_{1i}e^{-j\beta_1z}\mathbf{u}_x$ \danger{Vorzeichen von $z$!}\\
-	Stehwellenverhältnis: SWR = $\frac{|E_1|_{\text{max}}}{|E_1|_{\text{min}}} = \frac{1 + |\rho |}{1-|\rho |}$\\
+	Stehwellenverhältnis: SWR = $\frac{|E_1|_{\text{max}}}{|E_1|_{\text{min}}} = \frac{1 + |\rho |}{1-|\rho |}$, $|\rho| = \frac{\text{SWR}-1}{\text{SWR}+1}$\\
 	Max/Min: $z = -\frac{n \lambda_1}{2}, n= 0,1,2,\dots$, $|E_1| = |E_{1i}||1 + \rho|$\\
 	Min/Max: $z = -\frac{(2n+1) \lambda_1}{4}, n= 0,1,2,\dots$, $|E_1| = |E_{1i}||1 - \rho|$\\
 	Maximum/Minimum abhängig von ($\rho > 0$)/($\rho < 0$)\\
@@ -497,7 +497,7 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell und $\mathbf{k}\cdot\mathbf{k} 
 	Für große Werte von $|z|$ schmiegt sich das Hyperboloid asymptotisch einem Kegel an mit dem Öffnungswinkel:\\
 	$\theta_0 = \text{arctan}\frac{2w_0}{b}$\\
 	$w(z) = z\tan\theta$\\
-	Für $z \gg b$: $\frac{w_0}{w(z)} \approx \frac{b}{2z}$
+	Für $z \gg b$: $\frac{w_0}{w(z)} \approx \frac{b}{2z}$, $w(z) = \frac{2z}{b}w_0$
 	
 	Für kleine Öffnungswinkel erhalten wir näherungsweise:\\
 	$\theta_0 = \frac{\lambda}{\pi w_0} = \frac{2w_0}{b} = \frac{2}{nk_0w_0} = \frac{\lambda_0}{\pi w_0 n}$\\
@@ -505,8 +505,12 @@ Verlustloste Medien: $\omega^2\epsilon\mu$ reell und $\mathbf{k}\cdot\mathbf{k} 
 
 	\includegraphics[width = \columnwidth]{./img/gauss_strahl.png}\\
 	
-	Leistungstransport des Strahls:\\
-	$P = \frac{n}{2Z_{F0}}\int_-\infty^\infty\int_-\infty^\infty |E_{00x}(x,y,z)|^2 dxdy$
+	\textbf{Leistungstransport des Strahls}:\\
+	$P = \frac{n}{2Z_{F0}}\int_-\infty^\infty\int_-\infty^\infty |E_{00x}(x,y,z)|^2 dxdy$\\
+	Leistungsdichte im Maximum: $E_{00,\text{max}} = \frac{\sqrt{\frac{4k_0Z_FP}{\pi b}}}{\sqrt{1+\left(\frac{2z}{b}\right)^2}}$\\
+	Für $z \gg b$: $E_{00,\text{max}} = \sqrt{\frac{4k_0Z_FP}{\pi b}}\frac{b}{2z}$\\
+	Antennengewinn: $G = \frac{8\pi^2w_0^2}{\lambda^2}$\\
+	Leistungsübertragung bei Empfangsfläche $A$: $P_E = P_S \frac{2\pi^2r^2w_0^2}{z^2\lambda^2}$
 
 	Konfokaler Parameter $b$:\\
 	Im konfocalen Abstand $z=\pm b/2$ ist die doppelte Fläche beschienen: $w(z) = \sqrt{2}w_0$.
@@ -578,6 +582,7 @@ Im Lastwiderstand umgesetzte Leistung: $P_L = \frac{|V_+|^2}{Z_0}(1-|\rho|^2)$
 	nicht nach rechts positiv gemessen d.h.: $\xi = -z$\\
 	
 	$\rho = \frac{Z_L - Z_0}{Z_L + Z_0}$ \quad
+	$Z_L=Z_0\frac{1+\rho}{1-\rho}$ \quad
 	$Z(\xi) = Z_0 \frac{1+\rho e^{-j2\beta\xi}}{1-\rho e^{-j2\beta\xi}}$\\
 	
 		\begin{tablebox}{@{\hspace{5mm}}l@{\extracolsep\fill}|l@{\extracolsep\fill}}
@@ -650,7 +655,11 @@ Im Lastwiderstand umgesetzte Leistung: $P_L = \frac{|V_+|^2}{Z_0}(1-|\rho|^2)$
 	\textbf{Admittanz $\rightarrow$ Bauteilwert}\\
 	$C=\frac{y_C / j}{Z_0 \omega} \quad L = \frac{Z_0}{(-y_L / j) \omega}$\\
 	\textbf{Elektrische/Mechanische Wellenlänge}:\\
-	Elektrisch: $\lambda = \frac{c_0}{f}\quad$ Mechanisch: $\lambda_{eff} = \frac{\lambda}{\sqrt{\varepsilon_r}}$
+	Elektrisch: $\lambda = \frac{c_0}{f}\quad$ Mechanisch: $\lambda_{eff} = \frac{\lambda}{\sqrt{\varepsilon_r}}$ \\
+	Nützlich für Leitung:\\
+	$\frac{L}{\lambda}=X \rightarrow L = X \cdot \lambda = X \cdot \frac{c}{f} = X \cdot \frac{1}{f\sqrt{LC}}$
+	\begin{center}\includegraphics[width = 0.5\textwidth]{./img/smith_para_serie.png}\end{center}
+
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -669,15 +678,16 @@ Im Lastwiderstand umgesetzte Leistung: $P_L = \frac{|V_+|^2}{Z_0}(1-|\rho|^2)$
 		\item[+] verlustarm
 		\item[+] umepfindlich gg. Diskontinuitäten
 		\item[+] Serienelemente leicht integrierbar
+		\item[+] gute Wärmeabfuhr 
 		\item[-] Parallelelemente schwierig
 		\item[-] Leiterbreite nicht skalierbar
 		\item[-] messtechnisch schwierig
+		\item[-] Kontaktierung aufwendig
 	\end{itemize}
 	\columnbreak
 	\begin{itemize}
 		\item[+] einseitige Metallisierung
 		\item[+] Leiterbreite skalierbar
-		\item[+] Serienelemente leicht integrierbar
 		\item[+] Serienelemente leicht integrierbar
 		\item[+] Parallelelemente leicht integrierbar
 		\item[-] mittlere Verluste
@@ -757,9 +767,9 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 	Absolute Stabilität: Die Tore verhalten sich unabhängig von der Beschaltung passiv d.h. $Re\{Z_E\} > 0$ und $Re\{Z_A\} > 0$.\\
 	Für die Reflexionsfaktoren muss gelten:\\
 	\begin{emphbox}
-		$|\rho_E < 1$ und $|\rho_A| < 1$ für\\
+		$|\rho_E| \leq  1$ und $|\rho_A| \leq  1$ für\\
 		
-		$|\rho_L| < 1$ und $|\rho_G| < 1$
+		$|\rho_L| \leq  1$ und $|\rho_G| \leq  1$
 	\end{emphbox}
 \end{sectionbox}
 
@@ -926,6 +936,7 @@ Falls Zweitor rückwirkungsfrei: $S_{12} = 0 \implies \rho_E = S_{11}, \quad \rh
 		\item Für maximalen Gewinn ist Wirkleistungsanpassung erforderlich
 		\item HF-Verstärker haben frequenzabhängige und stark reaktive Ein/Ausgangsimpedanzen, die angepasst werden müssen
 		\item Problem: Reaktive Anpassungen in der Regel schmalbandig
+		\item Lösung: Breitbandigkeit durch Anpassung mit resistiven Bauteilen, die jedoch eine Dämpfung verursachen.
 		\item Problem: Reflexionen können zu Stabilitätsproblemen führen
 	\end{itemize}
 \end{sectionbox}
@@ -1013,6 +1024,20 @@ $S [\text{dB}] = 10\cdot log(|S|^2), \quad |S|^2 = a^2+b^2$
 	Mehrstufige Koppler verbessern die Bandbreite.
 \end{sectionbox}
 \begin{sectionbox}
+	\textbf{Zirkulator}:Ein Dreitor, dessen S-Parametermatrix verlustfrei und allseitig reflexionsfrei angepasst ist.
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Resistiver 3-Tor Leistungsteiler}
+	\begin{center}\includegraphics[width = 2.5cm]{./img/res-3tor.png}
+	\raisebox{1cm}{$[S]=\left[\begin{array}{lll}
+		0 & \frac{1}{2} & \frac{1}{2} \\
+		\frac{1}{2} & 0 & \frac{1}{2} \\
+		\frac{1}{2} & \frac{1}{2} & 0
+		\end{array}\right]$}\end{center}
+\end{sectionbox}
+
+\begin{sectionbox}
 	\subsection{Resistive Koppler}
 	\includegraphics[width = 4.3cm]{./img/resistiver_koppler.png}
 	\includegraphics[width = 2.3cm]{./img/resistiver_koppler_evenodd.png}\\
@@ -1042,6 +1067,7 @@ $S [\text{dB}] = 10\cdot log(|S|^2), \quad |S|^2 = a^2+b^2$
 		\item $R$ idealerweise verlustfrei da zwischen Punkten gleichen Potential
 		\item Für $R = 2Z_0$ sind die Tore 2 und 3 entkoppelt
 		\item Etwa eine Oktave Bandbreite, erweiterbar durch mehrere Stufen
+		\item symmetrisch, reziprok, angepasst
 	\end{itemize}
 
 \textbf{Alternativer Aufbau} (einfacher zu dimensionieren):\\
@@ -1129,7 +1155,17 @@ symmetrisch, reziprok, angepasst
 	$\Rightarrow$ Für $\mu^{\prime \prime}(\vec{r})>0 $ und/oder $ \varepsilon^{\prime \prime}(\vec{r})>0$ ist die Feldlösung eindeutig.\\
 	$\Rightarrow$ Für verlustfreie Medien (ideale Resonatoren) oder negativen Materialien existieren mehrere Lösungen.
 
-\end{sectionbox}	
+\end{sectionbox}
+
+\begin{sectionbox}
+	\subsection{Reziprozität der Green'schen Funktion beweisen}
+	Beweis hier beispielhaft für $G_J^E$\\
+	Reziprozität: $\iiint_V E_1\cdot J_2 dv = \iiint_V E_2\cdot J_1 dv$\\
+	Einsetzen:\\
+	$E_{1,2} = \iiint_V G_J^E(r,r') J_{1,2}(r') dv'$\\
+	$J_{1} = Il \delta(r-r_{1,2})e_{a,b,c}\quad J_{2} = Il \delta(r-r_{1,2})e_{d,e,f}$\\
+	Lösen der Integrale: $G_J^E(r_1,r_2)_{abc,def} = G_J^E(r_2,r_1)_{def,abc}$
+\end{sectionbox}
 
 \begin{sectionbox}
 	\subsection{Reziprozität}
@@ -1275,12 +1311,12 @@ symmetrisch, reziprok, angepasst
 	\begin{emphbox}
 		$\vec{H}(\vec{r})=\frac{1}{\mu} \nabla \times \vec{A}(\vec{r})$\\
 	\end{emphbox}
-	\begin{center}\includegraphics[width = 6.5cm]{green_zsm.png}\end{center}
+	\begin{center}\includegraphics[width = \textwidth]{green_zsm.png}\end{center}
 \end{sectionbox}
 
 \begin{sectionbox}
 	\subsection{Spiegelungsprinzip}
-	\begin{center}\includegraphics[width = 6.5cm]{spiegelungsprinzip.png}\end{center}
+	\begin{center}\includegraphics[width =\textwidth]{spiegelungsprinzip.png}\end{center}
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -1424,11 +1460,12 @@ Der Quellvektor $\vec{r}'$ muss entsprechend angepasst werden! Bei Flächenströ
 \begin{sectionbox}
 	\textbf{Ausbreitungstyp} $q\leq k$ bzw. $f_c \leq f$:\\
 	$\gamma = j\beta$, $\alpha=0$, $\beta = k_z = \sqrt{k^2 - q^2}$, $Z_F = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\omega\mu}{k}$\\
-	$Z_{F_0} = 120\pi \quad Z_F = \frac{Z_{F_0}}{\sqrt{\varepsilon_r}}$
+	$Z_{F_0} = 120\pi \quad Z_F = \frac{Z_{F_0}}{\sqrt{\varepsilon_r}}$, 
+	$k=\frac{2 \pi f}{c}= \frac{\omega}{c}$ 
 	% Ausbreitungseigenschaften:
 	\begin{emphbox}
 		$\frac{k_z}{k} = \frac{\lambda}{\lambda_G} = \sqrt{1- \left(\frac{f_c}{f}\right)^2}=\frac{1}{k}\sqrt{\frac{\omega^{2}}{c^{2}}-k_{c}^{2}}$\\
-		$\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}} \geq \lambda$ (g: guided, z)\\
+		$\lambda_{g}=\frac{2 \pi}{\beta}=\frac{2 \pi}{\sqrt{k^{2}-q^{2}}} =\frac{2 \pi}{k_z}\geq \lambda$ (g: guided, z)\\
 		$Z_{F H} = \frac{j \omega \mu}{\gamma_{H}}=\frac{\omega \mu}{\beta_{H}}=\frac{k}{k_z}Z_F=\frac{Z_{F}}{\sqrt{1 - \left(\frac{f_c}{f}\right)^2}}$\\
 		$Z_{F E} = \frac{\gamma_{E}}{j \omega \varepsilon}=\frac{\beta_{E}}{\omega \varepsilon}=\frac{k_z}{k}Z_F=\sqrt{1 - \left(\frac{f_c}{f}\right)^2}Z_{F}$\\
 	\end{emphbox}
@@ -1516,6 +1553,8 @@ Der Quellvektor $\vec{r}'$ muss entsprechend angepasst werden! Bei Flächenströ
 	Spezialfall: Achse durch Gehäuse\\
 	\begin{center}\includegraphics[width = 4cm]{./img/hl-schirmung2.jpeg}\end{center}
 	Dielektrische Achse: $\alpha_{c}=\frac{2 \pi}{1,71 D}$ bestimmt Dämpfung\\
+	\begin{center}\includegraphics[width = 3cm]{./img/hl-dampfung.png}\end{center}
+
 \end{sectionbox}
 
 
@@ -1595,6 +1634,7 @@ Der Quellvektor $\vec{r}'$ muss entsprechend angepasst werden! Bei Flächenströ
 \begin{sectionbox}
 	\subsection{TE(H)-Moden im Rechteck Hohlleiter}
 	\textbf{$\text{H}_{mn}$-Mode}:\\
+	m: nebeneinander, n: übereinander\\
 	$E_z = 0$
 	\begin{center}\includegraphics[width = 4cm]{./img/Hmn.png}\end{center}
 
@@ -1624,20 +1664,22 @@ Der Quellvektor $\vec{r}'$ muss entsprechend angepasst werden! Bei Flächenströ
 
 	Dispersionsrelation:
 	\begin{emphbox}
-		$k_x^2 + k_y^2 + k_z^2 = (\frac{m\pi}{a})^2+(\frac{n\pi}{b})^2 + k_z^2$\\
-		$k_x = \frac{m\pi}{a}$ und $k_y = \frac{n\pi}{b}$\\
+		$k^2=k_x^2 + k_y^2 + k_z^2 = (\frac{m\pi}{a})^2+(\frac{n\pi}{b})^2 + k_z^2$\\
+		$k = \frac{2 \pi f}{c_0}$ und $k_x = \frac{m\pi}{a}$ und $k_y = \frac{n\pi}{b}$\\
 		$q^2 = (\frac{m\pi}{a})^2+(\frac{n\pi}{b})^2$
 	\end{emphbox}
 	
 	\begin{emphbox}
 		$f_c = \frac{c}{2}\sqrt{\left(\frac{m}{a}\right)^2+\left(\frac{n}{b}\right)^2}$ (= $\frac{c}{2a}$ für $\text{TE}_{10}$)\\
-		$\lambda_c = \frac{c}{\sqrt{f^2 - f_c^2}}$, $\beta_c = \frac{2\pi}{\lambda_c}$\\
+		$\lambda_g = \frac{c}{\sqrt{f^2 - f_c^2}},\quad$ $\beta_c = \frac{2\pi}{\lambda_c},\quad$ $\lambda_c = \frac{c}{f_c}$\\
 	\end{emphbox}
 
 	In der Nähe der Grenzfrequenz wird der Hohlleiter extrem dispersiv $\rightarrow$ Betriebsbereich von 1.25 bis 1.9 der unteren Grenzfrequenz.\\
 
 	Nützliche Umformungen:\\
-	$\frac{Z_F}{\omega\mu} = \frac{1}{k}$\\
+	$\frac{Z_F}{\omega\mu} = \frac{1}{k}$, 
+	$c=\frac{1}{\sqrt{\varepsilon \mu}}$, 
+	$k \triangleq \left[\frac{1}{m}\right] $\\
 	
 	Wahl der Geometrie:
 	\begin{itemize}
@@ -1702,6 +1744,8 @@ Der Quellvektor $\vec{r}'$ muss entsprechend angepasst werden! Bei Flächenströ
 	Dielektrische Verluste sind bereits perfekt über die feldtheoretischen Ansatz abgedeckt.\\
 	Sie sind von Bedeutung in substratintegrieten Hohlleitern.\\
 	$\alpha_{D} \approx \frac{1}{2} \beta_{0} \sqrt{\varepsilon_{r}^{\prime}} \tan \delta_{\varepsilon} \frac{\frac{f}{f_{c}}}{\sqrt{\left(\frac{f}{f_{c}}\right)^{2}-1}}$\\
+	mit $\beta_0 = \frac{2 \pi}{\lambda_{c_0}} = \frac{2 \pi f}{c_0}$,
+	Dämpfung: $d=10 \log \left(\mathrm{e}^{-2 \alpha_{\mathrm{D}} l_{\mathrm{RHL}}}\right)$\\
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -1728,6 +1772,10 @@ Der Quellvektor $\vec{r}'$ muss entsprechend angepasst werden! Bei Flächenströ
 	rotationssymmetrisch $\rightarrow$ Rotationskopplungen
 	\begin{center}\includegraphics[width = 6cm]{./img/hl-rund-e01_2.png}\end{center}
 
+\end{sectionbox}
+\begin{sectionbox}
+	\textbf{entartete Moden:}
+	Entartete Moden besitzen die gleiche Grenzfrequenz.
 \end{sectionbox}
 
 \section{Antennen}
@@ -1915,7 +1963,8 @@ $$
 \vec{S}=\frac{1}{2} \vec{E} \times \vec{H}^{*}=\mathrm{Z}_{F} k^{2} \frac{|I|^{2} \ell^{2}}{32 \pi^{2} r^{2}} \sin ^{2} \vartheta \vec{e}_{r}
 $$
 \end{emphbox}
-Effektiv bedeutet das, dass im Fernfeld $\vec{E}$ und $\vec{H}$ \textbf{senkrecht} aufeinander stehen und ein reiner \textbf{Wirkleistungstransport} stattfindet!
+Effektiv bedeutet das, dass im Fernfeld $\vec{E}$ und $\vec{H}$ \textbf{senkrecht} aufeinander stehen und ein reiner \textbf{Wirkleistungstransport} stattfindet!\\
+$\Delta \phi=0^{\circ}, \vec{E} \perp \vec{H}, E_{r}=H_{r}=0$, reine Wirkleistung\\
 Die Amplituden von elektrischen und magnetischem Feld sind über den Feldwellenwiderstand verknüpft:
 $$
 E_{\vartheta}=Z_{F} H_{\varphi}
@@ -2050,7 +2099,8 @@ $\left|C_{r}(\vartheta, \varphi)\right|=1 \quad \Rightarrow \quad P_{\mathrm{r}}
 	$\begin{aligned} P_{\mathrm{r}, \max } &=A_{e}\left|C_{\mathrm{r}}(\vartheta, \varphi)\right|^{2} \frac{1}{4 \pi r^{2}}\left|C_{\mathrm{t}}(\vartheta, \varphi)\right|^{2} G_{t} P_{t 0}\\ 
 		&=\frac{\lambda^{2}}{4 \pi} G_{r} \frac{1}{4 \pi r^{2}} G_{t} P_{\mathrm{t}, 0} \\
 		&=\frac{\lambda^{2}}{16 \pi^{2} r^{2}} G_{r} G_{t} P_{\mathrm{t}, 0} . \end{aligned}$\\
-	Optimal ausgerichtet $\rightarrow C_r$ und $C_t=1$
+	Optimal ausgerichtet $\rightarrow C_r$ und $C_t=1$\\
+	$P_{\mathrm{RX}}=\left(1-|r|^{2}\right) P_{0} G_{\mathrm{TX}} G_{\mathrm{RX}}\left(\frac{\lambda}{4 \pi d}\right)^{2}$
 \end{sectionbox}
 
 \begin{sectionbox}
@@ -2061,6 +2111,50 @@ $\left|C_{r}(\vartheta, \varphi)\right|=1 \quad \Rightarrow \quad P_{\mathrm{r}}
 	\subsection{Näherungen}
 	$w/2$ sehr klein: $\int\limits_{-w/2}^{w/2}f(x^{\prime}) d x^{\prime} \approx w f(0)$\\
 	Vergrößerung der Apertur führt in der Regel zu einer Vergrößerung der Richtwirkung.\\
+\end{sectionbox}
+
+
+\begin{sectionbox}
+	\subsection{Dielektrische Wellenleiter}
+	\begin{center}\includegraphics[width = 4cm]{./img/dielektr2.png}\includegraphics[width = 1cm]{./img/dielektr.png}\end{center}
+	Totalreflextion: $\vartheta < \vartheta < \frac{\pi}{2}$, $\vartheta = \operatorname{arcsin}\sqrt{\frac{\epsilon_2}{\epsilon_1}}$ (Metall: $\vartheta = 0$)\\
+	Wellenleitung ist nur im totalreflektierenden Bereich möglich\\
+	\begin{center}\includegraphics[width = 3.4cm]{./img/dielektr-tm.png}\includegraphics[width = 3.4cm]{./img/dielektr-te.png}\end{center}
+	Grenz und Stetigkeitsbedingungen:\\
+	$$\begin{array}{lll}
+		x=\pm \frac{a}{2} \rightarrow & \vec{H}_{1} \times \vec{e}_{x}=\vec{H}_{2} \times \vec{e}_{x} & \vec{E}_{1} \times \vec{e}_{x}=\vec{E}_{2} \times \vec{e}_{x} \\
+		x \rightarrow \pm \infty \rightarrow & \vec{H}_{2} \rightarrow 0 & \vec{E}_{2} \rightarrow 0
+		\end{array}$$
+
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Dielektrische Wellenleiter: y-unabhängige und ungerade (in x) Moden}
+	Links TM, rechts TE\\
+	\begin{center}\includegraphics[width = 2cm]{./img/dielektr-ugtm.png}\includegraphics[width = 2cm]{./img/dielektr-ugte.png}\end{center}
+	\begin{center}\includegraphics[width = 3.4cm]{./img/dielektr-ugtm2.png}\includegraphics[width = 3.4cm]{./img/dielektr-ugte2.png}\end{center}
+	$$\begin{aligned}
+		&k_{x}^{2}=k_{0}^{2} \varepsilon_{r}-\beta^{2} \\
+		&\alpha^{2}=\beta^{2}-k_{0}^{2}\\
+		&\alpha=\sqrt{k_{0}^{2}\left(\varepsilon_{r}-1\right)-k_{x}^{2}}
+		\end{aligned}$$
+	\begin{center}\includegraphics[width = 2cm]{./img/dielektr-ugtm3.png}\includegraphics[width = 2cm]{./img/dielektr-ugte3.png}\end{center}
+	\begin{center}\includegraphics[width = 5cm]{./img/dielektr-ug2.png}\end{center}
+	\begin{center}\includegraphics[width = 5cm]{./img/dielektr-ugfc.png}\end{center}
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Dielektrische Wellenleiter: y-unabhängige und gerade (in x) Moden}
+	Links TM, rechts TE\\
+	\begin{center}\includegraphics[width = 2cm]{./img/dielektr-gtm.png}\includegraphics[width = 2cm]{./img/dielektr-gte.png}\end{center}
+	\begin{center}\includegraphics[width = 3.4cm]{./img/dielektr-gtm2.png}\includegraphics[width = 3.4cm]{./img/dielektr-gte2.png}\end{center}
+	$$\begin{aligned}
+		&k_{x}^{2}=k_{0}^{2} \varepsilon_{r}-\beta^{2} \\
+		&\alpha^{2}=\beta^{2}-k_{0}^{2}\\
+		&\alpha=\sqrt{k_{0}^{2}\left(\varepsilon_{r}-1\right)-k_{x}^{2}}
+		\end{aligned}$$
+	\begin{center}\includegraphics[width = 2cm]{./img/dielektr-gtm3.png}\includegraphics[width = 2cm]{./img/dielektr-gte3.png}\end{center}
+	\begin{center}\includegraphics[width = 5cm]{./img/dielektr-g2.png}\end{center}
+	\begin{center}\includegraphics[width = 5cm]{./img/dielektr-gfc.png}\end{center}
+
 \end{sectionbox}
 % ======================================================================
 % End
