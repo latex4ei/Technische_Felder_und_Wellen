@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(FS NONE)
+project(TFW NONE)
 include(UseLATEX)
 
 add_custom_target(
@@ -10,7 +10,7 @@ add_custom_target(
 )
 
 add_latex_document(
-	StaSigProc.tex
+	TFW.tex
 	FORCE_PDF
 	IMAGE_DIRS img
 	DEPENDS writegitid
